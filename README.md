@@ -128,3 +128,8 @@ Detection is an explicit API state-changing experiment, excluded from `run_all_s
 ## Harness validation (not benchmark evidence)
 
 `bash -n experiments/*.sh` must be run in a loop (Bash only parses its first file argument). If already installed, run `shellcheck -x experiments/*.sh`. `python3 experiments/tests/test_harness.py` runs local HTTP **test fixtures** and failure-path checks in a temporary directory outside `logs/`; fixture data are never experimental evidence. It does not launch production `main.py`, initialize GPIO, or require Pi hardware.
+## Copyright and License
+
+Copyright © 2026 Danilo Stoletović.
+
+This experimental validation harness is licensed under the MIT License. See the repository's [`LICENSE`](../LICENSE) file for the full license text.
