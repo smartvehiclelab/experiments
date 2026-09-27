@@ -3,7 +3,8 @@
 set -Eeuo pipefail
 export LC_ALL=C
 EXP_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-REPO_DIR=$(cd -- "$EXP_DIR/.." && pwd)
+# This harness may be a standalone checkout or a backend subdirectory.
+REPO_DIR=$(git -C "$EXP_DIR" rev-parse --show-toplevel 2>/dev/null) || REPO_DIR=$EXP_DIR
 
 utc() { date -u +%Y-%m-%dT%H:%M:%SZ; }
 log() {
@@ -49,25 +50,72 @@ capture() {
 }
 positive() { [[ $2 =~ ^[1-9][0-9]*$ ]] || { printf '%s must be a positive integer\n' "$1" >&2; exit 2; }; }
 
+docker_capture() {
+    if [[ ${DOCKER_AVAILABLE:-false} == true ]]; then capture timeout 5 docker "$@"
+    else printf 'NA\n'; fi
+}
+
+discover_container() {
+    DOCKER_AVAILABLE=false
+    DOCKER_STATUS=unavailable
+    if ! command -v docker >/dev/null; then
+        error 'Docker CLI unavailable; HTTP/host collection continues'; return
+    fi
+    if ! timeout 5 docker info > "$RUN_DIR/docker-info.txt" 2>> "$RUN_DIR/errors.log"; then
+        error 'Docker daemon inaccessible in the current context (check socket permissions/context); HTTP/host collection continues'; return
+    fi
+    DOCKER_STATUS=unresolved
+    if [[ -z $CONTAINER_NAME ]]; then
+        local candidates
+        # Compose labels survive generated container names and folder changes.
+        candidates=$(timeout 5 docker ps --filter label=com.docker.compose.service=rpi-server --format '{{.Names}}' 2>> "$RUN_DIR/errors.log") || candidates=''
+        if [[ -z $candidates ]]; then
+            candidates=$(timeout 5 docker ps --filter name='^/rpi_stream_server$' --format '{{.Names}}' 2>> "$RUN_DIR/errors.log") || candidates=''
+        fi
+        # For renamed services with published ports, match the effective URL port.
+        if [[ -z $candidates ]]; then
+            local port
+            port=$(python3 -c 'import sys,urllib.parse; u=urllib.parse.urlsplit(sys.argv[1]); print(u.port or (443 if u.scheme == "https" else 80))' "$TARGET_BASE_URL" 2>> "$RUN_DIR/errors.log") || {
+                error 'Cannot derive Docker port from URL; pass --container NAME'; return;
+            }
+            candidates=$(timeout 5 docker ps --filter "publish=$port" --format '{{.Names}}' 2>> "$RUN_DIR/errors.log") || candidates=''
+        fi
+        if [[ -z $candidates || $candidates == *$'\n'* ]]; then
+            error 'Cannot uniquely identify the application container; pass --container NAME (see docker ps). HTTP/host collection continues'
+            return
+        fi
+        CONTAINER_NAME=$candidates
+    fi
+    if ! timeout 5 docker inspect --type container --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-discovery.json" 2>> "$RUN_DIR/errors.log"; then
+        error "Container '$CONTAINER_NAME' not accessible; pass its current name or ID with --container"; return
+    fi
+    DOCKER_AVAILABLE=true
+    DOCKER_STATUS=resolved
+    log "Using existing Docker container=$CONTAINER_NAME"
+}
+
 init() {
     NAME=$1; shift
     DURATION=${DURATION:-60}; INTERVAL=${INTERVAL:-5}
     TARGET_HOST=${TARGET_HOST:-localhost}; TARGET_PORT=${TARGET_PORT:-1607}
-    CONTAINER_NAME=${CONTAINER_NAME:-rpi_stream_server}
+    CONTAINER_NAME=${CONTAINER_NAME:-}
+    SOURCE_DIR=${SOURCE_DIR:-}
     REQUEST_TIMEOUT=${REQUEST_TIMEOUT:-3}; REQUESTS=${REQUESTS:-100}
     STALL_TIMEOUT=${STALL_TIMEOUT:-15}
     while (($#)); do
         case $1 in
-            --duration|--interval|--url|--container|--requests)
+            --duration|--interval|--url|--container|--requests|--source-dir)
                 (($# >= 2)) || { echo "Missing value for $1" >&2; exit 2; }
                 case $1 in
                     --duration) DURATION=$2;; --interval) INTERVAL=$2;;
                     --url) TARGET_BASE_URL=$2;; --container) CONTAINER_NAME=$2;;
                     --requests) REQUESTS=$2;;
+                    --source-dir) SOURCE_DIR=$2;;
                 esac; shift 2;;
             --help)
-                echo 'Options: --duration SECONDS --interval SECONDS --url URL --container NAME --requests COUNT'
-                echo 'Environment: TARGET_HOST TARGET_PORT TARGET_BASE_URL DURATION INTERVAL CONTAINER_NAME REQUEST_TIMEOUT REQUESTS STALL_TIMEOUT LOG_ROOT SESSION_ID'
+                echo 'Options: --duration SECONDS --interval SECONDS --url URL --container NAME --requests COUNT --source-dir PATH'
+                echo 'Container is auto-discovered if omitted. Backend source capture is optional via SOURCE_DIR/--source-dir.'
+                echo 'Environment: TARGET_HOST TARGET_PORT TARGET_BASE_URL DURATION INTERVAL CONTAINER_NAME SOURCE_DIR REQUEST_TIMEOUT REQUESTS STALL_TIMEOUT LOG_ROOT SESSION_ID'
                 exit 0;;
             *) echo "Unknown option: $1" >&2; exit 2;;
         esac
@@ -75,6 +123,10 @@ init() {
     positive DURATION "$DURATION"; positive INTERVAL "$INTERVAL"
     positive REQUEST_TIMEOUT "$REQUEST_TIMEOUT"; positive REQUESTS "$REQUESTS"
     positive STALL_TIMEOUT "$STALL_TIMEOUT"
+    if [[ -n $SOURCE_DIR ]]; then
+        [[ -d $SOURCE_DIR ]] || { echo "Source directory not found: $SOURCE_DIR" >&2; exit 2; }
+        SOURCE_DIR=$(cd -- "$SOURCE_DIR" && pwd)
+    fi
     TARGET_BASE_URL=${TARGET_BASE_URL:-http://$TARGET_HOST:$TARGET_PORT}
     TARGET_BASE_URL=${TARGET_BASE_URL%/}
     [[ $TARGET_BASE_URL =~ ^https?://[^[:space:]]+$ ]] || { echo 'Invalid HTTP URL' >&2; exit 2; }
@@ -92,6 +144,7 @@ init() {
     trap 'exit 130' INT
     trap 'exit 143' TERM
     log "Starting target=$TARGET_BASE_URL results=$RUN_DIR; collecting metadata"
+    discover_container
     metadata
     printf '%s\n' "$RUN_DIR"
 }
@@ -107,26 +160,29 @@ metadata() {
         printf 'duration_requested_s=%s\ninterval_s=%s\nrequests=%s\nrequest_timeout_s=%s\nstall_timeout_s=%s\n' "$DURATION" "$INTERVAL" "$REQUESTS" "$REQUEST_TIMEOUT" "$STALL_TIMEOUT"
         printf 'target_host_setting=%s\ntarget_port_setting=%s\ntarget_base_url=%s\ncontainer_name=%s\n' "$TARGET_HOST" "$TARGET_PORT" "$TARGET_BASE_URL" "$CONTAINER_NAME"
         printf 'metrics_scope=local collector host and local Docker context; HTTP target may differ\n'
+        printf 'harness_directory=%s\nharness_repository=%s\nbackend_source_directory=%s\ndocker_status=%s\n' "$EXP_DIR" "$REPO_DIR" "${SOURCE_DIR:-not supplied}" "$DOCKER_STATUS"
         printf 'hostname=%s\nkernel=%s\narchitecture=%s\n' "$(capture hostname)" "$(capture uname -sr)" "$(capture uname -m)"
         printf 'os=%s\n' "$(capture cat /etc/os-release)"
         printf 'pi_model=%s\n' "$(capture sh -c 'tr -d "\000" < /proc/device-tree/model')"
         printf 'git_remote=%s\ngit_commit=%s\ngit_branch=%s\ngit_state=%s\n' "$(capture git -C "$REPO_DIR" remote get-url origin)" "$(capture git -C "$REPO_DIR" rev-parse HEAD)" "$(capture git -C "$REPO_DIR" branch --show-current)" "$dirty"
-        printf 'docker_version=%s\ndocker_context=%s\n' "$(capture timeout 5 docker --version)" "$(capture timeout 5 docker context show)"
-        printf 'container_identity=%s\n' "$(capture timeout 5 docker inspect --format '{{.Id}} image_ref={{.Config.Image}} image_id={{.Image}}' "$CONTAINER_NAME")"
-        printf 'image_digests=%s\n' "$(capture timeout 5 docker image inspect --format '{{json .RepoDigests}}' "$(capture timeout 5 docker inspect --format '{{.Image}}' "$CONTAINER_NAME")")"
-        printf 'runtime_yolo_env=%s\n' "$(capture sh -c 'timeout 5 docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" "$1" | grep "^YOLO_"' sh "$CONTAINER_NAME")"
+        printf 'docker_version=%s\ndocker_context=%s\n' "$(docker_capture --version)" "$(docker_capture context show)"
+        printf 'container_identity=%s\n' "$(docker_capture inspect --type container --format '{{.Id}} image_ref={{.Config.Image}} image_id={{.Image}}' "$CONTAINER_NAME")"
+        printf 'image_digests=%s\n' "$(docker_capture image inspect --format '{{json .RepoDigests}}' "$(docker_capture inspect --type container --format '{{.Image}}' "$CONTAINER_NAME")")"
+        printf 'runtime_yolo_env=%s\n' "$(docker_capture inspect --type container --format '{{range .Config.Env}}{{println .}}{{end}}' "$CONTAINER_NAME" | awk '/^YOLO_/ {print; found=1} END {if (!found) print "NA"}')"
         printf 'camera_runtime_configuration=NA (not exposed by API)\n'
     } > "$RUN_DIR/metadata.txt"
-    for file in main.py Dockerfile docker-compose.yml requirements.txt; do
-        capture sha256sum "$REPO_DIR/$file" >> "$RUN_DIR/source-sha256.txt"
-    done
+    if [[ -n $SOURCE_DIR ]]; then
+        for file in main.py Dockerfile docker-compose.yml docker-compose.yaml compose.yml compose.yaml requirements.txt pyproject.toml; do
+            [[ ! -f $SOURCE_DIR/$file ]] || capture sha256sum "$SOURCE_DIR/$file" >> "$RUN_DIR/backend-source-sha256.txt"
+        done
+    fi
     capture sha256sum "$EXP_DIR"/*.sh >> "$RUN_DIR/source-sha256.txt"
     {
         capture uptime
         capture df -Pk "$REPO_DIR"
         capture ps -eo pid,ppid,comm,pcpu,pmem
     } > "$RUN_DIR/system.log"
-    capture timeout 5 docker inspect --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-start.json"
+    docker_capture inspect --type container --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-start.json"
 }
 
 # Every response is retained, including error responses and invalid JSON.
@@ -187,7 +243,7 @@ sample() {
     throttle=$(capture vcgencmd get_throttled)
     throttle=${throttle#throttled=}
     health "$SAMPLE"
-    docker_fields=$(capture timeout 5 docker inspect --format '{{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}}' "$CONTAINER_NAME")
+    docker_fields=$(docker_capture inspect --type container --format '{{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}}' "$CONTAINER_NAME")
     [[ $docker_fields != NA ]] || docker_fields=NA,NA,NA,NA,NA,NA
     local cid cstate chealth restarts started oom
     IFS=, read -r cid cstate chealth restarts started oom <<< "$docker_fields"
@@ -196,7 +252,7 @@ sample() {
         error "container transition old=$PREV_CONTAINER/$PREV_RESTART/$PREV_STARTED new=$cid/$restarts/$started"
     fi
     PREV_CONTAINER=$cid; PREV_RESTART=$restarts; PREV_STARTED=$started
-    [[ $cstate == running && ( $chealth == healthy || $chealth == NA ) ]] || error "container state=$cstate health=$chealth"
+    [[ $DOCKER_AVAILABLE != true || ( $cstate == running && ( $chealth == healthy || $chealth == NA ) ) ]] || error "container state=$cstate health=$chealth"
     printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n' \
         "$(utc)" "$((SECONDS-START_SECONDS))" "$phase" "$cpu" "$mem" "$temp" "$freq" "$load" "$up" "$throttle" \
         "$HTTP_RC" "$HTTP_CODE" "$HTTP_OK" "$HTTP_TIME" "$HEALTH_FIELDS,$docker_fields" >> "$RUN_DIR/raw.csv"
@@ -275,9 +331,11 @@ finish() {
     if [[ -n $RESTORE_DETECTION ]]; then
         set_detection "$RESTORE_DETECTION" || { error 'RESTORATION FAILED: inspect detection state manually'; rc=1; }
     fi
-    timeout 10 docker logs --timestamps --since "$START_UTC" "$CONTAINER_NAME" > "$RUN_DIR/docker.log" 2>> "$RUN_DIR/errors.log"
-    [[ $? == 0 ]] || error 'Docker logs unavailable or incomplete (timeout/permissions/container missing)'
-    capture timeout 5 docker inspect --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-end.json"
+    if [[ ${DOCKER_AVAILABLE:-false} == true ]]; then
+        timeout 10 docker logs --timestamps --since "$START_UTC" "$CONTAINER_NAME" > "$RUN_DIR/docker.log" 2>> "$RUN_DIR/errors.log"
+        [[ $? == 0 ]] || error 'Docker logs unavailable or incomplete (timeout/permissions/container missing)'
+    else printf 'NA: Docker container unavailable; see errors.log\n' > "$RUN_DIR/docker.log"; fi
+    docker_capture inspect --type container --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-end.json"
     printf 'end_utc=%s\nend_local=%s\nelapsed_s=%s\nexit_code=%s\n' "$(utc)" "$(date -Iseconds)" "$((SECONDS-START_SECONDS))" "$rc" >> "$RUN_DIR/metadata.txt"
     [[ $rc == 0 ]] || error "experiment exited with code $rc; partial evidence retained"
     log "Finished exit_code=$rc elapsed_s=$((SECONDS-START_SECONDS)) results=$RUN_DIR"

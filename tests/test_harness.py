@@ -67,7 +67,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix='harness-validation-', dir=ROOT.parent) as temp:
         tmp = Path(temp)
         env = os.environ.copy()
-        for key in ('TARGET_BASE_URL', 'SESSION_ID', 'FAIL_SUMMARY'):
+        for key in ('TARGET_BASE_URL', 'SESSION_ID', 'FAIL_SUMMARY', 'CONTAINER_NAME', 'SOURCE_DIR', 'DOCKER_FIXTURE'):
             env.pop(key, None)
         # Use the interpreter running this test without installing or changing the host.
         bindir = tmp / 'bin'
@@ -77,6 +77,36 @@ def main():
                            'if [[ ${FAIL_SUMMARY:-0} == 1 && ${2:-} == */raw.csv ]]; then exit 9; fi\n'
                            'exec "' + posix(sys.executable) + '" "$@"\n', encoding='utf-8')
         wrapper.chmod(0o755)
+        # Always isolate Docker too: never inspect the developer's real containers.
+        docker = bindir / 'docker'
+        docker.write_text(r'''#!/usr/bin/env bash
+printf '%s\n' "$*" >> "$DOCKER_TRACE"
+case "$1" in
+  info) [[ ${DOCKER_FIXTURE:-} != denied ]] || { echo 'permission denied' >&2; exit 1; }; echo fixture;;
+  ps)
+    case ${DOCKER_FIXTURE:-} in
+      ambiguous) printf 'renamed-app\nsecond-app\n';;
+      port) [[ $* != *publish=* ]] || echo renamed-app;;
+      *) echo renamed-app;;
+    esac;;
+  inspect)
+    [[ ${*: -1} != missing ]] || exit 1
+    case "$*" in
+      *RestartCount*) echo 'fixture-id,running,healthy,0,2026-01-01T00:00:00Z,false';;
+      *Config.Env*) echo YOLO_MODEL_PATH=fixture.pt;;
+      *image_ref*) echo 'fixture-id image_ref=fixture image_id=sha256:fixture';;
+      *'{{.Image}}'*) echo sha256:fixture;;
+      *) echo '{"Status":"running"}';;
+    esac;;
+  image) echo '[]';;
+  logs) echo 'fixture application log';;
+  context) echo fixture-context;;
+  --version) echo 'Docker fixture';;
+  *) echo 'Unexpected Docker command' >&2; exit 99;;
+esac
+''', encoding='utf-8', newline='\n')
+        docker.chmod(0o755)
+        env['DOCKER_TRACE'] = posix(tmp / 'docker-trace.txt')
         logpath = posix(tmp / 'results')
         if os.name == 'nt':
             logpath = '/' + logpath[0].lower() + logpath[2:]
@@ -150,6 +180,33 @@ def main():
         threading.Thread(target=server.serve_forever, daemon=True).start()
         env['TARGET_BASE_URL'] = f'http://127.0.0.1:{server.server_port}'
         try:
+            baseline = run('system_baseline.sh')
+            assert len(rows(baseline / 'raw.csv')) == 2
+            assert all(r['container_state'] == 'running' for r in rows(baseline / 'raw.csv'))
+            metadata = (baseline / 'metadata.txt').read_text()
+            assert 'container_name=renamed-app' in metadata
+            assert 'harness_repository=' in metadata
+            assert 'backend_source_directory=not supplied' in metadata
+            assert 'main.py' not in (baseline / 'errors.log').read_text()
+            assert 'fixture application log' in (baseline / 'docker.log').read_text()
+            source = tmp / 'backend source'
+            source.mkdir()
+            (source / 'compose.yaml').write_text('services: {}\n')
+            explicit = run('system_baseline.sh', '--container', 'custom-app', '--source-dir', posix(source))
+            assert 'container_name=custom-app' in (explicit / 'metadata.txt').read_text()
+            assert 'compose.yaml' in (explicit / 'backend-source-sha256.txt').read_text()
+            for mode in ('denied', 'ambiguous', 'port'):
+                env['DOCKER_FIXTURE'] = mode
+                result = run('system_baseline.sh')
+                expected_state = 'running' if mode == 'port' else 'NA'
+                assert all(r['container_state'] == expected_state for r in rows(result / 'raw.csv'))
+                if mode == 'denied':
+                    assert 'daemon inaccessible' in (result / 'errors.log').read_text()
+                elif mode == 'ambiguous':
+                    assert 'Cannot uniquely identify' in (result / 'errors.log').read_text()
+            env.pop('DOCKER_FIXTURE')
+            missing = run('system_baseline.sh', '--container', 'missing')
+            assert all(r['container_state'] == 'NA' for r in rows(missing / 'raw.csv'))
             first = run('api_latency.sh')
             assert all(r['health_valid'] == 'true' for r in rows(first / 'raw.csv'))
             assert 'successful=2' in (first / 'summary.txt').read_text()
@@ -189,6 +246,8 @@ def main():
             session = run('run_all_safe.sh', '--requests', '1')
             assert len(rows(session / 'children.csv')) == 5
             assert posts == [], 'Read-only scripts and safe session must never POST'
+            assert all(line.split()[0] in {'info', 'ps', 'inspect', 'image', 'logs', 'context', '--version'}
+                       for line in (tmp / 'docker-trace.txt').read_text().splitlines()), 'Docker must remain read-only'
         finally:
             server.shutdown()
             server.server_close()

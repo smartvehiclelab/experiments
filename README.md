@@ -2,13 +2,13 @@
 
 ## TL;DR
 
-Run these Bash scripts **on the Raspberry Pi host** to measure the running server's resource use, HTTP latency, stream transport, and reliability. Each execution saves a new UTC timestamped directory under `experiments/logs/`. Seven recorded runs from 2026-09-27 are available under [logs/](logs/), with measurements and evidence limitations summarized below. Nothing installs packages, tunes the Pi, restarts containers, or changes production code.
+Run these Bash scripts **on the Raspberry Pi host** to measure the running server's resource use, HTTP latency, stream transport, and reliability. Each execution saves a new UTC timestamped directory under `logs/` beside the scripts. Seven recorded runs from 2026-09-27 are available under [logs/](logs/), with measurements and evidence limitations summarized below. Nothing installs packages, tunes the Pi, restarts containers, or changes production code.
 
-This harness belongs in [smartvehiclelab/rpi-server](https://github.com/smartvehiclelab/rpi-server), the active Pi backend, rather than the archived `rpi-server-legacy`, clients, dashboard, landing page, or separate model export pipeline. Architecture was inspected at `2de433043c89cec83909f8e5a59875d78d0594a3`, including `main.py`, README, Dockerfile, Compose, requirements and release workflow. Recheck assumptions if the deployed API changes.
+This is a standalone experiments repository that observes an already running Pi backend. It also works when placed inside a backend checkout. No backend source files or Compose project are required beside the scripts. The historical backend architecture described below was inspected at `2de433043c89cec83909f8e5a59875d78d0594a3`, including `main.py`, README, Dockerfile, Compose, requirements and release workflow. Recheck assumptions if the deployed API changes.
 
 ## Test Environment
 
-Source configuration (not measurements of your deployment):
+Historical source configuration (not discovery of your current deployment):
 
 - Raspberry Pi 5; README supports 64-bit Raspberry Pi OS Bookworm/Trixie. The container uses Python 3.11 slim Bookworm, aiohttp, Picamera2, OpenCV, Ultralytics and GPIOZero/lgpio.
 - Compose service `rpi-server`, container `rpi_stream_server`, image `yoloprojekat/rpi-server:latest`; host networking, privileged hardware access, `/dev` and `/run/udev` mounts, 512 MiB shared memory, `unless-stopped` restart policy. Docker logs rotate at 10 MB × 3. The tag release workflow builds `linux/arm64` images.
@@ -20,7 +20,7 @@ Source configuration (not measurements of your deployment):
 
 An IMX219 camera, OS Lite installation, and `pametno-vozilo.local` hostname are user-supplied deployment expectations; this repository does not establish those for a live run. Record the physical camera, RAM variant, cooling, power supply, ambient temperature, scene/lighting, other clients and motor-power condition in a separate `operator-notes.md` beside each dataset. Do not present those notes as automatic measurements.
 
-Metadata automatically records local/UTC start/end, host, OS/kernel/architecture, Pi device-tree model when readable, Git remote/SHA/branch/dirty state, source checksums, Docker version/context/container identity/image ID/digests, YOLO environment and run settings. Health JSON records live flags. Camera settings and actual model file hash are not exposed by the HTTP API. Source checkout identity does not prove an already running image was built from it; compare image identity and deployment records.
+Metadata automatically records local/UTC start/end, host, OS/kernel/architecture, Pi device-tree model when readable, Git remote/SHA/branch/dirty state, source checksums, Docker version/context/container identity/image ID/digests, YOLO environment and run settings. Health JSON records live flags. Camera settings and actual model file hash are not exposed by the HTTP API. Git metadata identifies the harness checkout, discovered from the script directory. Harness checksums are saved in `source-sha256.txt`. Optional `--source-dir PATH` records available backend configuration/source entry-point checksums in `backend-source-sha256.txt`; missing legacy filenames are skipped. This does not prove the running image was built from those sources; compare image identity and deployment records.
 
 ## Methodology
 
@@ -98,16 +98,28 @@ Retain the raw files and error logs when sharing these results. Source comments 
 
 Prerequisites: Bash 4+, standard Linux utilities (awk, coreutils including `timeout`, procps), curl, Python 3 standard library (strict JSON parsing and latency summary). Docker CLI/daemon access and `vcgencmd` are optional. No root is required by the harness. It never installs missing utilities or alters permissions; Docker permission errors become evidence. Run against your already deployed service. Stop other controlling clients and physically disconnect motor power for controlled workload testing.
 
-After copying/committing these files into your Pi checkout:
+From the standalone experiments checkout on the Pi:
 
 ```bash
-cd ~/rpi-server/experiments   # use your actual checkout location
+cd ~/experiments   # directory containing system_baseline.sh
 bash system_baseline.sh
 bash api_latency.sh --requests 20 --interval 1
 bash idle_stability.sh --duration 30 --interval 5
 bash stream_stability.sh --duration 30 --interval 5
 bash endurance_test.sh --duration 600 --interval 5
 ```
+
+All scripts use the existing Docker daemon/context without starting or restarting anything. With no explicit container, discovery first checks the Compose service label `rpi-server`, then the legacy name `rpi_stream_server`, then the effective HTTP URL's published port. Multiple matches remain unresolved. For renamed host-network containers, a different Compose service, or multiple deployments, specify the name or ID from `docker ps`:
+
+```bash
+docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+bash system_baseline.sh --container YOUR_RUNNING_CONTAINER
+bash run_all_safe.sh --container YOUR_RUNNING_CONTAINER --duration 30 --requests 10
+# Optional: backend sources stored somewhere else
+bash system_baseline.sh --container YOUR_RUNNING_CONTAINER --source-dir ~/rpi-server
+```
+
+Docker running does not guarantee the current user can access its socket. A failed daemon check is reported separately from a missing/ambiguous container, and host/HTTP measurements continue with Docker fields marked `NA`. Details are saved in `errors.log`; no permissions are changed. Docker discovery always concerns the collector's Docker context, even with a remote HTTP URL, so verify the selected container in the startup message. The safe runner propagates the selected container and optional source path to every child.
 
 Idle refuses to run unless detection and follow are already off; set those through your normal operator interface first. Read-only scripts do not stop a vehicle already following or being remotely controlled.
 
@@ -129,7 +141,7 @@ DURATION=14400 INTERVAL=30 bash endurance_test.sh
 TARGET_HOST=pametno-vozilo.local TARGET_PORT=1607 bash api_latency.sh --requests 20
 ```
 
-Environment settings: `TARGET_HOST=localhost`, `TARGET_PORT=1607`, `TARGET_BASE_URL` (overrides host/port), `CONTAINER_NAME=rpi_stream_server`, `DURATION`, `INTERVAL`, `REQUESTS=100`, `REQUEST_TIMEOUT=3`, `STALL_TIMEOUT=15`, `LOG_ROOT=experiments/logs`, optional `SESSION_ID`. All numeric settings must be positive integer seconds/counts. CLI `--duration`, `--interval`, `--requests`, `--url`, `--container` override corresponding environment settings. `--help` lists options. URL metadata is authoritative when host/port settings are overridden. Avoid credentials in URLs; metadata records them verbatim.
+Environment settings: `TARGET_HOST=localhost`, `TARGET_PORT=1607`, `TARGET_BASE_URL` (overrides host/port), `CONTAINER_NAME` (optional explicit name/ID), `DURATION`, `INTERVAL`, `REQUESTS=100`, `REQUEST_TIMEOUT=3`, `STALL_TIMEOUT=15`, `LOG_ROOT` (defaults to `logs/` beside scripts), optional `SESSION_ID` and `SOURCE_DIR`. All numeric settings must be positive integer seconds/counts. CLI `--duration`, `--interval`, `--requests`, `--url`, `--container`, `--source-dir` override corresponding environment settings. `--help` lists options. URL metadata is authoritative when host/port settings are overridden. Avoid credentials in URLs; metadata records them verbatim.
 
 ## Output and Git handling
 
@@ -139,7 +151,7 @@ Duration-based phases show `remaining_s` once per second, including while probes
 
 Names use UTC plus a random suffix to prevent collisions, including concurrent starts. Runs never overwrite/delete previous data. Outputs include `metadata.txt`, `raw.csv`, `system.log`, `errors.log`, `docker.log`, start/end container state JSON, health response files, Git status and source checksums. Stream and detection add their own records; only API latency currently generates a statistical summary. Disk space and log growth are the operator's responsibility; no binary video is stored.
 
-`logs/.gitkeep` is tracked and logs are intentionally **not ignored**. Review identifying hostnames, network details and server logs before publishing. Commit selected complete datasets explicitly, for example `git add experiments/logs/<run-directory>`. Document exclusions in research analysis rather than automatically selecting only successful runs. `git_state=dirty` can include newly generated/untracked experiment logs; consult `git-status.txt` and source checksums. Git SHA does not include uncommitted harness changes, so commit the harness before collecting publishable data.
+`logs/.gitkeep` is tracked and logs are intentionally **not ignored**. Review identifying hostnames, network details and server logs before publishing. Commit selected complete datasets explicitly, for example `git add logs/<run-directory>`. Document exclusions in research analysis rather than automatically selecting only successful runs. `git_state=dirty` can include newly generated/untracked experiment logs; consult `git-status.txt` and source checksums. Git SHA does not include uncommitted harness changes, so commit the harness before collecting publishable data.
 
 ## Evidence model
 
@@ -167,9 +179,9 @@ Detection is an explicit API state-changing experiment, excluded from `run_all_s
 
 The Python harness streams subprocess output immediately, labels each case and its elapsed time, checks console/persisted progress and countdown output, and identifies results by newly created directories. It can be imported without starting tests. Set `BASH_EXE` if Bash is not on PATH; the standard Git for Windows installation is also detected. Cases time out after 50 seconds and terminate their process tree. Temporary fixture results are created inside the workspace and removed after the run.
 
-`bash -n experiments/*.sh` must be run in a loop (Bash only parses its first file argument). If already installed, run `shellcheck -x experiments/*.sh`. `python3 experiments/tests/test_harness.py` runs local HTTP **test fixtures** and failure-path checks in a temporary directory outside `logs/`; fixture data are never experimental evidence. It does not launch production `main.py`, initialize GPIO, or require Pi hardware.
+`for script in *.sh; do bash -n "$script" || exit; done` checks every script. If already installed, run `shellcheck -x *.sh`. `python3 tests/test_harness.py` runs local HTTP and Docker **test fixtures** and failure-path checks in a temporary directory outside `logs/`; fixture data are never experimental evidence. It does not launch production `main.py`, initialize GPIO, or require Pi hardware.
 ## Copyright and License
 
 Copyright © 2026 Danilo Stoletović.
 
-This experimental validation harness is licensed under the MIT License. See the repository's [`LICENSE`](../LICENSE) file for the full license text.
+This experimental validation harness is licensed under the MIT License. See the repository's [`LICENSE`](LICENSE) file for the full license text.

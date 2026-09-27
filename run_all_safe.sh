@@ -3,7 +3,7 @@ set -Eeuo pipefail
 source "$(dirname -- "${BASH_SOURCE[0]}")/common.sh"
 init safe-session "$@"
 export SESSION_ID=${SESSION_ID:-$(basename -- "$RUN_DIR")}
-export LOG_ROOT="$RUN_DIR" TARGET_BASE_URL CONTAINER_NAME DURATION INTERVAL REQUEST_TIMEOUT REQUESTS STALL_TIMEOUT
+export LOG_ROOT="$RUN_DIR" TARGET_BASE_URL CONTAINER_NAME SOURCE_DIR DURATION INTERVAL REQUEST_TIMEOUT REQUESTS STALL_TIMEOUT
 printf 'session_id_assigned=%s\n' "$SESSION_ID" >> "$RUN_DIR/metadata.txt"
 printf 'utc,script,exit_code\n' > "$RUN_DIR/children.csv"
 failed=0
