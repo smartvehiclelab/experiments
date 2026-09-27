@@ -1,0 +1,35 @@
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:34:25Z unavailable: git -C /home/pi remote get-url origin
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:34:25Z unavailable: git -C /home/pi rev-parse HEAD
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:34:25Z unavailable: git -C /home/pi branch --show-current
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: timeout 5 docker inspect --format {{.Id}} image_ref={{.Config.Image}} image_id={{.Image}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: timeout 5 docker inspect --format {{.Image}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/images/NA/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: timeout 5 docker image inspect --format {{json .RepoDigests}} NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: sh -c timeout 5 docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" "$1" | grep "^YOLO_" sh rpi_stream_server
+sha256sum: /home/pi/main.py: No such file or directory
+2026-09-27T12:34:25Z unavailable: sha256sum /home/pi/main.py
+sha256sum: /home/pi/Dockerfile: No such file or directory
+2026-09-27T12:34:25Z unavailable: sha256sum /home/pi/Dockerfile
+sha256sum: /home/pi/docker-compose.yml: No such file or directory
+2026-09-27T12:34:25Z unavailable: sha256sum /home/pi/docker-compose.yml
+sha256sum: /home/pi/requirements.txt: No such file or directory
+2026-09-27T12:34:25Z unavailable: sha256sum /home/pi/requirements.txt
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: timeout 5 docker inspect --format {{json .State}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:25Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:34:25Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:26Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:34:26Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:26Z Docker logs unavailable or incomplete (timeout/permissions/container missing)
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:34:26Z unavailable: timeout 5 docker inspect --format {{json .State}} rpi_stream_server

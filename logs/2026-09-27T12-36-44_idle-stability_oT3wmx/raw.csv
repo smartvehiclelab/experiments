@@ -1,0 +1,7 @@
+utc,elapsed_s,phase,cpu_busy_pct,ram_used_kib,ram_total_kib,temp_c,cpu_freq_khz,load1,load5,load15,uptime_s,throttled_bits,curl_exit,http_code,health_valid,health_latency_s,camera_active,yolo_active,yolo_loading,detection_enabled,follow_enabled,service_uptime_s,container_id,container_state,container_health,restart_count,container_started_at,oom_killed
+2026-09-27T12:36:44Z,0,observed_idle,NA,927200,8255824,53.45,2400000,0.17,0.17,0.09,439.23,0x0,0,200,true,0.000836,true,true,false,false,false,425.2,NA,NA,NA,NA,NA,NA
+2026-09-27T12:36:49Z,5,observed_idle,3.074,913936,8255824,54,1500000,0.16,0.16,0.09,444.29,0x0,0,200,true,0.001052,true,true,false,false,false,430.3,NA,NA,NA,NA,NA,NA
+2026-09-27T12:36:54Z,10,observed_idle,4.279,914656,8255824,52.9,1600000,0.14,0.16,0.09,449.38,0x0,0,200,true,0.002135,true,true,false,false,false,435.4,NA,NA,NA,NA,NA,NA
+2026-09-27T12:36:59Z,15,observed_idle,4.288,913232,8255824,54,1600000,0.13,0.16,0.09,454.46,0x0,0,200,true,0.001090,true,true,false,false,false,440.5,NA,NA,NA,NA,NA,NA
+2026-09-27T12:37:04Z,20,observed_idle,4.234,914352,8255824,51.8,1600000,0.12,0.15,0.09,459.55,0x0,0,200,true,0.001030,true,true,false,false,false,445.5,NA,NA,NA,NA,NA,NA
+2026-09-27T12:37:09Z,25,observed_idle,4.386,911520,8255824,54,1600000,0.19,0.17,0.09,464.63,0x0,0,200,true,0.001010,true,true,false,false,false,450.6,NA,NA,NA,NA,NA,NA

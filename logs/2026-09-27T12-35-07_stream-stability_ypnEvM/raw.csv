@@ -1,0 +1,7 @@
+utc,elapsed_s,phase,cpu_busy_pct,ram_used_kib,ram_total_kib,temp_c,cpu_freq_khz,load1,load5,load15,uptime_s,throttled_bits,curl_exit,http_code,health_valid,health_latency_s,camera_active,yolo_active,yolo_loading,detection_enabled,follow_enabled,service_uptime_s,container_id,container_state,container_health,restart_count,container_started_at,oom_killed
+2026-09-27T12:35:07Z,0,streaming,NA,933104,8255824,53.45,1900000,0.29,0.19,0.09,342.75,0x0,0,200,true,0.000991,true,true,false,false,false,328.7,NA,NA,NA,NA,NA,NA
+2026-09-27T12:35:12Z,5,streaming,4.253,928880,8255824,53.45,1600000,0.26,0.19,0.09,347.83,0x0,0,200,true,0.001081,true,true,false,false,false,333.8,NA,NA,NA,NA,NA,NA
+2026-09-27T12:35:18Z,11,streaming,4.870,916624,8255824,51.8,1600000,0.24,0.18,0.09,352.90,0x0,0,200,true,0.001087,true,true,false,false,false,338.9,NA,NA,NA,NA,NA,NA
+2026-09-27T12:35:23Z,16,streaming,4.431,914448,8255824,51.8,1600000,0.22,0.18,0.09,357.99,0x0,0,200,true,0.001141,true,true,false,false,false,344.0,NA,NA,NA,NA,NA,NA
+2026-09-27T12:35:28Z,21,streaming,4.581,916144,8255824,52.9,1600000,0.20,0.18,0.08,363.07,0x0,0,200,true,0.001021,true,true,false,false,false,349.1,NA,NA,NA,NA,NA,NA
+2026-09-27T12:35:33Z,26,streaming,4.425,910032,8255824,52.9,1600000,0.19,0.17,0.08,368.16,0x0,0,200,true,0.001073,true,true,false,false,false,354.2,NA,NA,NA,NA,NA,NA

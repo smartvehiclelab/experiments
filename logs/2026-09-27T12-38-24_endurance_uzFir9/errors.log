@@ -1,0 +1,383 @@
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:38:24Z unavailable: git -C /home/pi remote get-url origin
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:38:24Z unavailable: git -C /home/pi rev-parse HEAD
+fatal: not a git repository (or any of the parent directories): .git
+2026-09-27T12:38:24Z unavailable: git -C /home/pi branch --show-current
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: timeout 5 docker inspect --format {{.Id}} image_ref={{.Config.Image}} image_id={{.Image}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: timeout 5 docker inspect --format {{.Image}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/images/NA/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: timeout 5 docker image inspect --format {{json .RepoDigests}} NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: sh -c timeout 5 docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" "$1" | grep "^YOLO_" sh rpi_stream_server
+sha256sum: /home/pi/main.py: No such file or directory
+2026-09-27T12:38:24Z unavailable: sha256sum /home/pi/main.py
+sha256sum: /home/pi/Dockerfile: No such file or directory
+2026-09-27T12:38:24Z unavailable: sha256sum /home/pi/Dockerfile
+sha256sum: /home/pi/docker-compose.yml: No such file or directory
+2026-09-27T12:38:24Z unavailable: sha256sum /home/pi/docker-compose.yml
+sha256sum: /home/pi/requirements.txt: No such file or directory
+2026-09-27T12:38:24Z unavailable: sha256sum /home/pi/requirements.txt
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: timeout 5 docker inspect --format {{json .State}} rpi_stream_server
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:24Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:24Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:30Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:30Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:35Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:35Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:40Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:40Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:45Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:45Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:50Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:50Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:38:55Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:38:55Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:00Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:00Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:05Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:05Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:10Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:10Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:15Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:15Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:20Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:20Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:25Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:25Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:31Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:31Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:36Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:36Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:41Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:41Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:46Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:46Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:51Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:51Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:39:56Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:39:56Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:01Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:01Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:06Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:06Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:11Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:11Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:16Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:16Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:21Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:21Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:26Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:26Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:32Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:32Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:37Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:37Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:42Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:42Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:47Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:47Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:52Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:52Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:40:57Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:40:57Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:02Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:02Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:07Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:07Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:12Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:12Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:17Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:17Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:22Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:22Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:27Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:27Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:33Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:33Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:38Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:38Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:43Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:43Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:48Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:48Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:53Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:53Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:41:58Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:41:58Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:03Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:03Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:08Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:08Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:13Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:13Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:18Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:18Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:23Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:23Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:28Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:28Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:34Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:34Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:39Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:39Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:44Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:44Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:49Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:49Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:54Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:54Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:42:59Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:42:59Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:04Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:04Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:09Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:09Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:14Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:14Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:19Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:19Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:24Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:24Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:30Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:30Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:35Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:35Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:40Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:40Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:45Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:45Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:50Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:50Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:43:55Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:43:55Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:00Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:00Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:05Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:05Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:10Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:10Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:15Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:15Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:20Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:20Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:25Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:25Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:31Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:31Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:36Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:36Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:41Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:41Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:46Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:46Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:51Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:51Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:44:56Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:44:56Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:01Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:01Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:06Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:06Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:11Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:11Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:16Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:16Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:21Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:21Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:26Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:26Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:32Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:32Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:37Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:37Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:42Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:42Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:47Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:47Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:52Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:52Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:45:57Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:45:57Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:02Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:02Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:07Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:07Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:12Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:12Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:17Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:17Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:22Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:22Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:27Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:27Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:33Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:33Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:38Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:38Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:43Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:43Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:48Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:48Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:53Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:53Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:46:58Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:46:58Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:03Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:03Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:08Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:08Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:13Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:13Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:18Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:18Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:23Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:23Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:28Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:28Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:34Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:34Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:39Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:39Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:44Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:44Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:49Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:49Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:54Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:54Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:47:59Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:47:59Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:04Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:48:04Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:09Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:48:09Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:14Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:48:14Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:19Z unavailable: timeout 5 docker inspect --format {{.Id}},{{.State.Status}},{{if .State.Health}}{{.State.Health.Status}}{{else}}NA{{end}},{{.RestartCount}},{{.State.StartedAt}},{{.State.OOMKilled}} rpi_stream_server
+2026-09-27T12:48:19Z container state=NA health=NA
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:24Z Docker logs unavailable or incomplete (timeout/permissions/container missing)
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/rpi_stream_server/json": dial unix /var/run/docker.sock: connect: permission denied
+2026-09-27T12:48:24Z unavailable: timeout 5 docker inspect --format {{json .State}} rpi_stream_server

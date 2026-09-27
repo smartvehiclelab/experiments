@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-Run these Bash scripts **on the Raspberry Pi host** to measure the running server's resource use, HTTP latency, stream transport, and reliability. Each execution saves a new UTC timestamped directory under `experiments/logs/`. No benchmark datasets or performance claims are supplied. Nothing installs packages, tunes the Pi, restarts containers, or changes production code.
+Run these Bash scripts **on the Raspberry Pi host** to measure the running server's resource use, HTTP latency, stream transport, and reliability. Each execution saves a new UTC timestamped directory under `experiments/logs/`. Seven recorded runs from 2026-09-27 are available under [logs/](logs/), with measurements and evidence limitations summarized below. Nothing installs packages, tunes the Pi, restarts containers, or changes production code.
 
 This harness belongs in [smartvehiclelab/rpi-server](https://github.com/smartvehiclelab/rpi-server), the active Pi backend, rather than the archived `rpi-server-legacy`, clients, dashboard, landing page, or separate model export pipeline. Architecture was inspected at `2de433043c89cec83909f8e5a59875d78d0594a3`, including `main.py`, README, Dockerfile, Compose, requirements and release workflow. Recheck assumptions if the deployed API changes.
 
@@ -53,12 +53,46 @@ The safe runner defaults to 60 s for each duration-based child (explicitly propa
 
 ## Results
 
-No physical-device experiments have been run as part of creating this harness. Add links to committed run directories after execution, retaining unsuccessful runs when reporting reliability. Suggested results table:
+The available datasets cover seven runs on **2026-09-27, 12:34:25–12:53:18 UTC** (14:34:25–14:53:18 local, UTC+02:00). Metadata identifies a **Raspberry Pi 5 Model B Rev 1.0**, hostname `pametno-vozilo`, Debian GNU/Linux 13.7 (trixie), kernel `6.18.50+rpt-rpi-2712`, and `aarch64`. Recorded host RAM totals 8,255,824 KiB (7.87 GiB); this is OS-visible memory, not confirmation of the physical RAM variant. All HTTP measurements target `http://localhost:1607`.
 
-| Experiment | Git commit / image ID | Actual duration | Key measurements | Raw data |
+### Resource measurements
+
+These summaries are calculated from each linked `raw.csv`. CPU is the arithmetic mean of valid host-wide samples, excluding the initial `NA` in each phase; it is not time-weighted. RAM ranges use KiB / 1024 to obtain MiB. Temperature and RAM ranges include all rows. Durations come from `metadata.txt`; sampling pauses were 5 seconds. Values are rounded to two decimal places.
+
+| Experiment / phase | Recorded duration | Rows / valid CPU samples | Mean CPU (%) | RAM range (MiB) | Temperature range (°C) | Raw data |
+|---|---|---|---|---|---|---|
+| Baseline | 1 s | 2 / 1 | 7.01 | 895.13–914.86 | 51.25–52.35 | [CSV](logs/2026-09-27T12-34-25_system-baseline_sh9csT/raw.csv) |
+| Stream | 30 s | 6 / 5 | 4.51 | 888.70–911.23 | 51.80–53.45 | [CSV](logs/2026-09-27T12-35-07_stream-stability_ypnEvM/raw.csv) |
+| Idle | 30 s | 6 / 5 | 4.05 | 890.16–905.47 | 51.80–54.00 | [CSV](logs/2026-09-27T12-36-44_idle-stability_oT3wmx/raw.csv) |
+| Endurance | 600 s | 118 / 117 | 4.14 | 879.28–906.58 | 52.90–58.95 | [CSV](logs/2026-09-27T12-38-24_endurance_uzFir9/raw.csv) |
+| Detection off | 60 s phase | 12 / 11 | 4.08 | 882.39–914.38 | 55.65–59.50 | [CSV](logs/2026-09-27T12-49-56_detection-benchmark_j0ghsR/raw.csv) |
+| Detection on | 60 s phase | 12 / 11 | 54.91 | 890.95–1063.44 | 59.50–73.80 | [CSV](logs/2026-09-27T12-49-56_detection-benchmark_j0ghsR/raw.csv) |
+| Follow observation (follow off) | 60 s | 12 / 11 | 4.01 | 977.39–992.91 | 60.05–65.55 | [CSV](logs/2026-09-27T12-52-18_follow-observation_54EaI9/raw.csv) |
+
+The detection run lasted 120 seconds overall. Its [transition log](logs/2026-09-27T12-49-56_detection-benchmark_j0ghsR/transitions.log) records off, on, then restoration to the original off state; the final [health verification](logs/2026-09-27T12-49-56_detection-benchmark_j0ghsR/health-verify-3-false.json) records the restored state. In this single sequential comparison, mean host CPU increased by 50.83 percentage points with detection enabled. The fixed phase order, short duration and missing scene/cooling notes limit generalization. Follow remained off in every resource sample, including the follow-observation run, so these data do not measure autonomous-follow performance.
+
+### API latency and stream transport
+
+The [API latency run](logs/2026-09-27T12-34-36_api-latency_x4KdUA/raw.csv) recorded **20 successful requests, zero failures**, with one-second pauses and 21 seconds total elapsed time. Its [saved summary](logs/2026-09-27T12-34-36_api-latency_x4KdUA/summary.txt), converted from seconds to milliseconds, reports:
+
+| Minimum | Mean | Median | p95 (nearest rank) | Maximum |
 |---|---|---|---|---|
+| 0.804 ms | 1.03545 ms | 1.038 ms | 1.175 ms | 1.336 ms |
 
-Do not copy source comments about 30 FPS, startup speed, or memory stability into measured results.
+These are loopback `/health` latencies, not Wi-Fi or inference latencies.
+
+The [stream attempt](logs/2026-09-27T12-35-07_stream-stability_ypnEvM/stream.csv) received **15,500,462 bytes** with HTTP 200 over 30.000228 seconds, using one attempt and no reconnect attempts. Curl exited with code 28 and outcome `deadline_or_stall_timeout`; [stderr](logs/2026-09-27T12-35-07_stream-stability_ypnEvM/errors.log) reports a timeout after 30,000 ms, consistent with the configured 30-second budget. This establishes transport activity, not frame validity, FPS or uninterrupted frame delivery.
+
+### Reliability and evidence gaps
+
+- All 168 resource sample rows and all 20 API request rows recorded curl exit 0, HTTP 200 and valid health JSON. Camera and YOLO readiness were true in all resource sample rows. All seven run metadata files report collection exit code 0; this is not a benchmark pass criterion.
+- The endurance run collected 118 samples over 600 seconds. Recorded service uptime increased from 525.8 to 1120.6 seconds without a sampled reset. Polling cannot exclude outages between samples, and ten minutes does not establish long-term stability or absence of memory leaks.
+- `throttled_bits` was `0x0` through the detection-off phase, changed to `0x50000` at 12:51:01 UTC during detection-on, and remained `0x50000` throughout follow observation. Preserve this nonzero diagnostic in comparisons; the samples alone do not establish when an underlying event occurred or its cause.
+- Docker socket access was denied in every run. Container identity, image digest, runtime YOLO environment, restart counts, container health and OOM state are unavailable; Docker logs could not be collected. These runs cannot substantiate a claim of zero container restarts.
+- Git metadata is `NA`: collection tried to inspect `/home/pi`, which was not a Git checkout. Backend source checksum attempts also failed because the expected files were absent there. The source revision cited in the architecture description above does not identify the deployed image for these runs.
+- No `operator-notes.md` accompanies these datasets. Camera model, power supply, cooling, ambient temperature, scene/lighting, other clients and physical motor-power isolation remain undocumented. The available runs are individual executions (`session_id=NA`), with no grouped safe-session dataset.
+
+Retain the raw files and error logs when sharing these results. Source comments about 30 FPS, startup speed or memory stability are not measured results.
 
 ## Reproduction
 

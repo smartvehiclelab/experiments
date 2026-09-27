@@ -1,0 +1,13 @@
+utc,elapsed_s,phase,cpu_busy_pct,ram_used_kib,ram_total_kib,temp_c,cpu_freq_khz,load1,load5,load15,uptime_s,throttled_bits,curl_exit,http_code,health_valid,health_latency_s,camera_active,yolo_active,yolo_loading,detection_enabled,follow_enabled,service_uptime_s,container_id,container_state,container_health,restart_count,container_started_at,oom_killed
+2026-09-27T12:52:18Z,0,observed_state,NA,1006320,8255824,65,1800000,1.02,0.51,0.27,1373.36,0x50000,0,200,true,0.001059,true,true,false,false,false,1359.3,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:23Z,5,observed_state,4.253,1016736,8255824,64.45,1600000,0.94,0.51,0.27,1378.43,0x50000,0,200,true,0.001037,true,true,false,false,false,1364.4,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:28Z,10,observed_state,3.199,1014464,8255824,65.55,1500000,0.86,0.50,0.27,1383.51,0x50000,0,200,true,0.001088,true,true,false,false,false,1369.5,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:33Z,15,observed_state,3.302,1014880,8255824,64.45,2400000,0.80,0.49,0.27,1388.59,0x50000,0,200,true,0.001135,true,true,false,false,false,1374.6,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:38Z,20,observed_state,3.951,1001392,8255824,63.9,1600000,0.73,0.48,0.26,1393.68,0x50000,0,200,true,0.001036,true,true,false,false,false,1379.7,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:43Z,25,observed_state,4.150,1014848,8255824,62.8,1600000,0.67,0.47,0.26,1398.76,0x50000,0,200,true,0.001105,true,true,false,false,false,1384.7,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:49Z,31,observed_state,4.140,1015488,8255824,63.35,1600000,0.62,0.46,0.26,1403.84,0x50000,0,200,true,0.001128,true,true,false,false,false,1389.8,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:54Z,36,observed_state,4.245,1004368,8255824,61.15,1600000,0.57,0.46,0.26,1408.92,0x50000,0,200,true,0.001125,true,true,false,false,false,1394.9,NA,NA,NA,NA,NA,NA
+2026-09-27T12:52:59Z,41,observed_state,4.138,1005360,8255824,61.15,1600000,0.52,0.45,0.26,1414.01,0x50000,0,200,true,0.001098,true,true,false,false,false,1400.0,NA,NA,NA,NA,NA,NA
+2026-09-27T12:53:04Z,46,observed_state,4.292,1000848,8255824,61.15,1600000,0.48,0.44,0.26,1419.09,0x50000,0,200,true,0.001018,true,true,false,false,false,1405.1,NA,NA,NA,NA,NA,NA
+2026-09-27T12:53:09Z,51,observed_state,3.996,1006976,8255824,60.6,1600000,0.44,0.43,0.26,1424.18,0x50000,0,200,true,0.001027,true,true,false,false,false,1410.2,NA,NA,NA,NA,NA,NA
+2026-09-27T12:53:14Z,56,observed_state,4.389,1004096,8255824,60.05,1600000,0.41,0.43,0.25,1429.26,0x50000,0,200,true,0.001101,true,true,false,false,false,1415.2,NA,NA,NA,NA,NA,NA
