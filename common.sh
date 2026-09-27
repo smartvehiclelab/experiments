@@ -6,7 +6,38 @@ EXP_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 REPO_DIR=$(cd -- "$EXP_DIR/.." && pwd)
 
 utc() { date -u +%Y-%m-%dT%H:%M:%SZ; }
-error() { printf '%s %s\n' "$(utc)" "$*" >> "$RUN_DIR/errors.log"; }
+log() {
+    local line
+    line="$(utc) [$NAME] $*"
+    printf '%s\n' "$line" >> "$RUN_DIR/progress.log"
+    printf '%s\n' "$line" >&2
+}
+error() { printf '%s %s\n' "$(utc)" "$*" >> "$RUN_DIR/errors.log"; log "WARNING $*"; }
+
+# The countdown is a collection budget, not a promise about cleanup time.
+start_timer() {
+    stop_timer
+    local label=$1 budget=$2
+    log "$label remaining_s=$budget (collection budget; cleanup follows)"
+    (
+        trap 'exit 0' TERM INT
+        local deadline=$((SECONDS+budget)) remaining
+        while ((SECONDS < deadline)); do
+            sleep 1
+            remaining=$((deadline-SECONDS))
+            ((remaining >= 0)) || remaining=0
+            log "$label remaining_s=$remaining"
+        done
+    ) &
+    TIMER_PID=$!
+}
+stop_timer() {
+    if [[ -n ${TIMER_PID:-} ]]; then
+        kill "$TIMER_PID" 2>/dev/null || true
+        wait "$TIMER_PID" 2>/dev/null || true
+        TIMER_PID=''
+    fi
+}
 capture() {
     local value
     if value=$("$@" 2>> "$RUN_DIR/errors.log") && [[ -n $value ]]; then
@@ -54,11 +85,13 @@ init() {
     RUN_DIR=$(mktemp -d "${LOG_ROOT:-$EXP_DIR/logs}/$(date -u +%Y-%m-%dT%H-%M-%S)_${NAME}_XXXXXX")
     export RUN_DIR
     : > "$RUN_DIR/errors.log"
+    : > "$RUN_DIR/progress.log"
     START_UTC=$(utc); START_SECONDS=$SECONDS
     STREAM_PID=''; CHILD_PID=''; RESTORE_DETECTION=''; TRANSITION=0
     trap finish EXIT
     trap 'exit 130' INT
     trap 'exit 143' TERM
+    log "Starting target=$TARGET_BASE_URL results=$RUN_DIR; collecting metadata"
     metadata
     printf '%s\n' "$RUN_DIR"
 }
@@ -123,6 +156,7 @@ PY
     [[ -n $HTTP_CODE ]] || HTTP_CODE=NA
     [[ $HTTP_OK == true ]] || HTTP_TIME=NA
     IFS=, read -r CAMERA YOLO LOADING DETECTION FOLLOW SERVICE_UPTIME <<< "$HEALTH_FIELDS"
+    log "health=$tag http=$HTTP_CODE valid=$HTTP_OK latency_s=$HTTP_TIME camera=$CAMERA yolo=$YOLO detection=$DETECTION follow=$FOLLOW"
 }
 
 init_samples() {
@@ -166,10 +200,12 @@ sample() {
     printf '%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n' \
         "$(utc)" "$((SECONDS-START_SECONDS))" "$phase" "$cpu" "$mem" "$temp" "$freq" "$load" "$up" "$throttle" \
         "$HTTP_RC" "$HTTP_CODE" "$HTTP_OK" "$HTTP_TIME" "$HEALTH_FIELDS,$docker_fields" >> "$RUN_DIR/raw.csv"
+    log "phase=$phase sample=$SAMPLE cpu_pct=$cpu ram_used_total_kib=$mem temp_c=$temp throttled=$throttle container=$cstate restarts=$restarts"
 }
 
 collect() {
     local phase=$1 end=$((SECONDS+DURATION)) remaining
+    start_timer "phase=$phase" "$DURATION"
     while ((SECONDS < end)); do
         sample "$phase"
         if [[ $NAME == idle-stability ]] && [[ $HTTP_OK != true || $FOLLOW != false || $DETECTION != false ]]; then
@@ -184,10 +220,13 @@ collect() {
         ((remaining <= INTERVAL)) || remaining=$INTERVAL
         sleep "$remaining"
     done
+    stop_timer
+    log "phase=$phase remaining_s=0 collection complete"
 }
 
 set_detection() {
     local enabled=$1 rc=0 code
+    log "Setting detection=$enabled"
     TRANSITION=$((TRANSITION+1))
     code=$(curl --silent --show-error --noproxy '*' --connect-timeout "$REQUEST_TIMEOUT" --max-time "$REQUEST_TIMEOUT" \
         -H 'Content-Type: application/json' --data "{\"enable\":$enabled}" \
@@ -205,6 +244,7 @@ stream() {
     printf 'utc,attempt,budget_s,curl_exit,http_code,elapsed_s,bytes_received,outcome\n' > "$RUN_DIR/stream.csv"
     while ((SECONDS < end)); do
         attempt=$((attempt+1)); remaining=$((end-SECONDS)); rc=0
+        log "stream attempt=$attempt started budget_s=$remaining"
         curl --silent --show-error --noproxy '*' --connect-timeout "$REQUEST_TIMEOUT" --max-time "$remaining" \
             --speed-limit 1 --speed-time "$STALL_TIMEOUT" --output /dev/null \
             --write-out '%{http_code},%{time_total},%{size_download}' \
@@ -218,6 +258,7 @@ stream() {
         # Timeout code 28 also denotes a low-speed timeout. Do not equate it with success.
         if ((SECONDS >= end)) && [[ $rc == 28 ]]; then outcome=deadline_or_stall_timeout; fi
         printf '%s,%s,%s,%s,%s,%s\n' "$(utc)" "$attempt" "$remaining" "$rc" "$result" "$outcome" >> "$RUN_DIR/stream.csv"
+        log "stream attempt=$attempt curl_exit=$rc http_elapsed_bytes=$result outcome=$outcome"
         [[ $outcome != interrupted_or_closed ]] || error "stream attempt=$attempt curl_exit=$rc result=$result"
         ((SECONDS >= end)) || sleep 1
     done
@@ -227,6 +268,8 @@ finish() {
     local rc=$?
     trap - EXIT INT TERM
     set +e
+    stop_timer
+    log 'Finalizing: stopping workers, restoring state and collecting Docker logs'
     if [[ -n $CHILD_PID ]]; then kill "$CHILD_PID" 2>/dev/null; wait "$CHILD_PID"; fi
     if [[ -n $STREAM_PID ]]; then kill "$STREAM_PID" 2>/dev/null; wait "$STREAM_PID"; fi
     if [[ -n $RESTORE_DETECTION ]]; then
@@ -237,5 +280,6 @@ finish() {
     capture timeout 5 docker inspect --format '{{json .State}}' "$CONTAINER_NAME" > "$RUN_DIR/container-end.json"
     printf 'end_utc=%s\nend_local=%s\nelapsed_s=%s\nexit_code=%s\n' "$(utc)" "$(date -Iseconds)" "$((SECONDS-START_SECONDS))" "$rc" >> "$RUN_DIR/metadata.txt"
     [[ $rc == 0 ]] || error "experiment exited with code $rc; partial evidence retained"
+    log "Finished exit_code=$rc elapsed_s=$((SECONDS-START_SECONDS)) results=$RUN_DIR"
     exit "$rc"
 }

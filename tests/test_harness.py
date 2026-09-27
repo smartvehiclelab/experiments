@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -13,7 +14,9 @@ import time
 
 ROOT = Path(__file__).resolve().parents[1]
 BASH = os.environ.get('BASH_EXE') or shutil.which('bash')
-assert BASH, 'Bash required'
+if not BASH and os.name == 'nt':
+    candidate = Path('C:/Program Files/Git/bin/bash.exe')
+    BASH = str(candidate) if candidate.exists() else None
 state = dict(detection=False, follow=False, malformed=False)
 posts = []
 
@@ -58,96 +61,146 @@ def posix(path):
     return str(path).replace('\\', '/')
 
 
-with tempfile.TemporaryDirectory(prefix='harness-validation-', dir=ROOT.parent.parent) as temp:
-    tmp = Path(temp)
-    env = os.environ.copy()
-    # Use the interpreter running this test without installing or changing the host.
-    bindir = tmp / 'bin'
-    bindir.mkdir()
-    wrapper = bindir / 'python3'
-    wrapper.write_text('#!/usr/bin/env bash\n'
-                       'if [[ ${FAIL_SUMMARY:-0} == 1 && ${2:-} == */raw.csv ]]; then exit 9; fi\n'
-                       'exec "' + posix(sys.executable) + '" "$@"\n', encoding='utf-8')
-    wrapper.chmod(0o755)
-    logpath = posix(tmp / 'results')
-    if os.name == 'nt':
-        logpath = '/' + logpath[0].lower() + logpath[2:]
-    env.update(LOG_ROOT=logpath, DURATION='1', INTERVAL='1',
-               REQUESTS='2', REQUEST_TIMEOUT='1', STALL_TIMEOUT='1')
-    # Git Bash translates Windows PATH at startup; prepend the wrapper in Bash itself.
-    binpath = posix(bindir)
-    if os.name == 'nt':
-        binpath = '/' + binpath[0].lower() + binpath[2:]
-    command_prefix = 'export PATH="' + binpath + ':$PATH"; '
+def main():
+    if not BASH:
+        raise SystemExit('Bash required: set BASH_EXE to a Bash executable')
+    with tempfile.TemporaryDirectory(prefix='harness-validation-', dir=ROOT.parent) as temp:
+        tmp = Path(temp)
+        env = os.environ.copy()
+        for key in ('TARGET_BASE_URL', 'SESSION_ID', 'FAIL_SUMMARY'):
+            env.pop(key, None)
+        # Use the interpreter running this test without installing or changing the host.
+        bindir = tmp / 'bin'
+        bindir.mkdir()
+        wrapper = bindir / 'python3'
+        wrapper.write_text('#!/usr/bin/env bash\n'
+                           'if [[ ${FAIL_SUMMARY:-0} == 1 && ${2:-} == */raw.csv ]]; then exit 9; fi\n'
+                           'exec "' + posix(sys.executable) + '" "$@"\n', encoding='utf-8')
+        wrapper.chmod(0o755)
+        logpath = posix(tmp / 'results')
+        if os.name == 'nt':
+            logpath = '/' + logpath[0].lower() + logpath[2:]
+        env.update(LOG_ROOT=logpath, DURATION='1', INTERVAL='1',
+                   REQUESTS='2', REQUEST_TIMEOUT='1', STALL_TIMEOUT='1')
+        # Git Bash translates Windows PATH at startup; prepend the wrapper in Bash itself.
+        binpath = posix(bindir)
+        if os.name == 'nt':
+            binpath = '/' + binpath[0].lower() + binpath[2:]
+        command_prefix = 'export PATH="' + binpath + ':$PATH"; '
 
-    def run(script, *args, expected=0):
-        command = command_prefix + 'exec bash "$@"'
-        proc = subprocess.run([BASH, '-c', command, 'test', posix(ROOT / script), *args],
-                              env=env, cwd=ROOT.parent, capture_output=True, text=True, timeout=50)
-        assert proc.returncode == expected, (script, proc.returncode, proc.stdout, proc.stderr)
-        directories = sorted((tmp / 'results').glob('*'), key=lambda p: p.stat().st_mtime_ns)
-        return directories[-1] if directories else None
+        def run(script, *args, expected=0):
+            command = command_prefix + 'exec bash "$@"'
+            before = set((tmp / 'results').glob('*'))
+            print(f'\nRUN {script} {" ".join(args)} (expected exit {expected})', flush=True)
+            output = []
+            started = time.monotonic()
+            with subprocess.Popen([BASH, '-c', command, 'test', posix(ROOT / script), *args],
+                                  env=env, cwd=ROOT.parent, stdout=subprocess.PIPE,
+                                  stderr=subprocess.STDOUT, text=True, encoding='utf-8',
+                                  errors='replace', bufsize=1, start_new_session=os.name != 'nt') as proc:
+                def relay():
+                    for line in proc.stdout:
+                        output.append(line)
+                        print(line, end='', flush=True)
+                reader = threading.Thread(target=relay, daemon=True)
+                reader.start()
+                try:
+                    proc.wait(timeout=50)
+                except subprocess.TimeoutExpired:
+                    if os.name == 'nt':
+                        subprocess.run(['taskkill', '/PID', str(proc.pid), '/T', '/F'],
+                                       capture_output=True, check=False)
+                    else:
+                        os.killpg(proc.pid, signal.SIGTERM)
+                    try:
+                        proc.wait(timeout=10)
+                    except subprocess.TimeoutExpired:
+                        if os.name != 'nt':
+                            os.killpg(proc.pid, signal.SIGKILL)
+                        else:
+                            proc.kill()
+                        proc.wait()
+                    raise AssertionError(f'{script} timed out after 50s\n' + ''.join(output))
+                reader.join(timeout=5)
+            assert proc.returncode == expected, (script, proc.returncode, ''.join(output))
+            created = set((tmp / 'results').glob('*')) - before
+            assert len(created) <= 1, (script, created)
+            result = next(iter(created), None)
+            if result is not None:
+                progress = (result / 'progress.log').read_text()
+                assert 'Starting target=' in progress and 'Finished exit_code=' in progress
+                assert 'Finalizing:' in progress
+                assert 'Finished exit_code=' in ''.join(output), 'Progress must reach the console'
+            print(f'PASS {script} ({time.monotonic()-started:.1f}s)', flush=True)
+            return result
 
-    def rows(path):
-        with path.open(newline='') as f:
-            data = list(csv.DictReader(f))
-        assert all(None not in r and None not in r.values() for r in data), path
-        return data
+        def rows(path):
+            with path.open(newline='') as f:
+                data = list(csv.DictReader(f))
+            assert all(None not in r and None not in r.values() for r in data), path
+            return data
 
-    for script in ROOT.glob('*.sh'):
-        subprocess.run([BASH, '-n', posix(script)], check=True)
-    run('api_latency.sh', '--duration', '0', expected=2)
-    run('api_latency.sh', '--unknown', expected=2)
-    assert not (tmp / 'results').exists(), 'Invalid CLI must not start an experiment'
+        for script in ROOT.glob('*.sh'):
+            subprocess.run([BASH, '-n', posix(script)], check=True)
+        run('api_latency.sh', '--duration', '0', expected=2)
+        run('api_latency.sh', '--unknown', expected=2)
+        assert not (tmp / 'results').exists(), 'Invalid CLI must not start an experiment'
 
-    server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Handler)
-    threading.Thread(target=server.serve_forever, daemon=True).start()
-    env['TARGET_BASE_URL'] = f'http://127.0.0.1:{server.server_port}'
-    try:
-        first = run('api_latency.sh')
-        assert all(r['health_valid'] == 'true' for r in rows(first / 'raw.csv'))
-        assert 'successful=2' in (first / 'summary.txt').read_text()
-        assert 'end_utc=' in (first / 'metadata.txt').read_text()
-        env['FAIL_SUMMARY'] = '1'
-        summary_failure = run('api_latency.sh', expected=1)
-        assert len(rows(summary_failure / 'raw.csv')) == 2
-        assert 'Summary generation failed' in (summary_failure / 'errors.log').read_text()
-        env.pop('FAIL_SUMMARY')
-        second = run('api_latency.sh')
-        assert first != second and first.exists(), 'Old runs must be preserved'
-        state['malformed'] = True
-        invalid = run('api_latency.sh')
-        assert all(r['latency_s'] == 'NA' for r in rows(invalid / 'raw.csv'))
-        assert 'failed=2' in (invalid / 'summary.txt').read_text()
-        assert 'invalid schema' in (invalid / 'errors.log').read_text()
-        state['malformed'] = False
-        state['follow'] = True
-        run('detection_benchmark.sh', expected=1)
-        run('idle_stability.sh', expected=1)
-        assert posts == [], 'Preflight refusal must not mutate anything'
-        state['follow'] = False
-        detection = run('detection_benchmark.sh')
-        assert state['detection'] is False, 'Restore original state'
-        assert len(list(detection.glob('detection-*.json'))) == 3
-        assert {r['phase'] for r in rows(detection / 'raw.csv')} == {'detection_false', 'detection_true'}
-        posts.clear()
-        run('system_baseline.sh')
-        run('idle_stability.sh')
-        run('follow_benchmark.sh')
-        stream = run('stream_stability.sh', '--duration', '2')
-        assert float(rows(stream / 'stream.csv')[0]['bytes_received']) > 0
-        run('endurance_test.sh')
-        session = run('run_all_safe.sh', '--requests', '1')
-        assert len(rows(session / 'children.csv')) == 5
-        assert posts == [], 'Read-only scripts and safe session must never POST'
-    finally:
-        server.shutdown()
-        server.server_close()
-    env['TARGET_BASE_URL'] = f'http://127.0.0.1:{server.server_port}'
-    failed = run('api_latency.sh', '--requests', '1')
-    assert rows(failed / 'raw.csv')[0]['latency_s'] == 'NA'
-    assert 'failed=1' in (failed / 'summary.txt').read_text()
-    assert 'curl_exit=' in (failed / 'errors.log').read_text()
-    print('PASS: syntax, CLI validation, unique directories, metadata, latency success/failure,')
-    print('invalid JSON, detection phases/restoration/refusal, read-only safety, stream bytes, session grouping.')
-    print('All data were temporary test fixtures, not experimental evidence.')
+        server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        threading.Thread(target=server.serve_forever, daemon=True).start()
+        env['TARGET_BASE_URL'] = f'http://127.0.0.1:{server.server_port}'
+        try:
+            first = run('api_latency.sh')
+            assert all(r['health_valid'] == 'true' for r in rows(first / 'raw.csv'))
+            assert 'successful=2' in (first / 'summary.txt').read_text()
+            assert 'end_utc=' in (first / 'metadata.txt').read_text()
+            env['FAIL_SUMMARY'] = '1'
+            summary_failure = run('api_latency.sh', expected=1)
+            assert len(rows(summary_failure / 'raw.csv')) == 2
+            assert 'Summary generation failed' in (summary_failure / 'errors.log').read_text()
+            env.pop('FAIL_SUMMARY')
+            second = run('api_latency.sh')
+            assert first != second and first.exists(), 'Old runs must be preserved'
+            state['malformed'] = True
+            invalid = run('api_latency.sh')
+            assert all(r['latency_s'] == 'NA' for r in rows(invalid / 'raw.csv'))
+            assert 'failed=2' in (invalid / 'summary.txt').read_text()
+            assert 'invalid schema' in (invalid / 'errors.log').read_text()
+            state['malformed'] = False
+            state['follow'] = True
+            run('detection_benchmark.sh', expected=1)
+            run('idle_stability.sh', expected=1)
+            assert posts == [], 'Preflight refusal must not mutate anything'
+            state['follow'] = False
+            detection = run('detection_benchmark.sh')
+            assert state['detection'] is False, 'Restore original state'
+            assert len(list(detection.glob('detection-*.json'))) == 3
+            assert {r['phase'] for r in rows(detection / 'raw.csv')} == {'detection_false', 'detection_true'}
+            posts.clear()
+            run('system_baseline.sh')
+            run('idle_stability.sh')
+            run('follow_benchmark.sh')
+            stream = run('stream_stability.sh', '--duration', '2')
+            assert float(rows(stream / 'stream.csv')[0]['bytes_received']) > 0
+            endurance = run('endurance_test.sh', '--duration', '3', '--interval', '3')
+            progress = (endurance / 'progress.log').read_text()
+            assert 'remaining_s=3' in progress and 'remaining_s=0' in progress
+            assert 'cpu_pct=' in progress and 'temp_c=' in progress
+            session = run('run_all_safe.sh', '--requests', '1')
+            assert len(rows(session / 'children.csv')) == 5
+            assert posts == [], 'Read-only scripts and safe session must never POST'
+        finally:
+            server.shutdown()
+            server.server_close()
+        env['TARGET_BASE_URL'] = f'http://127.0.0.1:{server.server_port}'
+        failed = run('api_latency.sh', '--requests', '1')
+        assert rows(failed / 'raw.csv')[0]['latency_s'] == 'NA'
+        assert 'failed=1' in (failed / 'summary.txt').read_text()
+        assert 'curl_exit=' in (failed / 'errors.log').read_text()
+        print('PASS: syntax, CLI validation, unique directories, metadata, latency success/failure,')
+        print('invalid JSON, detection phases/restoration/refusal, read-only safety, stream bytes, session grouping.')
+        print('All data were temporary test fixtures, not experimental evidence.')
+
+
+if __name__ == '__main__':
+    main()

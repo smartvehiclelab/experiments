@@ -133,6 +133,10 @@ Environment settings: `TARGET_HOST=localhost`, `TARGET_PORT=1607`, `TARGET_BASE_
 
 ## Output and Git handling
 
+Every script now prints timestamped live progress to stderr and saves it in `progress.log`. This includes health/readiness flags, sampled CPU/RAM/temperature, throttling, container state, stream attempts, detection changes, warnings and final exit status. Stdout continues to report result directories. Raw application Docker logs are still collected at exit in `docker.log`.
+
+Duration-based phases show `remaining_s` once per second, including while probes are running. Detection has a separate countdown for each phase. This is the remaining collection budget; an in-flight probe, state restoration and final log capture can extend actual completion. API tests display request progress and an estimated upper remaining time based on request timeouts and pauses (process overhead is excluded). Baseline reports its fixed two-sample plan, and the safe session reports each child and its countdown rather than claiming an exact overall finish time.
+
 Names use UTC plus a random suffix to prevent collisions, including concurrent starts. Runs never overwrite/delete previous data. Outputs include `metadata.txt`, `raw.csv`, `system.log`, `errors.log`, `docker.log`, start/end container state JSON, health response files, Git status and source checksums. Stream and detection add their own records; only API latency currently generates a statistical summary. Disk space and log growth are the operator's responsibility; no binary video is stored.
 
 `logs/.gitkeep` is tracked and logs are intentionally **not ignored**. Review identifying hostnames, network details and server logs before publishing. Commit selected complete datasets explicitly, for example `git add experiments/logs/<run-directory>`. Document exclusions in research analysis rather than automatically selecting only successful runs. `git_state=dirty` can include newly generated/untracked experiment logs; consult `git-status.txt` and source checksums. Git SHA does not include uncommitted harness changes, so commit the harness before collecting publishable data.
@@ -160,6 +164,8 @@ Baseline, idle, stream, API, endurance, follow observation and the safe runner i
 Detection is an explicit API state-changing experiment, excluded from `run_all_safe.sh`. Follow must be verified off, other controllers disconnected and motor power isolated before running it. No script calls `/control` or `/toggle_follow`, manipulates GPIO, or modifies the service. Follow observation only records current software state and does not exercise autonomous steering.
 
 ## Harness validation (not benchmark evidence)
+
+The Python harness streams subprocess output immediately, labels each case and its elapsed time, checks console/persisted progress and countdown output, and identifies results by newly created directories. It can be imported without starting tests. Set `BASH_EXE` if Bash is not on PATH; the standard Git for Windows installation is also detected. Cases time out after 50 seconds and terminate their process tree. Temporary fixture results are created inside the workspace and removed after the run.
 
 `bash -n experiments/*.sh` must be run in a loop (Bash only parses its first file argument). If already installed, run `shellcheck -x experiments/*.sh`. `python3 experiments/tests/test_harness.py` runs local HTTP **test fixtures** and failure-path checks in a temporary directory outside `logs/`; fixture data are never experimental evidence. It does not launch production `main.py`, initialize GPIO, or require Pi hardware.
 ## Copyright and License
