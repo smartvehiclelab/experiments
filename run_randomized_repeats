@@ -1,0 +1,217 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+cd "$SCRIPT_DIR"
+
+REPEATS=${REPEATS:-4}
+COOLDOWN=${COOLDOWN:-60}
+
+# Experiments to execute.
+#
+# common.sh is a shared library, not an experiment.
+# run_all_safe.sh is excluded because it already runs multiple experiments
+# and would duplicate measurements inside this randomized session.
+EXPERIMENTS=(
+    system_baseline.sh
+    idle_stability.sh
+    stream_stability.sh
+    detection_benchmark.sh
+    follow_benchmark.sh
+    api_latency.sh
+    endurance_test.sh
+)
+
+timestamp() {
+    date -u +%Y-%m-%dT%H:%M:%SZ
+}
+
+die() {
+    printf 'ERROR: %s\n' "$*" >&2
+    exit 1
+}
+
+[[ $REPEATS =~ ^[1-9][0-9]*$ ]] ||
+    die "REPEATS must be a positive integer"
+
+[[ $COOLDOWN =~ ^[0-9]+$ ]] ||
+    die "COOLDOWN must be a non-negative integer"
+
+command -v shuf >/dev/null 2>&1 ||
+    die "shuf is required"
+
+for script in "${EXPERIMENTS[@]}"; do
+    [[ -f $script ]] ||
+        die "Missing experiment script: $script"
+
+    bash -n "$script" ||
+        die "Syntax check failed: $script"
+done
+
+SESSION_ID=$(date -u +%Y-%m-%dT%H-%M-%SZ)_randomized
+SESSION_DIR="$SCRIPT_DIR/logs/sessions/$SESSION_ID"
+
+mkdir -p "$SESSION_DIR"
+
+ORDER_LOG="$SESSION_DIR/execution-order.csv"
+
+printf '%s\n' \
+    'sequence,repeat,position,script,start_utc,end_utc,exit_code' \
+    > "$ORDER_LOG"
+
+{
+    printf 'session_id=%s\n' "$SESSION_ID"
+    printf 'repeats=%s\n' "$REPEATS"
+    printf 'cooldown_s=%s\n' "$COOLDOWN"
+    printf 'randomization=independent shuf of experiment order before each repeat\n'
+    printf 'start_utc=%s\n' "$(timestamp)"
+    printf 'working_directory=%s\n' "$SCRIPT_DIR"
+    printf 'experiment_count=%s\n' "${#EXPERIMENTS[@]}"
+    printf 'total_planned_runs=%s\n' "$((REPEATS * ${#EXPERIMENTS[@]}))"
+
+    printf 'experiments='
+    printf '%s ' "${EXPERIMENTS[@]}"
+    printf '\n'
+
+} > "$SESSION_DIR/session-metadata.txt"
+
+sequence=0
+failures=0
+
+printf '\n'
+printf 'Randomized repeated experiment session\n'
+printf '======================================\n'
+printf 'Session:        %s\n' "$SESSION_ID"
+printf 'Repeats:        %s\n' "$REPEATS"
+printf 'Experiments:    %s\n' "${#EXPERIMENTS[@]}"
+printf 'Planned runs:   %s\n' "$((REPEATS * ${#EXPERIMENTS[@]}))"
+printf 'Cooldown:       %ss\n' "$COOLDOWN"
+printf 'Results:        %s\n' "$SESSION_DIR"
+printf '\n'
+
+for ((repeat = 1; repeat <= REPEATS; repeat++)); do
+
+    printf '\n'
+    printf '======================================\n'
+    printf 'REPEAT %d / %d\n' "$repeat" "$REPEATS"
+    printf '======================================\n'
+
+    mapfile -t ORDER < <(
+        printf '%s\n' "${EXPERIMENTS[@]}" | shuf
+    )
+
+    {
+        printf 'repeat=%s\n' "$repeat"
+        printf 'generated_utc=%s\n' "$(timestamp)"
+
+        for ((i = 0; i < ${#ORDER[@]}; i++)); do
+            printf '%d,%s\n' "$((i + 1))" "${ORDER[$i]}"
+        done
+
+    } > "$SESSION_DIR/repeat-${repeat}-order.txt"
+
+    printf 'Random order:\n'
+
+    for ((i = 0; i < ${#ORDER[@]}; i++)); do
+        printf '  %d. %s\n' "$((i + 1))" "${ORDER[$i]}"
+    done
+
+    printf '\n'
+
+    for ((position = 0; position < ${#ORDER[@]}; position++)); do
+
+        script=${ORDER[$position]}
+
+        sequence=$((sequence + 1))
+
+        start_utc=$(timestamp)
+
+        printf '\n'
+        printf '%s\n' '--------------------------------------'
+        printf 'Run %d / %d\n' \
+            "$sequence" \
+            "$((REPEATS * ${#EXPERIMENTS[@]}))"
+
+        printf 'Repeat:      %d / %d\n' \
+            "$repeat" \
+            "$REPEATS"
+
+        printf 'Position:    %d / %d\n' \
+            "$((position + 1))" \
+            "${#ORDER[@]}"
+
+        printf 'Experiment:  %s\n' "$script"
+        printf 'Start:       %s\n' "$start_utc"
+        printf '%s\n' '--------------------------------------'
+
+        rc=0
+
+        SESSION_ID="$SESSION_ID" \
+            bash "$SCRIPT_DIR/$script" ||
+            rc=$?
+
+        end_utc=$(timestamp)
+
+        printf '%d,%d,%d,%s,%s,%s,%d\n' \
+            "$sequence" \
+            "$repeat" \
+            "$((position + 1))" \
+            "$script" \
+            "$start_utc" \
+            "$end_utc" \
+            "$rc" \
+            >> "$ORDER_LOG"
+
+        if ((rc != 0)); then
+            failures=$((failures + 1))
+
+            printf 'WARNING: %s exited with code %d\n' \
+                "$script" \
+                "$rc" \
+                >&2
+        else
+            printf 'Completed: %s\n' "$script"
+        fi
+
+        #
+        # Cooldown between experiments.
+        #
+        # Do not sleep after the final experiment of the final repeat.
+        #
+        if ! (
+            ((repeat == REPEATS)) &&
+            ((position == ${#ORDER[@]} - 1))
+        ); then
+
+            if ((COOLDOWN > 0)); then
+                printf 'Cooldown: %d seconds\n' "$COOLDOWN"
+                sleep "$COOLDOWN"
+            fi
+        fi
+    done
+done
+
+{
+    printf 'end_utc=%s\n' "$(timestamp)"
+    printf 'completed_runs=%s\n' "$sequence"
+    printf 'failed_runs=%s\n' "$failures"
+
+} >> "$SESSION_DIR/session-metadata.txt"
+
+printf '\n'
+printf '======================================\n'
+printf 'SESSION COMPLETE\n'
+printf '======================================\n'
+printf 'Session:        %s\n' "$SESSION_ID"
+printf 'Completed runs: %s\n' "$sequence"
+printf 'Failed runs:    %s\n' "$failures"
+printf 'Order log:      %s\n' "$ORDER_LOG"
+printf 'Metadata:       %s\n' "$SESSION_DIR/session-metadata.txt"
+printf '\n'
+
+if ((failures > 0)); then
+    printf 'WARNING: %d experiment run(s) failed. Inspect their raw evidence.\n' \
+        "$failures" >&2
+    exit 1
+fi
