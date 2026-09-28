@@ -1,0 +1,16 @@
+2026-09-28T00:22:28Z [system-baseline] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T00-22-28_system-baseline_XQWRnd; collecting metadata
+2026-09-28T00:22:28Z [system-baseline] Running Docker containers:
+2026-09-28T00:22:28Z [system-baseline] docker-ps: NAMES     STATUS                    PORTS
+2026-09-28T00:22:28Z [system-baseline] docker-ps: vehicle   Up 42 minutes (healthy)   
+2026-09-28T00:22:28Z [system-baseline] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T00:22:28Z [system-baseline] Using existing Docker container=vehicle state=running
+2026-09-28T00:22:28Z [system-baseline] Baseline: two samples with a one-second pause; completion depends on probe time
+2026-09-28T00:22:28Z [system-baseline] health=1 http=200 valid=true latency_s=0.002990 camera=true yolo=true detection=false follow=false
+2026-09-28T00:22:28Z [system-baseline] phase=baseline sample=1 cpu_pct=NA ram_used_total_kib=1017104,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:22:28Z [system-baseline] baseline inter-sample pause remaining_s=1 (collection budget; cleanup follows)
+2026-09-28T00:22:30Z [system-baseline] health=2 http=200 valid=true latency_s=0.001106 camera=true yolo=true detection=false follow=false
+2026-09-28T00:22:30Z [system-baseline] phase=baseline sample=2 cpu_pct=5.140 ram_used_total_kib=1026608,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T00:22:30Z [system-baseline] Baseline complete: two samples captured
+2026-09-28T00:22:30Z [system-baseline] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T00:22:30Z [system-baseline] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T00:22:30Z [system-baseline] Finished exit_code=0 elapsed_s=2 results=/home/pi/experiments/logs/2026-09-28T00-22-28_system-baseline_XQWRnd

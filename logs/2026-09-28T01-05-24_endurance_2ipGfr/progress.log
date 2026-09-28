@@ -1,0 +1,845 @@
+2026-09-28T01:05:24Z [endurance] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T01-05-24_endurance_2ipGfr; collecting metadata
+2026-09-28T01:05:24Z [endurance] Running Docker containers:
+2026-09-28T01:05:24Z [endurance] docker-ps: NAMES     STATUS                       PORTS
+2026-09-28T01:05:24Z [endurance] docker-ps: vehicle   Up About an hour (healthy)   
+2026-09-28T01:05:24Z [endurance] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T01:05:24Z [endurance] Using existing Docker container=vehicle state=running
+2026-09-28T01:05:24Z [endurance] phase=observed_state remaining_s=600 (collection budget; cleanup follows)
+2026-09-28T01:05:24Z [endurance] health=1 http=200 valid=true latency_s=0.001036 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:24Z [endurance] phase=observed_state sample=1 cpu_pct=NA ram_used_total_kib=1051408,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:25Z [endurance] phase=observed_state remaining_s=599
+2026-09-28T01:05:26Z [endurance] phase=observed_state remaining_s=598
+2026-09-28T01:05:27Z [endurance] phase=observed_state remaining_s=597
+2026-09-28T01:05:28Z [endurance] phase=observed_state remaining_s=596
+2026-09-28T01:05:29Z [endurance] phase=observed_state remaining_s=595
+2026-09-28T01:05:29Z [endurance] health=2 http=200 valid=true latency_s=0.001102 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:29Z [endurance] phase=observed_state sample=2 cpu_pct=4.391 ram_used_total_kib=1035280,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:30Z [endurance] phase=observed_state remaining_s=594
+2026-09-28T01:05:31Z [endurance] phase=observed_state remaining_s=593
+2026-09-28T01:05:32Z [endurance] phase=observed_state remaining_s=592
+2026-09-28T01:05:33Z [endurance] phase=observed_state remaining_s=591
+2026-09-28T01:05:34Z [endurance] phase=observed_state remaining_s=590
+2026-09-28T01:05:35Z [endurance] health=3 http=200 valid=true latency_s=0.001100 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:35Z [endurance] phase=observed_state sample=3 cpu_pct=4.442 ram_used_total_kib=1036848,8255824 temp_c=60.6 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:35Z [endurance] phase=observed_state remaining_s=589
+2026-09-28T01:05:36Z [endurance] phase=observed_state remaining_s=588
+2026-09-28T01:05:37Z [endurance] phase=observed_state remaining_s=587
+2026-09-28T01:05:38Z [endurance] phase=observed_state remaining_s=586
+2026-09-28T01:05:39Z [endurance] phase=observed_state remaining_s=585
+2026-09-28T01:05:40Z [endurance] health=4 http=200 valid=true latency_s=0.001430 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:40Z [endurance] phase=observed_state sample=4 cpu_pct=4.236 ram_used_total_kib=1022000,8255824 temp_c=60.05 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:40Z [endurance] phase=observed_state remaining_s=584
+2026-09-28T01:05:41Z [endurance] phase=observed_state remaining_s=583
+2026-09-28T01:05:42Z [endurance] phase=observed_state remaining_s=582
+2026-09-28T01:05:43Z [endurance] phase=observed_state remaining_s=581
+2026-09-28T01:05:44Z [endurance] phase=observed_state remaining_s=580
+2026-09-28T01:05:45Z [endurance] health=5 http=200 valid=true latency_s=0.001158 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:45Z [endurance] phase=observed_state sample=5 cpu_pct=4.579 ram_used_total_kib=1015392,8255824 temp_c=60.05 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:45Z [endurance] phase=observed_state remaining_s=579
+2026-09-28T01:05:46Z [endurance] phase=observed_state remaining_s=578
+2026-09-28T01:05:47Z [endurance] phase=observed_state remaining_s=577
+2026-09-28T01:05:48Z [endurance] phase=observed_state remaining_s=576
+2026-09-28T01:05:49Z [endurance] phase=observed_state remaining_s=575
+2026-09-28T01:05:50Z [endurance] health=6 http=200 valid=true latency_s=0.001032 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:50Z [endurance] phase=observed_state sample=6 cpu_pct=4.241 ram_used_total_kib=1020560,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:50Z [endurance] phase=observed_state remaining_s=574
+2026-09-28T01:05:51Z [endurance] phase=observed_state remaining_s=573
+2026-09-28T01:05:52Z [endurance] phase=observed_state remaining_s=572
+2026-09-28T01:05:53Z [endurance] phase=observed_state remaining_s=571
+2026-09-28T01:05:54Z [endurance] phase=observed_state remaining_s=570
+2026-09-28T01:05:55Z [endurance] health=7 http=200 valid=true latency_s=0.001125 camera=true yolo=true detection=false follow=false
+2026-09-28T01:05:55Z [endurance] phase=observed_state sample=7 cpu_pct=4.579 ram_used_total_kib=1022592,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:05:55Z [endurance] phase=observed_state remaining_s=569
+2026-09-28T01:05:56Z [endurance] phase=observed_state remaining_s=568
+2026-09-28T01:05:57Z [endurance] phase=observed_state remaining_s=567
+2026-09-28T01:05:58Z [endurance] phase=observed_state remaining_s=566
+2026-09-28T01:05:59Z [endurance] phase=observed_state remaining_s=565
+2026-09-28T01:06:00Z [endurance] health=8 http=200 valid=true latency_s=0.001114 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:00Z [endurance] phase=observed_state sample=8 cpu_pct=3.835 ram_used_total_kib=1011984,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:00Z [endurance] phase=observed_state remaining_s=564
+2026-09-28T01:06:01Z [endurance] phase=observed_state remaining_s=563
+2026-09-28T01:06:02Z [endurance] phase=observed_state remaining_s=562
+2026-09-28T01:06:03Z [endurance] phase=observed_state remaining_s=561
+2026-09-28T01:06:04Z [endurance] phase=observed_state remaining_s=560
+2026-09-28T01:06:05Z [endurance] health=9 http=200 valid=true latency_s=0.002930 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:05Z [endurance] phase=observed_state sample=9 cpu_pct=3.635 ram_used_total_kib=1011376,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:05Z [endurance] phase=observed_state remaining_s=559
+2026-09-28T01:06:06Z [endurance] phase=observed_state remaining_s=558
+2026-09-28T01:06:07Z [endurance] phase=observed_state remaining_s=557
+2026-09-28T01:06:08Z [endurance] phase=observed_state remaining_s=556
+2026-09-28T01:06:09Z [endurance] phase=observed_state remaining_s=555
+2026-09-28T01:06:10Z [endurance] health=10 http=200 valid=true latency_s=0.001058 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:10Z [endurance] phase=observed_state sample=10 cpu_pct=4.193 ram_used_total_kib=1014160,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:10Z [endurance] phase=observed_state remaining_s=554
+2026-09-28T01:06:11Z [endurance] phase=observed_state remaining_s=553
+2026-09-28T01:06:12Z [endurance] phase=observed_state remaining_s=552
+2026-09-28T01:06:13Z [endurance] phase=observed_state remaining_s=551
+2026-09-28T01:06:14Z [endurance] phase=observed_state remaining_s=550
+2026-09-28T01:06:15Z [endurance] health=11 http=200 valid=true latency_s=0.001026 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:15Z [endurance] phase=observed_state sample=11 cpu_pct=4.395 ram_used_total_kib=1016000,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:15Z [endurance] phase=observed_state remaining_s=549
+2026-09-28T01:06:16Z [endurance] phase=observed_state remaining_s=548
+2026-09-28T01:06:17Z [endurance] phase=observed_state remaining_s=547
+2026-09-28T01:06:18Z [endurance] phase=observed_state remaining_s=546
+2026-09-28T01:06:19Z [endurance] phase=observed_state remaining_s=545
+2026-09-28T01:06:20Z [endurance] health=12 http=200 valid=true latency_s=0.001136 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:20Z [endurance] phase=observed_state sample=12 cpu_pct=4.378 ram_used_total_kib=1020928,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:20Z [endurance] phase=observed_state remaining_s=544
+2026-09-28T01:06:21Z [endurance] phase=observed_state remaining_s=543
+2026-09-28T01:06:22Z [endurance] phase=observed_state remaining_s=542
+2026-09-28T01:06:23Z [endurance] phase=observed_state remaining_s=541
+2026-09-28T01:06:24Z [endurance] phase=observed_state remaining_s=540
+2026-09-28T01:06:25Z [endurance] health=13 http=200 valid=true latency_s=0.001050 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:25Z [endurance] phase=observed_state sample=13 cpu_pct=4.436 ram_used_total_kib=1016080,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:25Z [endurance] phase=observed_state remaining_s=539
+2026-09-28T01:06:26Z [endurance] phase=observed_state remaining_s=538
+2026-09-28T01:06:27Z [endurance] phase=observed_state remaining_s=537
+2026-09-28T01:06:28Z [endurance] phase=observed_state remaining_s=536
+2026-09-28T01:06:29Z [endurance] phase=observed_state remaining_s=535
+2026-09-28T01:06:30Z [endurance] phase=observed_state remaining_s=534
+2026-09-28T01:06:31Z [endurance] health=14 http=200 valid=true latency_s=0.001016 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:31Z [endurance] phase=observed_state sample=14 cpu_pct=4.142 ram_used_total_kib=1007728,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:31Z [endurance] phase=observed_state remaining_s=533
+2026-09-28T01:06:32Z [endurance] phase=observed_state remaining_s=532
+2026-09-28T01:06:33Z [endurance] phase=observed_state remaining_s=531
+2026-09-28T01:06:35Z [endurance] phase=observed_state remaining_s=529
+2026-09-28T01:06:36Z [endurance] phase=observed_state remaining_s=528
+2026-09-28T01:06:36Z [endurance] health=15 http=200 valid=true latency_s=0.001063 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:36Z [endurance] phase=observed_state sample=15 cpu_pct=4.673 ram_used_total_kib=1012768,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:37Z [endurance] phase=observed_state remaining_s=527
+2026-09-28T01:06:38Z [endurance] phase=observed_state remaining_s=526
+2026-09-28T01:06:39Z [endurance] phase=observed_state remaining_s=525
+2026-09-28T01:06:40Z [endurance] phase=observed_state remaining_s=524
+2026-09-28T01:06:41Z [endurance] phase=observed_state remaining_s=523
+2026-09-28T01:06:41Z [endurance] health=16 http=200 valid=true latency_s=0.001119 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:41Z [endurance] phase=observed_state sample=16 cpu_pct=4.146 ram_used_total_kib=1010848,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:42Z [endurance] phase=observed_state remaining_s=522
+2026-09-28T01:06:43Z [endurance] phase=observed_state remaining_s=521
+2026-09-28T01:06:44Z [endurance] phase=observed_state remaining_s=520
+2026-09-28T01:06:45Z [endurance] phase=observed_state remaining_s=519
+2026-09-28T01:06:46Z [endurance] phase=observed_state remaining_s=518
+2026-09-28T01:06:46Z [endurance] health=17 http=200 valid=true latency_s=0.001321 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:46Z [endurance] phase=observed_state sample=17 cpu_pct=4.442 ram_used_total_kib=1024720,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:47Z [endurance] phase=observed_state remaining_s=517
+2026-09-28T01:06:48Z [endurance] phase=observed_state remaining_s=516
+2026-09-28T01:06:49Z [endurance] phase=observed_state remaining_s=515
+2026-09-28T01:06:50Z [endurance] phase=observed_state remaining_s=514
+2026-09-28T01:06:51Z [endurance] phase=observed_state remaining_s=513
+2026-09-28T01:06:51Z [endurance] health=18 http=200 valid=true latency_s=0.001129 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:51Z [endurance] phase=observed_state sample=18 cpu_pct=3.154 ram_used_total_kib=1009936,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:52Z [endurance] phase=observed_state remaining_s=512
+2026-09-28T01:06:53Z [endurance] phase=observed_state remaining_s=511
+2026-09-28T01:06:54Z [endurance] phase=observed_state remaining_s=510
+2026-09-28T01:06:55Z [endurance] phase=observed_state remaining_s=509
+2026-09-28T01:06:56Z [endurance] phase=observed_state remaining_s=508
+2026-09-28T01:06:56Z [endurance] health=19 http=200 valid=true latency_s=0.001060 camera=true yolo=true detection=false follow=false
+2026-09-28T01:06:56Z [endurance] phase=observed_state sample=19 cpu_pct=3.445 ram_used_total_kib=1016800,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:06:57Z [endurance] phase=observed_state remaining_s=507
+2026-09-28T01:06:58Z [endurance] phase=observed_state remaining_s=506
+2026-09-28T01:06:59Z [endurance] phase=observed_state remaining_s=505
+2026-09-28T01:07:00Z [endurance] phase=observed_state remaining_s=504
+2026-09-28T01:07:01Z [endurance] phase=observed_state remaining_s=503
+2026-09-28T01:07:01Z [endurance] health=20 http=200 valid=true latency_s=0.001094 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:01Z [endurance] phase=observed_state sample=20 cpu_pct=4.331 ram_used_total_kib=1015344,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:02Z [endurance] phase=observed_state remaining_s=502
+2026-09-28T01:07:03Z [endurance] phase=observed_state remaining_s=501
+2026-09-28T01:07:04Z [endurance] phase=observed_state remaining_s=500
+2026-09-28T01:07:05Z [endurance] phase=observed_state remaining_s=499
+2026-09-28T01:07:06Z [endurance] phase=observed_state remaining_s=498
+2026-09-28T01:07:06Z [endurance] health=21 http=200 valid=true latency_s=0.001051 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:06Z [endurance] phase=observed_state sample=21 cpu_pct=4.346 ram_used_total_kib=1012400,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:07Z [endurance] phase=observed_state remaining_s=497
+2026-09-28T01:07:08Z [endurance] phase=observed_state remaining_s=496
+2026-09-28T01:07:09Z [endurance] phase=observed_state remaining_s=495
+2026-09-28T01:07:10Z [endurance] phase=observed_state remaining_s=494
+2026-09-28T01:07:11Z [endurance] phase=observed_state remaining_s=493
+2026-09-28T01:07:11Z [endurance] health=22 http=200 valid=true latency_s=0.001137 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:11Z [endurance] phase=observed_state sample=22 cpu_pct=3.250 ram_used_total_kib=1015360,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:12Z [endurance] phase=observed_state remaining_s=492
+2026-09-28T01:07:13Z [endurance] phase=observed_state remaining_s=491
+2026-09-28T01:07:14Z [endurance] phase=observed_state remaining_s=490
+2026-09-28T01:07:15Z [endurance] phase=observed_state remaining_s=489
+2026-09-28T01:07:16Z [endurance] phase=observed_state remaining_s=488
+2026-09-28T01:07:16Z [endurance] health=23 http=200 valid=true latency_s=0.001118 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:16Z [endurance] phase=observed_state sample=23 cpu_pct=4.525 ram_used_total_kib=1017952,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:17Z [endurance] phase=observed_state remaining_s=487
+2026-09-28T01:07:18Z [endurance] phase=observed_state remaining_s=486
+2026-09-28T01:07:19Z [endurance] phase=observed_state remaining_s=485
+2026-09-28T01:07:20Z [endurance] phase=observed_state remaining_s=484
+2026-09-28T01:07:21Z [endurance] phase=observed_state remaining_s=483
+2026-09-28T01:07:21Z [endurance] health=24 http=200 valid=true latency_s=0.001029 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:21Z [endurance] phase=observed_state sample=24 cpu_pct=4.284 ram_used_total_kib=1015424,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:22Z [endurance] phase=observed_state remaining_s=482
+2026-09-28T01:07:23Z [endurance] phase=observed_state remaining_s=481
+2026-09-28T01:07:24Z [endurance] phase=observed_state remaining_s=480
+2026-09-28T01:07:25Z [endurance] phase=observed_state remaining_s=479
+2026-09-28T01:07:26Z [endurance] phase=observed_state remaining_s=478
+2026-09-28T01:07:26Z [endurance] health=25 http=200 valid=true latency_s=0.001084 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:27Z [endurance] phase=observed_state sample=25 cpu_pct=4.626 ram_used_total_kib=1019328,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:27Z [endurance] phase=observed_state remaining_s=477
+2026-09-28T01:07:28Z [endurance] phase=observed_state remaining_s=476
+2026-09-28T01:07:29Z [endurance] phase=observed_state remaining_s=475
+2026-09-28T01:07:30Z [endurance] phase=observed_state remaining_s=474
+2026-09-28T01:07:31Z [endurance] phase=observed_state remaining_s=473
+2026-09-28T01:07:32Z [endurance] health=26 http=200 valid=true latency_s=0.001087 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:32Z [endurance] phase=observed_state sample=26 cpu_pct=4.241 ram_used_total_kib=1014512,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:32Z [endurance] phase=observed_state remaining_s=472
+2026-09-28T01:07:33Z [endurance] phase=observed_state remaining_s=471
+2026-09-28T01:07:34Z [endurance] phase=observed_state remaining_s=470
+2026-09-28T01:07:35Z [endurance] phase=observed_state remaining_s=469
+2026-09-28T01:07:36Z [endurance] phase=observed_state remaining_s=468
+2026-09-28T01:07:37Z [endurance] phase=observed_state remaining_s=467
+2026-09-28T01:07:37Z [endurance] health=27 http=200 valid=true latency_s=0.006154 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:37Z [endurance] phase=observed_state sample=27 cpu_pct=3.587 ram_used_total_kib=1020016,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:38Z [endurance] phase=observed_state remaining_s=466
+2026-09-28T01:07:39Z [endurance] phase=observed_state remaining_s=465
+2026-09-28T01:07:40Z [endurance] phase=observed_state remaining_s=464
+2026-09-28T01:07:41Z [endurance] phase=observed_state remaining_s=463
+2026-09-28T01:07:42Z [endurance] phase=observed_state remaining_s=462
+2026-09-28T01:07:42Z [endurance] health=28 http=200 valid=true latency_s=0.001116 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:42Z [endurance] phase=observed_state sample=28 cpu_pct=4.376 ram_used_total_kib=1016880,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:43Z [endurance] phase=observed_state remaining_s=461
+2026-09-28T01:07:44Z [endurance] phase=observed_state remaining_s=460
+2026-09-28T01:07:45Z [endurance] phase=observed_state remaining_s=459
+2026-09-28T01:07:46Z [endurance] phase=observed_state remaining_s=458
+2026-09-28T01:07:47Z [endurance] phase=observed_state remaining_s=457
+2026-09-28T01:07:47Z [endurance] health=29 http=200 valid=true latency_s=0.001069 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:47Z [endurance] phase=observed_state sample=29 cpu_pct=4.440 ram_used_total_kib=1024912,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:48Z [endurance] phase=observed_state remaining_s=456
+2026-09-28T01:07:49Z [endurance] phase=observed_state remaining_s=455
+2026-09-28T01:07:50Z [endurance] phase=observed_state remaining_s=454
+2026-09-28T01:07:51Z [endurance] phase=observed_state remaining_s=453
+2026-09-28T01:07:52Z [endurance] phase=observed_state remaining_s=452
+2026-09-28T01:07:52Z [endurance] health=30 http=200 valid=true latency_s=0.001049 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:52Z [endurance] phase=observed_state sample=30 cpu_pct=4.431 ram_used_total_kib=1013744,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:53Z [endurance] phase=observed_state remaining_s=451
+2026-09-28T01:07:54Z [endurance] phase=observed_state remaining_s=450
+2026-09-28T01:07:55Z [endurance] phase=observed_state remaining_s=449
+2026-09-28T01:07:56Z [endurance] phase=observed_state remaining_s=448
+2026-09-28T01:07:57Z [endurance] phase=observed_state remaining_s=447
+2026-09-28T01:07:57Z [endurance] health=31 http=200 valid=true latency_s=0.001058 camera=true yolo=true detection=false follow=false
+2026-09-28T01:07:57Z [endurance] phase=observed_state sample=31 cpu_pct=5.076 ram_used_total_kib=1010992,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:07:58Z [endurance] phase=observed_state remaining_s=446
+2026-09-28T01:07:59Z [endurance] phase=observed_state remaining_s=445
+2026-09-28T01:08:00Z [endurance] phase=observed_state remaining_s=444
+2026-09-28T01:08:01Z [endurance] phase=observed_state remaining_s=443
+2026-09-28T01:08:02Z [endurance] phase=observed_state remaining_s=442
+2026-09-28T01:08:02Z [endurance] health=32 http=200 valid=true latency_s=0.001083 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:02Z [endurance] phase=observed_state sample=32 cpu_pct=4.378 ram_used_total_kib=1014256,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:03Z [endurance] phase=observed_state remaining_s=441
+2026-09-28T01:08:04Z [endurance] phase=observed_state remaining_s=440
+2026-09-28T01:08:05Z [endurance] phase=observed_state remaining_s=439
+2026-09-28T01:08:06Z [endurance] phase=observed_state remaining_s=438
+2026-09-28T01:08:07Z [endurance] phase=observed_state remaining_s=437
+2026-09-28T01:08:07Z [endurance] health=33 http=200 valid=true latency_s=0.001109 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:07Z [endurance] phase=observed_state sample=33 cpu_pct=4.344 ram_used_total_kib=1011744,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:08Z [endurance] phase=observed_state remaining_s=436
+2026-09-28T01:08:09Z [endurance] phase=observed_state remaining_s=435
+2026-09-28T01:08:10Z [endurance] phase=observed_state remaining_s=434
+2026-09-28T01:08:11Z [endurance] phase=observed_state remaining_s=433
+2026-09-28T01:08:12Z [endurance] phase=observed_state remaining_s=432
+2026-09-28T01:08:12Z [endurance] health=34 http=200 valid=true latency_s=0.001042 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:12Z [endurance] phase=observed_state sample=34 cpu_pct=4.093 ram_used_total_kib=1019408,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:13Z [endurance] phase=observed_state remaining_s=431
+2026-09-28T01:08:14Z [endurance] phase=observed_state remaining_s=430
+2026-09-28T01:08:15Z [endurance] phase=observed_state remaining_s=429
+2026-09-28T01:08:16Z [endurance] phase=observed_state remaining_s=428
+2026-09-28T01:08:17Z [endurance] phase=observed_state remaining_s=427
+2026-09-28T01:08:17Z [endurance] health=35 http=200 valid=true latency_s=0.001274 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:17Z [endurance] phase=observed_state sample=35 cpu_pct=4.774 ram_used_total_kib=1010160,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:18Z [endurance] phase=observed_state remaining_s=426
+2026-09-28T01:08:19Z [endurance] phase=observed_state remaining_s=425
+2026-09-28T01:08:20Z [endurance] phase=observed_state remaining_s=424
+2026-09-28T01:08:21Z [endurance] phase=observed_state remaining_s=423
+2026-09-28T01:08:22Z [endurance] phase=observed_state remaining_s=422
+2026-09-28T01:08:22Z [endurance] health=36 http=200 valid=true latency_s=0.001162 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:22Z [endurance] phase=observed_state sample=36 cpu_pct=3.105 ram_used_total_kib=1007840,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:23Z [endurance] phase=observed_state remaining_s=421
+2026-09-28T01:08:24Z [endurance] phase=observed_state remaining_s=420
+2026-09-28T01:08:25Z [endurance] phase=observed_state remaining_s=419
+2026-09-28T01:08:26Z [endurance] phase=observed_state remaining_s=418
+2026-09-28T01:08:27Z [endurance] phase=observed_state remaining_s=417
+2026-09-28T01:08:28Z [endurance] health=37 http=200 valid=true latency_s=0.001040 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:28Z [endurance] phase=observed_state sample=37 cpu_pct=3.633 ram_used_total_kib=1015696,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:28Z [endurance] phase=observed_state remaining_s=416
+2026-09-28T01:08:29Z [endurance] phase=observed_state remaining_s=415
+2026-09-28T01:08:30Z [endurance] phase=observed_state remaining_s=414
+2026-09-28T01:08:31Z [endurance] phase=observed_state remaining_s=413
+2026-09-28T01:08:32Z [endurance] phase=observed_state remaining_s=412
+2026-09-28T01:08:33Z [endurance] health=38 http=200 valid=true latency_s=0.000858 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:33Z [endurance] phase=observed_state sample=38 cpu_pct=3.297 ram_used_total_kib=1009872,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:33Z [endurance] phase=observed_state remaining_s=411
+2026-09-28T01:08:34Z [endurance] phase=observed_state remaining_s=410
+2026-09-28T01:08:35Z [endurance] phase=observed_state remaining_s=409
+2026-09-28T01:08:36Z [endurance] phase=observed_state remaining_s=408
+2026-09-28T01:08:37Z [endurance] phase=observed_state remaining_s=407
+2026-09-28T01:08:38Z [endurance] health=39 http=200 valid=true latency_s=0.001020 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:38Z [endurance] phase=observed_state sample=39 cpu_pct=4.628 ram_used_total_kib=1005360,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:38Z [endurance] phase=observed_state remaining_s=406
+2026-09-28T01:08:39Z [endurance] phase=observed_state remaining_s=405
+2026-09-28T01:08:40Z [endurance] phase=observed_state remaining_s=404
+2026-09-28T01:08:41Z [endurance] phase=observed_state remaining_s=403
+2026-09-28T01:08:42Z [endurance] phase=observed_state remaining_s=402
+2026-09-28T01:08:43Z [endurance] phase=observed_state remaining_s=401
+2026-09-28T01:08:43Z [endurance] health=40 http=200 valid=true latency_s=0.001085 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:43Z [endurance] phase=observed_state sample=40 cpu_pct=3.391 ram_used_total_kib=1011792,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:44Z [endurance] phase=observed_state remaining_s=400
+2026-09-28T01:08:45Z [endurance] phase=observed_state remaining_s=399
+2026-09-28T01:08:46Z [endurance] phase=observed_state remaining_s=398
+2026-09-28T01:08:47Z [endurance] phase=observed_state remaining_s=397
+2026-09-28T01:08:48Z [endurance] phase=observed_state remaining_s=396
+2026-09-28T01:08:48Z [endurance] health=41 http=200 valid=true latency_s=0.001111 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:48Z [endurance] phase=observed_state sample=41 cpu_pct=3.445 ram_used_total_kib=1015664,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:49Z [endurance] phase=observed_state remaining_s=395
+2026-09-28T01:08:50Z [endurance] phase=observed_state remaining_s=394
+2026-09-28T01:08:51Z [endurance] phase=observed_state remaining_s=393
+2026-09-28T01:08:52Z [endurance] phase=observed_state remaining_s=392
+2026-09-28T01:08:53Z [endurance] phase=observed_state remaining_s=391
+2026-09-28T01:08:53Z [endurance] health=42 http=200 valid=true latency_s=0.001097 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:53Z [endurance] phase=observed_state sample=42 cpu_pct=3.441 ram_used_total_kib=1012672,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:54Z [endurance] phase=observed_state remaining_s=390
+2026-09-28T01:08:55Z [endurance] phase=observed_state remaining_s=389
+2026-09-28T01:08:56Z [endurance] phase=observed_state remaining_s=388
+2026-09-28T01:08:57Z [endurance] phase=observed_state remaining_s=387
+2026-09-28T01:08:58Z [endurance] phase=observed_state remaining_s=386
+2026-09-28T01:08:58Z [endurance] health=43 http=200 valid=true latency_s=0.000859 camera=true yolo=true detection=false follow=false
+2026-09-28T01:08:58Z [endurance] phase=observed_state sample=43 cpu_pct=3.492 ram_used_total_kib=1012896,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T01:08:59Z [endurance] phase=observed_state remaining_s=385
+2026-09-28T01:09:00Z [endurance] phase=observed_state remaining_s=384
+2026-09-28T01:09:01Z [endurance] phase=observed_state remaining_s=383
+2026-09-28T01:09:02Z [endurance] phase=observed_state remaining_s=382
+2026-09-28T01:09:03Z [endurance] phase=observed_state remaining_s=381
+2026-09-28T01:09:03Z [endurance] health=44 http=200 valid=true latency_s=0.001061 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:03Z [endurance] phase=observed_state sample=44 cpu_pct=4.239 ram_used_total_kib=1018960,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:04Z [endurance] phase=observed_state remaining_s=380
+2026-09-28T01:09:05Z [endurance] phase=observed_state remaining_s=379
+2026-09-28T01:09:06Z [endurance] phase=observed_state remaining_s=378
+2026-09-28T01:09:07Z [endurance] phase=observed_state remaining_s=377
+2026-09-28T01:09:08Z [endurance] phase=observed_state remaining_s=376
+2026-09-28T01:09:08Z [endurance] health=45 http=200 valid=true latency_s=0.003824 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:08Z [endurance] phase=observed_state sample=45 cpu_pct=3.496 ram_used_total_kib=1009968,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:09Z [endurance] phase=observed_state remaining_s=375
+2026-09-28T01:09:10Z [endurance] phase=observed_state remaining_s=374
+2026-09-28T01:09:11Z [endurance] phase=observed_state remaining_s=373
+2026-09-28T01:09:12Z [endurance] phase=observed_state remaining_s=372
+2026-09-28T01:09:13Z [endurance] phase=observed_state remaining_s=371
+2026-09-28T01:09:13Z [endurance] health=46 http=200 valid=true latency_s=0.001126 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:13Z [endurance] phase=observed_state sample=46 cpu_pct=3.246 ram_used_total_kib=1010208,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:14Z [endurance] phase=observed_state remaining_s=370
+2026-09-28T01:09:15Z [endurance] phase=observed_state remaining_s=369
+2026-09-28T01:09:16Z [endurance] phase=observed_state remaining_s=368
+2026-09-28T01:09:17Z [endurance] phase=observed_state remaining_s=367
+2026-09-28T01:09:18Z [endurance] phase=observed_state remaining_s=366
+2026-09-28T01:09:18Z [endurance] health=47 http=200 valid=true latency_s=0.001158 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:18Z [endurance] phase=observed_state sample=47 cpu_pct=3.633 ram_used_total_kib=1009728,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:19Z [endurance] phase=observed_state remaining_s=365
+2026-09-28T01:09:20Z [endurance] phase=observed_state remaining_s=364
+2026-09-28T01:09:21Z [endurance] phase=observed_state remaining_s=363
+2026-09-28T01:09:22Z [endurance] phase=observed_state remaining_s=362
+2026-09-28T01:09:23Z [endurance] phase=observed_state remaining_s=361
+2026-09-28T01:09:24Z [endurance] health=48 http=200 valid=true latency_s=0.001040 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:24Z [endurance] phase=observed_state sample=48 cpu_pct=3.008 ram_used_total_kib=1014064,8255824 temp_c=66.1 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:24Z [endurance] phase=observed_state remaining_s=360
+2026-09-28T01:09:25Z [endurance] phase=observed_state remaining_s=359
+2026-09-28T01:09:26Z [endurance] phase=observed_state remaining_s=358
+2026-09-28T01:09:27Z [endurance] phase=observed_state remaining_s=357
+2026-09-28T01:09:28Z [endurance] phase=observed_state remaining_s=356
+2026-09-28T01:09:29Z [endurance] health=49 http=200 valid=true latency_s=0.001105 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:29Z [endurance] phase=observed_state sample=49 cpu_pct=4.577 ram_used_total_kib=1017664,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:29Z [endurance] phase=observed_state remaining_s=355
+2026-09-28T01:09:30Z [endurance] phase=observed_state remaining_s=354
+2026-09-28T01:09:31Z [endurance] phase=observed_state remaining_s=353
+2026-09-28T01:09:32Z [endurance] phase=observed_state remaining_s=352
+2026-09-28T01:09:33Z [endurance] phase=observed_state remaining_s=351
+2026-09-28T01:09:34Z [endurance] health=50 http=200 valid=true latency_s=0.001129 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:34Z [endurance] phase=observed_state sample=50 cpu_pct=4.193 ram_used_total_kib=1018672,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:34Z [endurance] phase=observed_state remaining_s=350
+2026-09-28T01:09:35Z [endurance] phase=observed_state remaining_s=349
+2026-09-28T01:09:36Z [endurance] phase=observed_state remaining_s=348
+2026-09-28T01:09:37Z [endurance] phase=observed_state remaining_s=347
+2026-09-28T01:09:38Z [endurance] phase=observed_state remaining_s=346
+2026-09-28T01:09:39Z [endurance] health=51 http=200 valid=true latency_s=0.001112 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:39Z [endurance] phase=observed_state sample=51 cpu_pct=4.438 ram_used_total_kib=1018192,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:39Z [endurance] phase=observed_state remaining_s=345
+2026-09-28T01:09:40Z [endurance] phase=observed_state remaining_s=344
+2026-09-28T01:09:41Z [endurance] phase=observed_state remaining_s=343
+2026-09-28T01:09:42Z [endurance] phase=observed_state remaining_s=342
+2026-09-28T01:09:43Z [endurance] phase=observed_state remaining_s=341
+2026-09-28T01:09:44Z [endurance] health=52 http=200 valid=true latency_s=0.001077 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:44Z [endurance] phase=observed_state remaining_s=340
+2026-09-28T01:09:44Z [endurance] phase=observed_state sample=52 cpu_pct=3.200 ram_used_total_kib=1009664,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:45Z [endurance] phase=observed_state remaining_s=339
+2026-09-28T01:09:46Z [endurance] phase=observed_state remaining_s=338
+2026-09-28T01:09:47Z [endurance] phase=observed_state remaining_s=337
+2026-09-28T01:09:48Z [endurance] phase=observed_state remaining_s=336
+2026-09-28T01:09:49Z [endurance] phase=observed_state remaining_s=335
+2026-09-28T01:09:49Z [endurance] health=53 http=200 valid=true latency_s=0.003831 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:49Z [endurance] phase=observed_state sample=53 cpu_pct=4.575 ram_used_total_kib=1010592,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:50Z [endurance] phase=observed_state remaining_s=334
+2026-09-28T01:09:51Z [endurance] phase=observed_state remaining_s=333
+2026-09-28T01:09:52Z [endurance] phase=observed_state remaining_s=332
+2026-09-28T01:09:53Z [endurance] phase=observed_state remaining_s=331
+2026-09-28T01:09:54Z [endurance] phase=observed_state remaining_s=330
+2026-09-28T01:09:54Z [endurance] health=54 http=200 valid=true latency_s=0.001102 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:54Z [endurance] phase=observed_state sample=54 cpu_pct=4.286 ram_used_total_kib=1012000,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:09:55Z [endurance] phase=observed_state remaining_s=329
+2026-09-28T01:09:56Z [endurance] phase=observed_state remaining_s=328
+2026-09-28T01:09:57Z [endurance] phase=observed_state remaining_s=327
+2026-09-28T01:09:58Z [endurance] phase=observed_state remaining_s=326
+2026-09-28T01:09:59Z [endurance] phase=observed_state remaining_s=325
+2026-09-28T01:09:59Z [endurance] health=55 http=200 valid=true latency_s=0.001036 camera=true yolo=true detection=false follow=false
+2026-09-28T01:09:59Z [endurance] phase=observed_state sample=55 cpu_pct=4.938 ram_used_total_kib=1017184,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:00Z [endurance] phase=observed_state remaining_s=324
+2026-09-28T01:10:01Z [endurance] phase=observed_state remaining_s=323
+2026-09-28T01:10:02Z [endurance] phase=observed_state remaining_s=322
+2026-09-28T01:10:03Z [endurance] phase=observed_state remaining_s=321
+2026-09-28T01:10:04Z [endurance] phase=observed_state remaining_s=320
+2026-09-28T01:10:04Z [endurance] health=56 http=200 valid=true latency_s=0.001118 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:04Z [endurance] phase=observed_state sample=56 cpu_pct=4.146 ram_used_total_kib=1010656,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:05Z [endurance] phase=observed_state remaining_s=319
+2026-09-28T01:10:06Z [endurance] phase=observed_state remaining_s=318
+2026-09-28T01:10:07Z [endurance] phase=observed_state remaining_s=317
+2026-09-28T01:10:08Z [endurance] phase=observed_state remaining_s=316
+2026-09-28T01:10:09Z [endurance] phase=observed_state remaining_s=315
+2026-09-28T01:10:09Z [endurance] health=57 http=200 valid=true latency_s=0.001027 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:09Z [endurance] phase=observed_state sample=57 cpu_pct=4.493 ram_used_total_kib=1021088,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:10Z [endurance] phase=observed_state remaining_s=314
+2026-09-28T01:10:11Z [endurance] phase=observed_state remaining_s=313
+2026-09-28T01:10:12Z [endurance] phase=observed_state remaining_s=312
+2026-09-28T01:10:13Z [endurance] phase=observed_state remaining_s=311
+2026-09-28T01:10:14Z [endurance] phase=observed_state remaining_s=310
+2026-09-28T01:10:15Z [endurance] health=58 http=200 valid=true latency_s=0.001067 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:15Z [endurance] phase=observed_state sample=58 cpu_pct=4.239 ram_used_total_kib=1006768,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:15Z [endurance] phase=observed_state remaining_s=309
+2026-09-28T01:10:16Z [endurance] phase=observed_state remaining_s=308
+2026-09-28T01:10:17Z [endurance] phase=observed_state remaining_s=307
+2026-09-28T01:10:18Z [endurance] phase=observed_state remaining_s=306
+2026-09-28T01:10:19Z [endurance] phase=observed_state remaining_s=305
+2026-09-28T01:10:20Z [endurance] health=59 http=200 valid=true latency_s=0.002959 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:20Z [endurance] phase=observed_state sample=59 cpu_pct=4.541 ram_used_total_kib=1009024,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:20Z [endurance] phase=observed_state remaining_s=304
+2026-09-28T01:10:21Z [endurance] phase=observed_state remaining_s=303
+2026-09-28T01:10:22Z [endurance] phase=observed_state remaining_s=302
+2026-09-28T01:10:23Z [endurance] phase=observed_state remaining_s=301
+2026-09-28T01:10:24Z [endurance] phase=observed_state remaining_s=300
+2026-09-28T01:10:25Z [endurance] health=60 http=200 valid=true latency_s=0.000927 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:25Z [endurance] phase=observed_state sample=60 cpu_pct=3.246 ram_used_total_kib=1014064,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:25Z [endurance] phase=observed_state remaining_s=299
+2026-09-28T01:10:26Z [endurance] phase=observed_state remaining_s=298
+2026-09-28T01:10:27Z [endurance] phase=observed_state remaining_s=297
+2026-09-28T01:10:28Z [endurance] phase=observed_state remaining_s=296
+2026-09-28T01:10:29Z [endurance] phase=observed_state remaining_s=295
+2026-09-28T01:10:30Z [endurance] health=61 http=200 valid=true latency_s=0.001668 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:30Z [endurance] phase=observed_state sample=61 cpu_pct=3.733 ram_used_total_kib=1011008,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:30Z [endurance] phase=observed_state remaining_s=294
+2026-09-28T01:10:31Z [endurance] phase=observed_state remaining_s=293
+2026-09-28T01:10:32Z [endurance] phase=observed_state remaining_s=292
+2026-09-28T01:10:33Z [endurance] phase=observed_state remaining_s=291
+2026-09-28T01:10:34Z [endurance] phase=observed_state remaining_s=290
+2026-09-28T01:10:35Z [endurance] health=62 http=200 valid=true latency_s=0.001090 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:35Z [endurance] phase=observed_state sample=62 cpu_pct=4.335 ram_used_total_kib=1013664,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:35Z [endurance] phase=observed_state remaining_s=289
+2026-09-28T01:10:36Z [endurance] phase=observed_state remaining_s=288
+2026-09-28T01:10:37Z [endurance] phase=observed_state remaining_s=287
+2026-09-28T01:10:38Z [endurance] phase=observed_state remaining_s=286
+2026-09-28T01:10:39Z [endurance] phase=observed_state remaining_s=285
+2026-09-28T01:10:40Z [endurance] phase=observed_state remaining_s=284
+2026-09-28T01:10:40Z [endurance] health=63 http=200 valid=true latency_s=0.001080 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:40Z [endurance] phase=observed_state sample=63 cpu_pct=4.294 ram_used_total_kib=1012192,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:41Z [endurance] phase=observed_state remaining_s=283
+2026-09-28T01:10:42Z [endurance] phase=observed_state remaining_s=282
+2026-09-28T01:10:43Z [endurance] phase=observed_state remaining_s=281
+2026-09-28T01:10:44Z [endurance] phase=observed_state remaining_s=280
+2026-09-28T01:10:45Z [endurance] phase=observed_state remaining_s=279
+2026-09-28T01:10:45Z [endurance] health=64 http=200 valid=true latency_s=0.001099 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:45Z [endurance] phase=observed_state sample=64 cpu_pct=4.425 ram_used_total_kib=1009152,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:46Z [endurance] phase=observed_state remaining_s=278
+2026-09-28T01:10:47Z [endurance] phase=observed_state remaining_s=277
+2026-09-28T01:10:48Z [endurance] phase=observed_state remaining_s=276
+2026-09-28T01:10:49Z [endurance] phase=observed_state remaining_s=275
+2026-09-28T01:10:50Z [endurance] phase=observed_state remaining_s=274
+2026-09-28T01:10:50Z [endurance] health=65 http=200 valid=true latency_s=0.001879 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:50Z [endurance] phase=observed_state sample=65 cpu_pct=4.496 ram_used_total_kib=1011808,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:51Z [endurance] phase=observed_state remaining_s=273
+2026-09-28T01:10:52Z [endurance] phase=observed_state remaining_s=272
+2026-09-28T01:10:53Z [endurance] phase=observed_state remaining_s=271
+2026-09-28T01:10:54Z [endurance] phase=observed_state remaining_s=270
+2026-09-28T01:10:55Z [endurance] phase=observed_state remaining_s=269
+2026-09-28T01:10:55Z [endurance] health=66 http=200 valid=true latency_s=0.000975 camera=true yolo=true detection=false follow=false
+2026-09-28T01:10:55Z [endurance] phase=observed_state sample=66 cpu_pct=3.296 ram_used_total_kib=1012048,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:10:56Z [endurance] phase=observed_state remaining_s=268
+2026-09-28T01:10:57Z [endurance] phase=observed_state remaining_s=267
+2026-09-28T01:10:58Z [endurance] phase=observed_state remaining_s=266
+2026-09-28T01:10:59Z [endurance] phase=observed_state remaining_s=265
+2026-09-28T01:11:00Z [endurance] phase=observed_state remaining_s=264
+2026-09-28T01:11:00Z [endurance] health=67 http=200 valid=true latency_s=0.001024 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:00Z [endurance] phase=observed_state sample=67 cpu_pct=4.626 ram_used_total_kib=1011712,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:01Z [endurance] phase=observed_state remaining_s=263
+2026-09-28T01:11:02Z [endurance] phase=observed_state remaining_s=262
+2026-09-28T01:11:03Z [endurance] phase=observed_state remaining_s=261
+2026-09-28T01:11:04Z [endurance] phase=observed_state remaining_s=260
+2026-09-28T01:11:05Z [endurance] phase=observed_state remaining_s=259
+2026-09-28T01:11:06Z [endurance] health=68 http=200 valid=true latency_s=0.001149 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:06Z [endurance] phase=observed_state sample=68 cpu_pct=4.236 ram_used_total_kib=1018288,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:06Z [endurance] phase=observed_state remaining_s=258
+2026-09-28T01:11:07Z [endurance] phase=observed_state remaining_s=257
+2026-09-28T01:11:08Z [endurance] phase=observed_state remaining_s=256
+2026-09-28T01:11:09Z [endurance] phase=observed_state remaining_s=255
+2026-09-28T01:11:10Z [endurance] phase=observed_state remaining_s=254
+2026-09-28T01:11:11Z [endurance] health=69 http=200 valid=true latency_s=0.001141 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:11Z [endurance] phase=observed_state sample=69 cpu_pct=3.538 ram_used_total_kib=1010544,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:11Z [endurance] phase=observed_state remaining_s=253
+2026-09-28T01:11:12Z [endurance] phase=observed_state remaining_s=252
+2026-09-28T01:11:13Z [endurance] phase=observed_state remaining_s=251
+2026-09-28T01:11:14Z [endurance] phase=observed_state remaining_s=250
+2026-09-28T01:11:15Z [endurance] phase=observed_state remaining_s=249
+2026-09-28T01:11:16Z [endurance] health=70 http=200 valid=true latency_s=0.001118 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:16Z [endurance] phase=observed_state sample=70 cpu_pct=3.397 ram_used_total_kib=1013904,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:16Z [endurance] phase=observed_state remaining_s=248
+2026-09-28T01:11:17Z [endurance] phase=observed_state remaining_s=247
+2026-09-28T01:11:18Z [endurance] phase=observed_state remaining_s=246
+2026-09-28T01:11:19Z [endurance] phase=observed_state remaining_s=245
+2026-09-28T01:11:20Z [endurance] phase=observed_state remaining_s=244
+2026-09-28T01:11:21Z [endurance] health=71 http=200 valid=true latency_s=0.001272 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:21Z [endurance] phase=observed_state sample=71 cpu_pct=3.197 ram_used_total_kib=1010128,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:21Z [endurance] phase=observed_state remaining_s=243
+2026-09-28T01:11:22Z [endurance] phase=observed_state remaining_s=242
+2026-09-28T01:11:23Z [endurance] phase=observed_state remaining_s=241
+2026-09-28T01:11:24Z [endurance] phase=observed_state remaining_s=240
+2026-09-28T01:11:25Z [endurance] phase=observed_state remaining_s=239
+2026-09-28T01:11:26Z [endurance] health=72 http=200 valid=true latency_s=0.001070 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:26Z [endurance] phase=observed_state sample=72 cpu_pct=4.528 ram_used_total_kib=1013120,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:26Z [endurance] phase=observed_state remaining_s=238
+2026-09-28T01:11:27Z [endurance] phase=observed_state remaining_s=237
+2026-09-28T01:11:28Z [endurance] phase=observed_state remaining_s=236
+2026-09-28T01:11:29Z [endurance] phase=observed_state remaining_s=235
+2026-09-28T01:11:30Z [endurance] phase=observed_state remaining_s=234
+2026-09-28T01:11:31Z [endurance] health=73 http=200 valid=true latency_s=0.001116 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:31Z [endurance] phase=observed_state sample=73 cpu_pct=4.429 ram_used_total_kib=1016912,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:31Z [endurance] phase=observed_state remaining_s=233
+2026-09-28T01:11:32Z [endurance] phase=observed_state remaining_s=232
+2026-09-28T01:11:33Z [endurance] phase=observed_state remaining_s=231
+2026-09-28T01:11:34Z [endurance] phase=observed_state remaining_s=230
+2026-09-28T01:11:35Z [endurance] phase=observed_state remaining_s=229
+2026-09-28T01:11:36Z [endurance] health=74 http=200 valid=true latency_s=0.002641 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:36Z [endurance] phase=observed_state sample=74 cpu_pct=4.393 ram_used_total_kib=1018304,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:36Z [endurance] phase=observed_state remaining_s=228
+2026-09-28T01:11:37Z [endurance] phase=observed_state remaining_s=227
+2026-09-28T01:11:38Z [endurance] phase=observed_state remaining_s=226
+2026-09-28T01:11:39Z [endurance] phase=observed_state remaining_s=225
+2026-09-28T01:11:40Z [endurance] phase=observed_state remaining_s=224
+2026-09-28T01:11:41Z [endurance] health=75 http=200 valid=true latency_s=0.001152 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:41Z [endurance] phase=observed_state sample=75 cpu_pct=3.153 ram_used_total_kib=1015600,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:41Z [endurance] phase=observed_state remaining_s=223
+2026-09-28T01:11:42Z [endurance] phase=observed_state remaining_s=222
+2026-09-28T01:11:43Z [endurance] phase=observed_state remaining_s=221
+2026-09-28T01:11:44Z [endurance] phase=observed_state remaining_s=220
+2026-09-28T01:11:45Z [endurance] phase=observed_state remaining_s=219
+2026-09-28T01:11:46Z [endurance] phase=observed_state remaining_s=218
+2026-09-28T01:11:46Z [endurance] health=76 http=200 valid=true latency_s=0.001063 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:46Z [endurance] phase=observed_state sample=76 cpu_pct=3.584 ram_used_total_kib=1022832,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:47Z [endurance] phase=observed_state remaining_s=217
+2026-09-28T01:11:48Z [endurance] phase=observed_state remaining_s=216
+2026-09-28T01:11:49Z [endurance] phase=observed_state remaining_s=215
+2026-09-28T01:11:50Z [endurance] phase=observed_state remaining_s=214
+2026-09-28T01:11:51Z [endurance] phase=observed_state remaining_s=213
+2026-09-28T01:11:51Z [endurance] health=77 http=200 valid=true latency_s=0.002055 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:51Z [endurance] phase=observed_state sample=77 cpu_pct=3.059 ram_used_total_kib=1014624,8255824 temp_c=66.1 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:52Z [endurance] phase=observed_state remaining_s=212
+2026-09-28T01:11:53Z [endurance] phase=observed_state remaining_s=211
+2026-09-28T01:11:54Z [endurance] phase=observed_state remaining_s=210
+2026-09-28T01:11:55Z [endurance] phase=observed_state remaining_s=209
+2026-09-28T01:11:56Z [endurance] phase=observed_state remaining_s=208
+2026-09-28T01:11:56Z [endurance] health=78 http=200 valid=true latency_s=0.001106 camera=true yolo=true detection=false follow=false
+2026-09-28T01:11:56Z [endurance] phase=observed_state sample=78 cpu_pct=4.872 ram_used_total_kib=1010592,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:11:57Z [endurance] phase=observed_state remaining_s=207
+2026-09-28T01:11:58Z [endurance] phase=observed_state remaining_s=206
+2026-09-28T01:11:59Z [endurance] phase=observed_state remaining_s=205
+2026-09-28T01:12:00Z [endurance] phase=observed_state remaining_s=204
+2026-09-28T01:12:01Z [endurance] phase=observed_state remaining_s=203
+2026-09-28T01:12:02Z [endurance] health=79 http=200 valid=true latency_s=0.001030 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:02Z [endurance] phase=observed_state sample=79 cpu_pct=4.489 ram_used_total_kib=1015648,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:02Z [endurance] phase=observed_state remaining_s=202
+2026-09-28T01:12:03Z [endurance] phase=observed_state remaining_s=201
+2026-09-28T01:12:04Z [endurance] phase=observed_state remaining_s=200
+2026-09-28T01:12:05Z [endurance] phase=observed_state remaining_s=199
+2026-09-28T01:12:06Z [endurance] phase=observed_state remaining_s=198
+2026-09-28T01:12:07Z [endurance] health=80 http=200 valid=true latency_s=0.001096 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:07Z [endurance] phase=observed_state sample=80 cpu_pct=4.532 ram_used_total_kib=1019840,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:07Z [endurance] phase=observed_state remaining_s=197
+2026-09-28T01:12:08Z [endurance] phase=observed_state remaining_s=196
+2026-09-28T01:12:09Z [endurance] phase=observed_state remaining_s=195
+2026-09-28T01:12:10Z [endurance] phase=observed_state remaining_s=194
+2026-09-28T01:12:11Z [endurance] phase=observed_state remaining_s=193
+2026-09-28T01:12:12Z [endurance] health=81 http=200 valid=true latency_s=0.001058 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:12Z [endurance] phase=observed_state sample=81 cpu_pct=4.329 ram_used_total_kib=1012832,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:12Z [endurance] phase=observed_state remaining_s=192
+2026-09-28T01:12:13Z [endurance] phase=observed_state remaining_s=191
+2026-09-28T01:12:14Z [endurance] phase=observed_state remaining_s=190
+2026-09-28T01:12:15Z [endurance] phase=observed_state remaining_s=189
+2026-09-28T01:12:16Z [endurance] phase=observed_state remaining_s=188
+2026-09-28T01:12:17Z [endurance] health=82 http=200 valid=true latency_s=0.001100 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:17Z [endurance] phase=observed_state sample=82 cpu_pct=4.494 ram_used_total_kib=1013232,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:17Z [endurance] phase=observed_state remaining_s=187
+2026-09-28T01:12:18Z [endurance] phase=observed_state remaining_s=186
+2026-09-28T01:12:19Z [endurance] phase=observed_state remaining_s=185
+2026-09-28T01:12:20Z [endurance] phase=observed_state remaining_s=184
+2026-09-28T01:12:21Z [endurance] phase=observed_state remaining_s=183
+2026-09-28T01:12:22Z [endurance] health=83 http=200 valid=true latency_s=0.001064 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:22Z [endurance] phase=observed_state sample=83 cpu_pct=4.331 ram_used_total_kib=1019136,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:22Z [endurance] phase=observed_state remaining_s=182
+2026-09-28T01:12:23Z [endurance] phase=observed_state remaining_s=181
+2026-09-28T01:12:24Z [endurance] phase=observed_state remaining_s=180
+2026-09-28T01:12:25Z [endurance] phase=observed_state remaining_s=179
+2026-09-28T01:12:26Z [endurance] phase=observed_state remaining_s=178
+2026-09-28T01:12:27Z [endurance] health=84 http=200 valid=true latency_s=0.001080 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:27Z [endurance] phase=observed_state sample=84 cpu_pct=4.294 ram_used_total_kib=1028448,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:27Z [endurance] phase=observed_state remaining_s=177
+2026-09-28T01:12:28Z [endurance] phase=observed_state remaining_s=176
+2026-09-28T01:12:29Z [endurance] phase=observed_state remaining_s=175
+2026-09-28T01:12:30Z [endurance] phase=observed_state remaining_s=174
+2026-09-28T01:12:31Z [endurance] phase=observed_state remaining_s=173
+2026-09-28T01:12:32Z [endurance] health=85 http=200 valid=true latency_s=0.001087 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:32Z [endurance] phase=observed_state sample=85 cpu_pct=3.248 ram_used_total_kib=1019888,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:32Z [endurance] phase=observed_state remaining_s=172
+2026-09-28T01:12:33Z [endurance] phase=observed_state remaining_s=171
+2026-09-28T01:12:34Z [endurance] phase=observed_state remaining_s=170
+2026-09-28T01:12:35Z [endurance] phase=observed_state remaining_s=169
+2026-09-28T01:12:36Z [endurance] phase=observed_state remaining_s=168
+2026-09-28T01:12:37Z [endurance] health=86 http=200 valid=true latency_s=0.001145 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:37Z [endurance] phase=observed_state sample=86 cpu_pct=4.438 ram_used_total_kib=1016144,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:37Z [endurance] phase=observed_state remaining_s=167
+2026-09-28T01:12:38Z [endurance] phase=observed_state remaining_s=166
+2026-09-28T01:12:39Z [endurance] phase=observed_state remaining_s=165
+2026-09-28T01:12:40Z [endurance] phase=observed_state remaining_s=164
+2026-09-28T01:12:41Z [endurance] phase=observed_state remaining_s=163
+2026-09-28T01:12:42Z [endurance] health=87 http=200 valid=true latency_s=0.001122 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:42Z [endurance] phase=observed_state sample=87 cpu_pct=4.380 ram_used_total_kib=1008048,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:42Z [endurance] phase=observed_state remaining_s=162
+2026-09-28T01:12:43Z [endurance] phase=observed_state remaining_s=161
+2026-09-28T01:12:44Z [endurance] phase=observed_state remaining_s=160
+2026-09-28T01:12:45Z [endurance] phase=observed_state remaining_s=159
+2026-09-28T01:12:46Z [endurance] phase=observed_state remaining_s=158
+2026-09-28T01:12:47Z [endurance] health=88 http=200 valid=true latency_s=0.001256 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:47Z [endurance] phase=observed_state remaining_s=157
+2026-09-28T01:12:47Z [endurance] phase=observed_state sample=88 cpu_pct=4.438 ram_used_total_kib=1021664,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:48Z [endurance] phase=observed_state remaining_s=156
+2026-09-28T01:12:49Z [endurance] phase=observed_state remaining_s=155
+2026-09-28T01:12:50Z [endurance] phase=observed_state remaining_s=154
+2026-09-28T01:12:51Z [endurance] phase=observed_state remaining_s=153
+2026-09-28T01:12:52Z [endurance] phase=observed_state remaining_s=152
+2026-09-28T01:12:52Z [endurance] health=89 http=200 valid=true latency_s=0.001089 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:52Z [endurance] phase=observed_state sample=89 cpu_pct=4.239 ram_used_total_kib=1019056,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:53Z [endurance] phase=observed_state remaining_s=151
+2026-09-28T01:12:54Z [endurance] phase=observed_state remaining_s=150
+2026-09-28T01:12:55Z [endurance] phase=observed_state remaining_s=149
+2026-09-28T01:12:56Z [endurance] phase=observed_state remaining_s=148
+2026-09-28T01:12:57Z [endurance] phase=observed_state remaining_s=147
+2026-09-28T01:12:57Z [endurance] health=90 http=200 valid=true latency_s=0.001102 camera=true yolo=true detection=false follow=false
+2026-09-28T01:12:57Z [endurance] phase=observed_state sample=90 cpu_pct=4.628 ram_used_total_kib=1012304,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:12:58Z [endurance] phase=observed_state remaining_s=146
+2026-09-28T01:12:59Z [endurance] phase=observed_state remaining_s=145
+2026-09-28T01:13:00Z [endurance] phase=observed_state remaining_s=144
+2026-09-28T01:13:01Z [endurance] phase=observed_state remaining_s=143
+2026-09-28T01:13:02Z [endurance] phase=observed_state remaining_s=142
+2026-09-28T01:13:03Z [endurance] health=91 http=200 valid=true latency_s=0.001087 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:03Z [endurance] phase=observed_state sample=91 cpu_pct=4.144 ram_used_total_kib=1005760,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:03Z [endurance] phase=observed_state remaining_s=141
+2026-09-28T01:13:04Z [endurance] phase=observed_state remaining_s=140
+2026-09-28T01:13:05Z [endurance] phase=observed_state remaining_s=139
+2026-09-28T01:13:06Z [endurance] phase=observed_state remaining_s=138
+2026-09-28T01:13:07Z [endurance] phase=observed_state remaining_s=137
+2026-09-28T01:13:08Z [endurance] health=92 http=200 valid=true latency_s=0.001174 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:08Z [endurance] phase=observed_state sample=92 cpu_pct=4.579 ram_used_total_kib=1016368,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:08Z [endurance] phase=observed_state remaining_s=136
+2026-09-28T01:13:09Z [endurance] phase=observed_state remaining_s=135
+2026-09-28T01:13:10Z [endurance] phase=observed_state remaining_s=134
+2026-09-28T01:13:11Z [endurance] phase=observed_state remaining_s=133
+2026-09-28T01:13:12Z [endurance] phase=observed_state remaining_s=132
+2026-09-28T01:13:13Z [endurance] health=93 http=200 valid=true latency_s=0.001071 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:13Z [endurance] phase=observed_state sample=93 cpu_pct=4.288 ram_used_total_kib=1013808,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:13Z [endurance] phase=observed_state remaining_s=131
+2026-09-28T01:13:14Z [endurance] phase=observed_state remaining_s=130
+2026-09-28T01:13:15Z [endurance] phase=observed_state remaining_s=129
+2026-09-28T01:13:16Z [endurance] phase=observed_state remaining_s=128
+2026-09-28T01:13:17Z [endurance] phase=observed_state remaining_s=127
+2026-09-28T01:13:18Z [endurance] health=94 http=200 valid=true latency_s=0.004057 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:18Z [endurance] phase=observed_state sample=94 cpu_pct=4.436 ram_used_total_kib=1029376,8255824 temp_c=60.6 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:18Z [endurance] phase=observed_state remaining_s=126
+2026-09-28T01:13:19Z [endurance] phase=observed_state remaining_s=125
+2026-09-28T01:13:20Z [endurance] phase=observed_state remaining_s=124
+2026-09-28T01:13:21Z [endurance] phase=observed_state remaining_s=123
+2026-09-28T01:13:22Z [endurance] phase=observed_state remaining_s=122
+2026-09-28T01:13:23Z [endurance] health=95 http=200 valid=true latency_s=0.001100 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:23Z [endurance] phase=observed_state sample=95 cpu_pct=4.329 ram_used_total_kib=1012448,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:23Z [endurance] phase=observed_state remaining_s=121
+2026-09-28T01:13:24Z [endurance] phase=observed_state remaining_s=120
+2026-09-28T01:13:25Z [endurance] phase=observed_state remaining_s=119
+2026-09-28T01:13:26Z [endurance] phase=observed_state remaining_s=118
+2026-09-28T01:13:27Z [endurance] phase=observed_state remaining_s=117
+2026-09-28T01:13:28Z [endurance] health=96 http=200 valid=true latency_s=0.001018 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:28Z [endurance] phase=observed_state sample=96 cpu_pct=4.483 ram_used_total_kib=1013968,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:28Z [endurance] phase=observed_state remaining_s=116
+2026-09-28T01:13:29Z [endurance] phase=observed_state remaining_s=115
+2026-09-28T01:13:30Z [endurance] phase=observed_state remaining_s=114
+2026-09-28T01:13:31Z [endurance] phase=observed_state remaining_s=113
+2026-09-28T01:13:32Z [endurance] phase=observed_state remaining_s=112
+2026-09-28T01:13:33Z [endurance] health=97 http=200 valid=true latency_s=0.001159 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:33Z [endurance] phase=observed_state sample=97 cpu_pct=3.348 ram_used_total_kib=1009184,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:33Z [endurance] phase=observed_state remaining_s=111
+2026-09-28T01:13:34Z [endurance] phase=observed_state remaining_s=110
+2026-09-28T01:13:35Z [endurance] phase=observed_state remaining_s=109
+2026-09-28T01:13:36Z [endurance] phase=observed_state remaining_s=108
+2026-09-28T01:13:37Z [endurance] phase=observed_state remaining_s=107
+2026-09-28T01:13:38Z [endurance] health=98 http=200 valid=true latency_s=0.001097 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:38Z [endurance] phase=observed_state sample=98 cpu_pct=3.535 ram_used_total_kib=1024352,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:38Z [endurance] phase=observed_state remaining_s=106
+2026-09-28T01:13:39Z [endurance] phase=observed_state remaining_s=105
+2026-09-28T01:13:40Z [endurance] phase=observed_state remaining_s=104
+2026-09-28T01:13:41Z [endurance] phase=observed_state remaining_s=103
+2026-09-28T01:13:42Z [endurance] phase=observed_state remaining_s=102
+2026-09-28T01:13:43Z [endurance] health=99 http=200 valid=true latency_s=0.001047 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:43Z [endurance] phase=observed_state sample=99 cpu_pct=3.103 ram_used_total_kib=1018576,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:43Z [endurance] phase=observed_state remaining_s=101
+2026-09-28T01:13:44Z [endurance] phase=observed_state remaining_s=100
+2026-09-28T01:13:45Z [endurance] phase=observed_state remaining_s=99
+2026-09-28T01:13:46Z [endurance] phase=observed_state remaining_s=98
+2026-09-28T01:13:47Z [endurance] phase=observed_state remaining_s=97
+2026-09-28T01:13:48Z [endurance] phase=observed_state remaining_s=96
+2026-09-28T01:13:48Z [endurance] health=100 http=200 valid=true latency_s=0.001126 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:48Z [endurance] phase=observed_state sample=100 cpu_pct=4.539 ram_used_total_kib=1012928,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:49Z [endurance] phase=observed_state remaining_s=95
+2026-09-28T01:13:50Z [endurance] phase=observed_state remaining_s=94
+2026-09-28T01:13:51Z [endurance] phase=observed_state remaining_s=93
+2026-09-28T01:13:52Z [endurance] phase=observed_state remaining_s=92
+2026-09-28T01:13:53Z [endurance] phase=observed_state remaining_s=91
+2026-09-28T01:13:54Z [endurance] health=101 http=200 valid=true latency_s=0.001085 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:54Z [endurance] phase=observed_state sample=101 cpu_pct=4.236 ram_used_total_kib=1015168,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:54Z [endurance] phase=observed_state remaining_s=90
+2026-09-28T01:13:55Z [endurance] phase=observed_state remaining_s=89
+2026-09-28T01:13:56Z [endurance] phase=observed_state remaining_s=88
+2026-09-28T01:13:57Z [endurance] phase=observed_state remaining_s=87
+2026-09-28T01:13:58Z [endurance] phase=observed_state remaining_s=86
+2026-09-28T01:13:59Z [endurance] health=102 http=200 valid=true latency_s=0.000912 camera=true yolo=true detection=false follow=false
+2026-09-28T01:13:59Z [endurance] phase=observed_state sample=102 cpu_pct=4.539 ram_used_total_kib=1018640,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:13:59Z [endurance] phase=observed_state remaining_s=85
+2026-09-28T01:14:00Z [endurance] phase=observed_state remaining_s=84
+2026-09-28T01:14:01Z [endurance] phase=observed_state remaining_s=83
+2026-09-28T01:14:02Z [endurance] phase=observed_state remaining_s=82
+2026-09-28T01:14:03Z [endurance] phase=observed_state remaining_s=81
+2026-09-28T01:14:04Z [endurance] health=103 http=200 valid=true latency_s=0.001116 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:04Z [endurance] phase=observed_state sample=103 cpu_pct=3.510 ram_used_total_kib=1018384,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:04Z [endurance] phase=observed_state remaining_s=80
+2026-09-28T01:14:05Z [endurance] phase=observed_state remaining_s=79
+2026-09-28T01:14:06Z [endurance] phase=observed_state remaining_s=78
+2026-09-28T01:14:07Z [endurance] phase=observed_state remaining_s=77
+2026-09-28T01:14:08Z [endurance] phase=observed_state remaining_s=76
+2026-09-28T01:14:09Z [endurance] health=104 http=200 valid=true latency_s=0.001114 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:09Z [endurance] phase=observed_state sample=104 cpu_pct=4.483 ram_used_total_kib=1013360,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:09Z [endurance] phase=observed_state remaining_s=75
+2026-09-28T01:14:10Z [endurance] phase=observed_state remaining_s=74
+2026-09-28T01:14:11Z [endurance] phase=observed_state remaining_s=73
+2026-09-28T01:14:12Z [endurance] phase=observed_state remaining_s=72
+2026-09-28T01:14:14Z [endurance] phase=observed_state remaining_s=70
+2026-09-28T01:14:14Z [endurance] health=105 http=200 valid=true latency_s=0.001028 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:14Z [endurance] phase=observed_state sample=105 cpu_pct=4.331 ram_used_total_kib=1012240,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:15Z [endurance] phase=observed_state remaining_s=69
+2026-09-28T01:14:16Z [endurance] phase=observed_state remaining_s=68
+2026-09-28T01:14:17Z [endurance] phase=observed_state remaining_s=67
+2026-09-28T01:14:18Z [endurance] phase=observed_state remaining_s=66
+2026-09-28T01:14:19Z [endurance] phase=observed_state remaining_s=65
+2026-09-28T01:14:19Z [endurance] health=106 http=200 valid=true latency_s=0.001118 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:19Z [endurance] phase=observed_state sample=106 cpu_pct=4.633 ram_used_total_kib=1008272,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:20Z [endurance] phase=observed_state remaining_s=64
+2026-09-28T01:14:21Z [endurance] phase=observed_state remaining_s=63
+2026-09-28T01:14:22Z [endurance] phase=observed_state remaining_s=62
+2026-09-28T01:14:23Z [endurance] phase=observed_state remaining_s=61
+2026-09-28T01:14:24Z [endurance] phase=observed_state remaining_s=60
+2026-09-28T01:14:24Z [endurance] health=107 http=200 valid=true latency_s=0.001227 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:24Z [endurance] phase=observed_state sample=107 cpu_pct=4.333 ram_used_total_kib=1007840,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:25Z [endurance] phase=observed_state remaining_s=59
+2026-09-28T01:14:26Z [endurance] phase=observed_state remaining_s=58
+2026-09-28T01:14:27Z [endurance] phase=observed_state remaining_s=57
+2026-09-28T01:14:28Z [endurance] phase=observed_state remaining_s=56
+2026-09-28T01:14:29Z [endurance] phase=observed_state remaining_s=55
+2026-09-28T01:14:29Z [endurance] health=108 http=200 valid=true latency_s=0.002942 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:29Z [endurance] phase=observed_state sample=108 cpu_pct=4.722 ram_used_total_kib=1028368,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:30Z [endurance] phase=observed_state remaining_s=54
+2026-09-28T01:14:31Z [endurance] phase=observed_state remaining_s=53
+2026-09-28T01:14:32Z [endurance] phase=observed_state remaining_s=52
+2026-09-28T01:14:33Z [endurance] phase=observed_state remaining_s=51
+2026-09-28T01:14:34Z [endurance] phase=observed_state remaining_s=50
+2026-09-28T01:14:34Z [endurance] health=109 http=200 valid=true latency_s=0.001052 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:34Z [endurance] phase=observed_state sample=109 cpu_pct=4.234 ram_used_total_kib=1015072,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:35Z [endurance] phase=observed_state remaining_s=49
+2026-09-28T01:14:36Z [endurance] phase=observed_state remaining_s=48
+2026-09-28T01:14:37Z [endurance] phase=observed_state remaining_s=47
+2026-09-28T01:14:38Z [endurance] phase=observed_state remaining_s=46
+2026-09-28T01:14:39Z [endurance] phase=observed_state remaining_s=45
+2026-09-28T01:14:39Z [endurance] health=110 http=200 valid=true latency_s=0.001043 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:39Z [endurance] phase=observed_state sample=110 cpu_pct=3.635 ram_used_total_kib=1011408,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:40Z [endurance] phase=observed_state remaining_s=44
+2026-09-28T01:14:41Z [endurance] phase=observed_state remaining_s=43
+2026-09-28T01:14:42Z [endurance] phase=observed_state remaining_s=42
+2026-09-28T01:14:43Z [endurance] phase=observed_state remaining_s=41
+2026-09-28T01:14:44Z [endurance] phase=observed_state remaining_s=40
+2026-09-28T01:14:44Z [endurance] health=111 http=200 valid=true latency_s=0.001037 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:44Z [endurance] phase=observed_state sample=111 cpu_pct=4.333 ram_used_total_kib=1012848,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:45Z [endurance] phase=observed_state remaining_s=39
+2026-09-28T01:14:46Z [endurance] phase=observed_state remaining_s=38
+2026-09-28T01:14:47Z [endurance] phase=observed_state remaining_s=37
+2026-09-28T01:14:48Z [endurance] phase=observed_state remaining_s=36
+2026-09-28T01:14:49Z [endurance] phase=observed_state remaining_s=35
+2026-09-28T01:14:50Z [endurance] phase=observed_state remaining_s=34
+2026-09-28T01:14:50Z [endurance] health=112 http=200 valid=true latency_s=0.001064 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:50Z [endurance] phase=observed_state sample=112 cpu_pct=4.391 ram_used_total_kib=1018240,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:51Z [endurance] phase=observed_state remaining_s=33
+2026-09-28T01:14:52Z [endurance] phase=observed_state remaining_s=32
+2026-09-28T01:14:53Z [endurance] phase=observed_state remaining_s=31
+2026-09-28T01:14:54Z [endurance] phase=observed_state remaining_s=30
+2026-09-28T01:14:55Z [endurance] phase=observed_state remaining_s=29
+2026-09-28T01:14:55Z [endurance] health=113 http=200 valid=true latency_s=0.001326 camera=true yolo=true detection=false follow=false
+2026-09-28T01:14:55Z [endurance] phase=observed_state sample=113 cpu_pct=4.159 ram_used_total_kib=1014240,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T01:14:56Z [endurance] phase=observed_state remaining_s=28
+2026-09-28T01:14:57Z [endurance] phase=observed_state remaining_s=27
+2026-09-28T01:14:58Z [endurance] phase=observed_state remaining_s=26
+2026-09-28T01:14:59Z [endurance] phase=observed_state remaining_s=25
+2026-09-28T01:15:00Z [endurance] phase=observed_state remaining_s=24
+2026-09-28T01:15:00Z [endurance] health=114 http=200 valid=true latency_s=0.001139 camera=true yolo=true detection=false follow=false
+2026-09-28T01:15:00Z [endurance] phase=observed_state sample=114 cpu_pct=3.447 ram_used_total_kib=1018112,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:15:01Z [endurance] phase=observed_state remaining_s=23
+2026-09-28T01:15:02Z [endurance] phase=observed_state remaining_s=22
+2026-09-28T01:15:03Z [endurance] phase=observed_state remaining_s=21
+2026-09-28T01:15:04Z [endurance] phase=observed_state remaining_s=20
+2026-09-28T01:15:05Z [endurance] phase=observed_state remaining_s=19
+2026-09-28T01:15:05Z [endurance] health=115 http=200 valid=true latency_s=0.001039 camera=true yolo=true detection=false follow=false
+2026-09-28T01:15:05Z [endurance] phase=observed_state sample=115 cpu_pct=4.189 ram_used_total_kib=1013904,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:15:06Z [endurance] phase=observed_state remaining_s=18
+2026-09-28T01:15:07Z [endurance] phase=observed_state remaining_s=17
+2026-09-28T01:15:08Z [endurance] phase=observed_state remaining_s=16
+2026-09-28T01:15:09Z [endurance] phase=observed_state remaining_s=15
+2026-09-28T01:15:10Z [endurance] phase=observed_state remaining_s=14
+2026-09-28T01:15:10Z [endurance] health=116 http=200 valid=true latency_s=0.001083 camera=true yolo=true detection=false follow=false
+2026-09-28T01:15:10Z [endurance] phase=observed_state sample=116 cpu_pct=4.577 ram_used_total_kib=1012064,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T01:15:11Z [endurance] phase=observed_state remaining_s=13
+2026-09-28T01:15:12Z [endurance] phase=observed_state remaining_s=12
+2026-09-28T01:15:13Z [endurance] phase=observed_state remaining_s=11
+2026-09-28T01:15:14Z [endurance] phase=observed_state remaining_s=10
+2026-09-28T01:15:15Z [endurance] phase=observed_state remaining_s=9
+2026-09-28T01:15:15Z [endurance] health=117 http=200 valid=true latency_s=0.001080 camera=true yolo=true detection=false follow=false
+2026-09-28T01:15:15Z [endurance] phase=observed_state sample=117 cpu_pct=4.191 ram_used_total_kib=1010480,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T01:15:16Z [endurance] phase=observed_state remaining_s=8
+2026-09-28T01:15:17Z [endurance] phase=observed_state remaining_s=7
+2026-09-28T01:15:18Z [endurance] phase=observed_state remaining_s=6
+2026-09-28T01:15:19Z [endurance] phase=observed_state remaining_s=5
+2026-09-28T01:15:20Z [endurance] phase=observed_state remaining_s=4
+2026-09-28T01:15:20Z [endurance] health=118 http=200 valid=true latency_s=0.001075 camera=true yolo=true detection=false follow=false
+2026-09-28T01:15:20Z [endurance] phase=observed_state sample=118 cpu_pct=3.496 ram_used_total_kib=1012336,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T01:15:21Z [endurance] phase=observed_state remaining_s=3
+2026-09-28T01:15:22Z [endurance] phase=observed_state remaining_s=2
+2026-09-28T01:15:23Z [endurance] phase=observed_state remaining_s=1
+2026-09-28T01:15:24Z [endurance] phase=observed_state remaining_s=0
+2026-09-28T01:15:24Z [endurance] phase=observed_state remaining_s=0 collection complete
+2026-09-28T01:15:24Z [endurance] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T01:15:24Z [endurance] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T01:15:24Z [endurance] Finished exit_code=0 elapsed_s=600 results=/home/pi/experiments/logs/2026-09-28T01-05-24_endurance_2ipGfr

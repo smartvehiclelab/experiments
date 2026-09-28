@@ -1,0 +1,96 @@
+2026-09-28T00:20:28Z [stream-stability] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T00-20-28_stream-stability_16WvtX; collecting metadata
+2026-09-28T00:20:28Z [stream-stability] Running Docker containers:
+2026-09-28T00:20:28Z [stream-stability] docker-ps: NAMES     STATUS                    PORTS
+2026-09-28T00:20:28Z [stream-stability] docker-ps: vehicle   Up 40 minutes (healthy)   
+2026-09-28T00:20:28Z [stream-stability] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T00:20:28Z [stream-stability] Using existing Docker container=vehicle state=running
+2026-09-28T00:20:28Z [stream-stability] phase=streaming remaining_s=60 (collection budget; cleanup follows)
+2026-09-28T00:20:28Z [stream-stability] stream attempt=1 started budget_s=60
+2026-09-28T00:20:28Z [stream-stability] health=1 http=200 valid=true latency_s=0.000871 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:28Z [stream-stability] phase=streaming sample=1 cpu_pct=NA ram_used_total_kib=1030800,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:29Z [stream-stability] phase=streaming remaining_s=59
+2026-09-28T00:20:30Z [stream-stability] phase=streaming remaining_s=58
+2026-09-28T00:20:31Z [stream-stability] phase=streaming remaining_s=57
+2026-09-28T00:20:32Z [stream-stability] phase=streaming remaining_s=56
+2026-09-28T00:20:33Z [stream-stability] phase=streaming remaining_s=55
+2026-09-28T00:20:33Z [stream-stability] health=2 http=200 valid=true latency_s=0.001053 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:33Z [stream-stability] phase=streaming sample=2 cpu_pct=3.801 ram_used_total_kib=1031408,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:34Z [stream-stability] phase=streaming remaining_s=54
+2026-09-28T00:20:35Z [stream-stability] phase=streaming remaining_s=53
+2026-09-28T00:20:36Z [stream-stability] phase=streaming remaining_s=52
+2026-09-28T00:20:37Z [stream-stability] phase=streaming remaining_s=51
+2026-09-28T00:20:38Z [stream-stability] phase=streaming remaining_s=50
+2026-09-28T00:20:38Z [stream-stability] health=3 http=200 valid=true latency_s=0.001073 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:38Z [stream-stability] phase=streaming sample=3 cpu_pct=4.483 ram_used_total_kib=1026464,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:39Z [stream-stability] phase=streaming remaining_s=49
+2026-09-28T00:20:40Z [stream-stability] phase=streaming remaining_s=48
+2026-09-28T00:20:41Z [stream-stability] phase=streaming remaining_s=47
+2026-09-28T00:20:42Z [stream-stability] phase=streaming remaining_s=46
+2026-09-28T00:20:43Z [stream-stability] phase=streaming remaining_s=45
+2026-09-28T00:20:43Z [stream-stability] health=4 http=200 valid=true latency_s=0.001099 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:43Z [stream-stability] phase=streaming sample=4 cpu_pct=4.682 ram_used_total_kib=1016096,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:44Z [stream-stability] phase=streaming remaining_s=44
+2026-09-28T00:20:45Z [stream-stability] phase=streaming remaining_s=43
+2026-09-28T00:20:46Z [stream-stability] phase=streaming remaining_s=42
+2026-09-28T00:20:47Z [stream-stability] phase=streaming remaining_s=41
+2026-09-28T00:20:48Z [stream-stability] phase=streaming remaining_s=40
+2026-09-28T00:20:48Z [stream-stability] health=5 http=200 valid=true latency_s=0.001072 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:48Z [stream-stability] phase=streaming sample=5 cpu_pct=3.587 ram_used_total_kib=1014656,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:49Z [stream-stability] phase=streaming remaining_s=39
+2026-09-28T00:20:50Z [stream-stability] phase=streaming remaining_s=38
+2026-09-28T00:20:51Z [stream-stability] phase=streaming remaining_s=37
+2026-09-28T00:20:52Z [stream-stability] phase=streaming remaining_s=36
+2026-09-28T00:20:53Z [stream-stability] phase=streaming remaining_s=35
+2026-09-28T00:20:53Z [stream-stability] health=6 http=200 valid=true latency_s=0.001126 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:53Z [stream-stability] phase=streaming sample=6 cpu_pct=4.635 ram_used_total_kib=1022576,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:54Z [stream-stability] phase=streaming remaining_s=34
+2026-09-28T00:20:55Z [stream-stability] phase=streaming remaining_s=33
+2026-09-28T00:20:56Z [stream-stability] phase=streaming remaining_s=32
+2026-09-28T00:20:57Z [stream-stability] phase=streaming remaining_s=31
+2026-09-28T00:20:58Z [stream-stability] phase=streaming remaining_s=30
+2026-09-28T00:20:58Z [stream-stability] health=7 http=200 valid=true latency_s=0.001124 camera=true yolo=true detection=false follow=false
+2026-09-28T00:20:58Z [stream-stability] phase=streaming sample=7 cpu_pct=4.433 ram_used_total_kib=1013808,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:20:59Z [stream-stability] phase=streaming remaining_s=29
+2026-09-28T00:21:00Z [stream-stability] phase=streaming remaining_s=28
+2026-09-28T00:21:01Z [stream-stability] phase=streaming remaining_s=27
+2026-09-28T00:21:02Z [stream-stability] phase=streaming remaining_s=26
+2026-09-28T00:21:03Z [stream-stability] phase=streaming remaining_s=25
+2026-09-28T00:21:04Z [stream-stability] health=8 http=200 valid=true latency_s=0.001046 camera=true yolo=true detection=false follow=false
+2026-09-28T00:21:04Z [stream-stability] phase=streaming sample=8 cpu_pct=4.828 ram_used_total_kib=1019312,8255824 temp_c=61.15 throttled=0x50000 container=running restarts=0
+2026-09-28T00:21:04Z [stream-stability] phase=streaming remaining_s=24
+2026-09-28T00:21:05Z [stream-stability] phase=streaming remaining_s=23
+2026-09-28T00:21:06Z [stream-stability] phase=streaming remaining_s=22
+2026-09-28T00:21:07Z [stream-stability] phase=streaming remaining_s=21
+2026-09-28T00:21:08Z [stream-stability] phase=streaming remaining_s=20
+2026-09-28T00:21:09Z [stream-stability] health=9 http=200 valid=true latency_s=0.001037 camera=true yolo=true detection=false follow=false
+2026-09-28T00:21:09Z [stream-stability] phase=streaming sample=9 cpu_pct=4.290 ram_used_total_kib=1012768,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:21:09Z [stream-stability] phase=streaming remaining_s=19
+2026-09-28T00:21:10Z [stream-stability] phase=streaming remaining_s=18
+2026-09-28T00:21:11Z [stream-stability] phase=streaming remaining_s=17
+2026-09-28T00:21:12Z [stream-stability] phase=streaming remaining_s=16
+2026-09-28T00:21:13Z [stream-stability] phase=streaming remaining_s=15
+2026-09-28T00:21:14Z [stream-stability] health=10 http=200 valid=true latency_s=0.000799 camera=true yolo=true detection=false follow=false
+2026-09-28T00:21:14Z [stream-stability] phase=streaming sample=10 cpu_pct=4.020 ram_used_total_kib=1005808,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:21:14Z [stream-stability] phase=streaming remaining_s=14
+2026-09-28T00:21:15Z [stream-stability] phase=streaming remaining_s=13
+2026-09-28T00:21:16Z [stream-stability] phase=streaming remaining_s=12
+2026-09-28T00:21:17Z [stream-stability] phase=streaming remaining_s=11
+2026-09-28T00:21:18Z [stream-stability] phase=streaming remaining_s=10
+2026-09-28T00:21:19Z [stream-stability] health=11 http=200 valid=true latency_s=0.000986 camera=true yolo=true detection=false follow=false
+2026-09-28T00:21:19Z [stream-stability] phase=streaming sample=11 cpu_pct=4.481 ram_used_total_kib=1014352,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:21:19Z [stream-stability] phase=streaming remaining_s=9
+2026-09-28T00:21:20Z [stream-stability] phase=streaming remaining_s=8
+2026-09-28T00:21:21Z [stream-stability] phase=streaming remaining_s=7
+2026-09-28T00:21:22Z [stream-stability] phase=streaming remaining_s=6
+2026-09-28T00:21:23Z [stream-stability] phase=streaming remaining_s=5
+2026-09-28T00:21:24Z [stream-stability] health=12 http=200 valid=true latency_s=0.001026 camera=true yolo=true detection=false follow=false
+2026-09-28T00:21:24Z [stream-stability] phase=streaming sample=12 cpu_pct=4.637 ram_used_total_kib=1012000,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:21:24Z [stream-stability] phase=streaming remaining_s=4
+2026-09-28T00:21:25Z [stream-stability] phase=streaming remaining_s=3
+2026-09-28T00:21:26Z [stream-stability] phase=streaming remaining_s=2
+2026-09-28T00:21:27Z [stream-stability] phase=streaming remaining_s=1
+2026-09-28T00:21:28Z [stream-stability] stream attempt=1 curl_exit=28 http_elapsed_bytes=200,60.000491,35394369 outcome=deadline_or_stall_timeout
+2026-09-28T00:21:28Z [stream-stability] phase=streaming remaining_s=0 collection complete
+2026-09-28T00:21:28Z [stream-stability] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T00:21:28Z [stream-stability] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T00:21:28Z [stream-stability] Finished exit_code=0 elapsed_s=60 results=/home/pi/experiments/logs/2026-09-28T00-20-28_stream-stability_16WvtX

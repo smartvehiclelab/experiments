@@ -1,0 +1,187 @@
+2026-09-28T00:25:30Z [detection-benchmark] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T00-25-30_detection-benchmark_mFbxNk; collecting metadata
+2026-09-28T00:25:30Z [detection-benchmark] Running Docker containers:
+2026-09-28T00:25:30Z [detection-benchmark] docker-ps: NAMES     STATUS                    PORTS
+2026-09-28T00:25:30Z [detection-benchmark] docker-ps: vehicle   Up 45 minutes (healthy)   
+2026-09-28T00:25:30Z [detection-benchmark] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T00:25:30Z [detection-benchmark] Using existing Docker container=vehicle state=running
+2026-09-28T00:25:30Z [detection-benchmark] health=preflight http=200 valid=true latency_s=0.000965 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:30Z [detection-benchmark] Setting detection=false
+2026-09-28T00:25:31Z [detection-benchmark] health=verify-1-false http=200 valid=true latency_s=0.000846 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:31Z [detection-benchmark] phase=detection_false remaining_s=60 (collection budget; cleanup follows)
+2026-09-28T00:25:31Z [detection-benchmark] health=1 http=200 valid=true latency_s=0.000804 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:31Z [detection-benchmark] phase=detection_false sample=1 cpu_pct=NA ram_used_total_kib=1031936,8255824 temp_c=60.6 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:32Z [detection-benchmark] phase=detection_false remaining_s=59
+2026-09-28T00:25:33Z [detection-benchmark] phase=detection_false remaining_s=58
+2026-09-28T00:25:34Z [detection-benchmark] phase=detection_false remaining_s=57
+2026-09-28T00:25:35Z [detection-benchmark] phase=detection_false remaining_s=56
+2026-09-28T00:25:36Z [detection-benchmark] phase=detection_false remaining_s=55
+2026-09-28T00:25:36Z [detection-benchmark] health=2 http=200 valid=true latency_s=0.001081 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:36Z [detection-benchmark] phase=detection_false sample=2 cpu_pct=3.269 ram_used_total_kib=1035888,8255824 temp_c=60.05 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:37Z [detection-benchmark] phase=detection_false remaining_s=54
+2026-09-28T00:25:38Z [detection-benchmark] phase=detection_false remaining_s=53
+2026-09-28T00:25:39Z [detection-benchmark] phase=detection_false remaining_s=52
+2026-09-28T00:25:40Z [detection-benchmark] phase=detection_false remaining_s=51
+2026-09-28T00:25:41Z [detection-benchmark] phase=detection_false remaining_s=50
+2026-09-28T00:25:41Z [detection-benchmark] health=3 http=200 valid=true latency_s=0.001159 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:41Z [detection-benchmark] phase=detection_false sample=3 cpu_pct=4.335 ram_used_total_kib=1018544,8255824 temp_c=59.5 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:42Z [detection-benchmark] phase=detection_false remaining_s=49
+2026-09-28T00:25:43Z [detection-benchmark] phase=detection_false remaining_s=48
+2026-09-28T00:25:44Z [detection-benchmark] phase=detection_false remaining_s=47
+2026-09-28T00:25:45Z [detection-benchmark] phase=detection_false remaining_s=46
+2026-09-28T00:25:46Z [detection-benchmark] phase=detection_false remaining_s=45
+2026-09-28T00:25:46Z [detection-benchmark] health=4 http=200 valid=true latency_s=0.001082 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:46Z [detection-benchmark] phase=detection_false sample=4 cpu_pct=4.395 ram_used_total_kib=1007712,8255824 temp_c=60.05 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:47Z [detection-benchmark] phase=detection_false remaining_s=44
+2026-09-28T00:25:48Z [detection-benchmark] phase=detection_false remaining_s=43
+2026-09-28T00:25:49Z [detection-benchmark] phase=detection_false remaining_s=42
+2026-09-28T00:25:50Z [detection-benchmark] phase=detection_false remaining_s=41
+2026-09-28T00:25:51Z [detection-benchmark] phase=detection_false remaining_s=40
+2026-09-28T00:25:51Z [detection-benchmark] health=5 http=200 valid=true latency_s=0.001260 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:51Z [detection-benchmark] phase=detection_false sample=5 cpu_pct=4.236 ram_used_total_kib=1008144,8255824 temp_c=59.5 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:52Z [detection-benchmark] phase=detection_false remaining_s=39
+2026-09-28T00:25:53Z [detection-benchmark] phase=detection_false remaining_s=38
+2026-09-28T00:25:54Z [detection-benchmark] phase=detection_false remaining_s=37
+2026-09-28T00:25:55Z [detection-benchmark] phase=detection_false remaining_s=36
+2026-09-28T00:25:56Z [detection-benchmark] phase=detection_false remaining_s=35
+2026-09-28T00:25:56Z [detection-benchmark] health=6 http=200 valid=true latency_s=0.001044 camera=true yolo=true detection=false follow=false
+2026-09-28T00:25:56Z [detection-benchmark] phase=detection_false sample=6 cpu_pct=5.032 ram_used_total_kib=1012560,8255824 temp_c=60.05 throttled=0x50000 container=running restarts=0
+2026-09-28T00:25:57Z [detection-benchmark] phase=detection_false remaining_s=34
+2026-09-28T00:25:58Z [detection-benchmark] phase=detection_false remaining_s=33
+2026-09-28T00:25:59Z [detection-benchmark] phase=detection_false remaining_s=32
+2026-09-28T00:26:00Z [detection-benchmark] phase=detection_false remaining_s=31
+2026-09-28T00:26:01Z [detection-benchmark] phase=detection_false remaining_s=30
+2026-09-28T00:26:01Z [detection-benchmark] health=7 http=200 valid=true latency_s=0.001279 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:01Z [detection-benchmark] phase=detection_false sample=7 cpu_pct=3.345 ram_used_total_kib=1005984,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:02Z [detection-benchmark] phase=detection_false remaining_s=29
+2026-09-28T00:26:03Z [detection-benchmark] phase=detection_false remaining_s=28
+2026-09-28T00:26:04Z [detection-benchmark] phase=detection_false remaining_s=27
+2026-09-28T00:26:05Z [detection-benchmark] phase=detection_false remaining_s=26
+2026-09-28T00:26:06Z [detection-benchmark] phase=detection_false remaining_s=25
+2026-09-28T00:26:06Z [detection-benchmark] health=8 http=200 valid=true latency_s=0.001075 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:06Z [detection-benchmark] phase=detection_false sample=8 cpu_pct=3.448 ram_used_total_kib=1009760,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:07Z [detection-benchmark] phase=detection_false remaining_s=24
+2026-09-28T00:26:08Z [detection-benchmark] phase=detection_false remaining_s=23
+2026-09-28T00:26:09Z [detection-benchmark] phase=detection_false remaining_s=22
+2026-09-28T00:26:10Z [detection-benchmark] phase=detection_false remaining_s=21
+2026-09-28T00:26:11Z [detection-benchmark] phase=detection_false remaining_s=20
+2026-09-28T00:26:11Z [detection-benchmark] health=9 http=200 valid=true latency_s=0.001332 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:11Z [detection-benchmark] phase=detection_false sample=9 cpu_pct=3.248 ram_used_total_kib=1004000,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:12Z [detection-benchmark] phase=detection_false remaining_s=19
+2026-09-28T00:26:13Z [detection-benchmark] phase=detection_false remaining_s=18
+2026-09-28T00:26:14Z [detection-benchmark] phase=detection_false remaining_s=17
+2026-09-28T00:26:15Z [detection-benchmark] phase=detection_false remaining_s=16
+2026-09-28T00:26:16Z [detection-benchmark] phase=detection_false remaining_s=15
+2026-09-28T00:26:16Z [detection-benchmark] health=10 http=200 valid=true latency_s=0.000909 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:16Z [detection-benchmark] phase=detection_false sample=10 cpu_pct=3.351 ram_used_total_kib=1010672,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:17Z [detection-benchmark] phase=detection_false remaining_s=14
+2026-09-28T00:26:18Z [detection-benchmark] phase=detection_false remaining_s=13
+2026-09-28T00:26:19Z [detection-benchmark] phase=detection_false remaining_s=12
+2026-09-28T00:26:20Z [detection-benchmark] phase=detection_false remaining_s=11
+2026-09-28T00:26:21Z [detection-benchmark] phase=detection_false remaining_s=10
+2026-09-28T00:26:21Z [detection-benchmark] health=11 http=200 valid=true latency_s=0.001041 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:21Z [detection-benchmark] phase=detection_false sample=11 cpu_pct=4.286 ram_used_total_kib=1002432,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:22Z [detection-benchmark] phase=detection_false remaining_s=9
+2026-09-28T00:26:23Z [detection-benchmark] phase=detection_false remaining_s=8
+2026-09-28T00:26:24Z [detection-benchmark] phase=detection_false remaining_s=7
+2026-09-28T00:26:25Z [detection-benchmark] phase=detection_false remaining_s=6
+2026-09-28T00:26:26Z [detection-benchmark] phase=detection_false remaining_s=5
+2026-09-28T00:26:27Z [detection-benchmark] health=12 http=200 valid=true latency_s=0.001565 camera=true yolo=true detection=false follow=false
+2026-09-28T00:26:27Z [detection-benchmark] phase=detection_false sample=12 cpu_pct=4.485 ram_used_total_kib=1012208,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:27Z [detection-benchmark] phase=detection_false remaining_s=4
+2026-09-28T00:26:28Z [detection-benchmark] phase=detection_false remaining_s=3
+2026-09-28T00:26:29Z [detection-benchmark] phase=detection_false remaining_s=2
+2026-09-28T00:26:30Z [detection-benchmark] phase=detection_false remaining_s=1
+2026-09-28T00:26:31Z [detection-benchmark] phase=detection_false remaining_s=0 collection complete
+2026-09-28T00:26:31Z [detection-benchmark] Setting detection=true
+2026-09-28T00:26:31Z [detection-benchmark] health=verify-2-true http=200 valid=true latency_s=0.000867 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:31Z [detection-benchmark] phase=detection_true remaining_s=60 (collection budget; cleanup follows)
+2026-09-28T00:26:31Z [detection-benchmark] health=13 http=200 valid=true latency_s=0.000851 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:31Z [detection-benchmark] phase=detection_true sample=13 cpu_pct=NA ram_used_total_kib=1009888,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:32Z [detection-benchmark] phase=detection_true remaining_s=59
+2026-09-28T00:26:33Z [detection-benchmark] phase=detection_true remaining_s=58
+2026-09-28T00:26:34Z [detection-benchmark] phase=detection_true remaining_s=57
+2026-09-28T00:26:35Z [detection-benchmark] phase=detection_true remaining_s=56
+2026-09-28T00:26:36Z [detection-benchmark] phase=detection_true remaining_s=55
+2026-09-28T00:26:36Z [detection-benchmark] health=14 http=200 valid=true latency_s=0.002010 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:36Z [detection-benchmark] phase=detection_true sample=14 cpu_pct=54.190 ram_used_total_kib=1043712,8255824 temp_c=67.75 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:37Z [detection-benchmark] phase=detection_true remaining_s=54
+2026-09-28T00:26:38Z [detection-benchmark] phase=detection_true remaining_s=53
+2026-09-28T00:26:39Z [detection-benchmark] phase=detection_true remaining_s=52
+2026-09-28T00:26:40Z [detection-benchmark] phase=detection_true remaining_s=51
+2026-09-28T00:26:41Z [detection-benchmark] phase=detection_true remaining_s=50
+2026-09-28T00:26:41Z [detection-benchmark] health=15 http=200 valid=true latency_s=0.001550 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:41Z [detection-benchmark] phase=detection_true sample=15 cpu_pct=55.945 ram_used_total_kib=1061424,8255824 temp_c=68.85 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:42Z [detection-benchmark] phase=detection_true remaining_s=49
+2026-09-28T00:26:43Z [detection-benchmark] phase=detection_true remaining_s=48
+2026-09-28T00:26:44Z [detection-benchmark] phase=detection_true remaining_s=47
+2026-09-28T00:26:45Z [detection-benchmark] phase=detection_true remaining_s=46
+2026-09-28T00:26:46Z [detection-benchmark] phase=detection_true remaining_s=45
+2026-09-28T00:26:46Z [detection-benchmark] health=16 http=200 valid=true latency_s=0.001571 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:46Z [detection-benchmark] phase=detection_true sample=16 cpu_pct=55.484 ram_used_total_kib=1030592,8255824 temp_c=69.95 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:47Z [detection-benchmark] phase=detection_true remaining_s=44
+2026-09-28T00:26:48Z [detection-benchmark] phase=detection_true remaining_s=43
+2026-09-28T00:26:49Z [detection-benchmark] phase=detection_true remaining_s=42
+2026-09-28T00:26:50Z [detection-benchmark] phase=detection_true remaining_s=41
+2026-09-28T00:26:51Z [detection-benchmark] phase=detection_true remaining_s=40
+2026-09-28T00:26:51Z [detection-benchmark] health=17 http=200 valid=true latency_s=0.002337 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:51Z [detection-benchmark] phase=detection_true sample=17 cpu_pct=55.667 ram_used_total_kib=1042256,8255824 temp_c=72.15 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:52Z [detection-benchmark] phase=detection_true remaining_s=39
+2026-09-28T00:26:53Z [detection-benchmark] phase=detection_true remaining_s=38
+2026-09-28T00:26:54Z [detection-benchmark] phase=detection_true remaining_s=37
+2026-09-28T00:26:55Z [detection-benchmark] phase=detection_true remaining_s=36
+2026-09-28T00:26:56Z [detection-benchmark] phase=detection_true remaining_s=35
+2026-09-28T00:26:56Z [detection-benchmark] health=18 http=200 valid=true latency_s=0.001093 camera=true yolo=true detection=true follow=false
+2026-09-28T00:26:56Z [detection-benchmark] phase=detection_true sample=18 cpu_pct=55.734 ram_used_total_kib=1069632,8255824 temp_c=73.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:26:57Z [detection-benchmark] phase=detection_true remaining_s=34
+2026-09-28T00:26:58Z [detection-benchmark] phase=detection_true remaining_s=33
+2026-09-28T00:26:59Z [detection-benchmark] phase=detection_true remaining_s=32
+2026-09-28T00:27:00Z [detection-benchmark] phase=detection_true remaining_s=31
+2026-09-28T00:27:01Z [detection-benchmark] phase=detection_true remaining_s=30
+2026-09-28T00:27:01Z [detection-benchmark] health=19 http=200 valid=true latency_s=0.003027 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:01Z [detection-benchmark] phase=detection_true sample=19 cpu_pct=55.341 ram_used_total_kib=1065440,8255824 temp_c=72.15 throttled=0x50000 container=running restarts=0
+2026-09-28T00:27:02Z [detection-benchmark] phase=detection_true remaining_s=29
+2026-09-28T00:27:03Z [detection-benchmark] phase=detection_true remaining_s=28
+2026-09-28T00:27:04Z [detection-benchmark] phase=detection_true remaining_s=27
+2026-09-28T00:27:05Z [detection-benchmark] phase=detection_true remaining_s=26
+2026-09-28T00:27:06Z [detection-benchmark] phase=detection_true remaining_s=25
+2026-09-28T00:27:07Z [detection-benchmark] health=20 http=200 valid=true latency_s=0.001664 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:07Z [detection-benchmark] phase=detection_true sample=20 cpu_pct=56.194 ram_used_total_kib=1084192,8255824 temp_c=74.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:27:07Z [detection-benchmark] phase=detection_true remaining_s=24
+2026-09-28T00:27:08Z [detection-benchmark] phase=detection_true remaining_s=23
+2026-09-28T00:27:09Z [detection-benchmark] phase=detection_true remaining_s=22
+2026-09-28T00:27:10Z [detection-benchmark] phase=detection_true remaining_s=21
+2026-09-28T00:27:11Z [detection-benchmark] phase=detection_true remaining_s=20
+2026-09-28T00:27:12Z [detection-benchmark] health=21 http=200 valid=true latency_s=0.001242 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:12Z [detection-benchmark] phase=detection_true sample=21 cpu_pct=54.788 ram_used_total_kib=1059728,8255824 temp_c=74.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:27:12Z [detection-benchmark] phase=detection_true remaining_s=19
+2026-09-28T00:27:13Z [detection-benchmark] phase=detection_true remaining_s=18
+2026-09-28T00:27:14Z [detection-benchmark] phase=detection_true remaining_s=17
+2026-09-28T00:27:15Z [detection-benchmark] phase=detection_true remaining_s=16
+2026-09-28T00:27:16Z [detection-benchmark] phase=detection_true remaining_s=15
+2026-09-28T00:27:17Z [detection-benchmark] health=22 http=200 valid=true latency_s=0.002020 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:17Z [detection-benchmark] phase=detection_true sample=22 cpu_pct=56.367 ram_used_total_kib=1047616,8255824 temp_c=76 throttled=0x50005 container=running restarts=0
+2026-09-28T00:27:17Z [detection-benchmark] phase=detection_true remaining_s=14
+2026-09-28T00:27:18Z [detection-benchmark] phase=detection_true remaining_s=13
+2026-09-28T00:27:19Z [detection-benchmark] phase=detection_true remaining_s=12
+2026-09-28T00:27:20Z [detection-benchmark] phase=detection_true remaining_s=11
+2026-09-28T00:27:21Z [detection-benchmark] phase=detection_true remaining_s=10
+2026-09-28T00:27:22Z [detection-benchmark] phase=detection_true remaining_s=9
+2026-09-28T00:27:22Z [detection-benchmark] health=23 http=200 valid=true latency_s=0.002305 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:22Z [detection-benchmark] phase=detection_true sample=23 cpu_pct=55.600 ram_used_total_kib=1037008,8255824 temp_c=74.9 throttled=0x50005 container=running restarts=0
+2026-09-28T00:27:23Z [detection-benchmark] phase=detection_true remaining_s=8
+2026-09-28T00:27:24Z [detection-benchmark] phase=detection_true remaining_s=7
+2026-09-28T00:27:25Z [detection-benchmark] phase=detection_true remaining_s=6
+2026-09-28T00:27:26Z [detection-benchmark] phase=detection_true remaining_s=5
+2026-09-28T00:27:27Z [detection-benchmark] phase=detection_true remaining_s=4
+2026-09-28T00:27:27Z [detection-benchmark] health=24 http=200 valid=true latency_s=0.000902 camera=true yolo=true detection=true follow=false
+2026-09-28T00:27:27Z [detection-benchmark] phase=detection_true sample=24 cpu_pct=56.136 ram_used_total_kib=1047008,8255824 temp_c=75.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:27:28Z [detection-benchmark] phase=detection_true remaining_s=3
+2026-09-28T00:27:29Z [detection-benchmark] phase=detection_true remaining_s=2
+2026-09-28T00:27:30Z [detection-benchmark] phase=detection_true remaining_s=1
+2026-09-28T00:27:31Z [detection-benchmark] phase=detection_true remaining_s=0
+2026-09-28T00:27:31Z [detection-benchmark] phase=detection_true remaining_s=0 collection complete
+2026-09-28T00:27:31Z [detection-benchmark] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T00:27:31Z [detection-benchmark] Setting detection=false
+2026-09-28T00:27:31Z [detection-benchmark] health=verify-3-false http=200 valid=true latency_s=0.003032 camera=true yolo=true detection=false follow=false
+2026-09-28T00:27:31Z [detection-benchmark] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T00:27:31Z [detection-benchmark] Finished exit_code=0 elapsed_s=121 results=/home/pi/experiments/logs/2026-09-28T00-25-30_detection-benchmark_mFbxNk

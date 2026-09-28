@@ -1,0 +1,55 @@
+Client:
+ Version:    26.1.5+dfsg1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  0.13.1+ds1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+
+Server:
+ Containers: 1
+  Running: 1
+  Paused: 0
+  Stopped: 0
+ Images: 1
+ Server Version: 26.1.5+dfsg1
+ Storage Driver: overlay2
+  Backing Filesystem: extfs
+  Supports d_type: true
+  Using metacopy: false
+  Native Overlay Diff: true
+  userxattr: false
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 1.7.24~ds1-6+deb13u1
+ runc version: 1.1.15+ds1-2+b4
+ init version: 
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.18.50+rpt-rpi-2712
+ Operating System: Debian GNU/Linux 13 (trixie)
+ OSType: linux
+ Architecture: aarch64
+ CPUs: 4
+ Total Memory: 7.873GiB
+ Name: pametno-vozilo
+ ID: 9a134881-7a5e-4b6a-ad84-8c4f401a4452
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+

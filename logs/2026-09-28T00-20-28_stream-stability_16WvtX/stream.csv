@@ -1,0 +1,2 @@
+utc,attempt,budget_s,curl_exit,http_code,elapsed_s,bytes_received,outcome
+2026-09-28T00:21:28Z,1,60,28,200,60.000491,35394369,deadline_or_stall_timeout

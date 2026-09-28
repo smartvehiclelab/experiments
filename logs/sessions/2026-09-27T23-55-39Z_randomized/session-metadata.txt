@@ -1,0 +1,12 @@
+session_id=2026-09-27T23-55-39Z_randomized
+repeats=4
+cooldown_s=60
+randomization=independent shuf of experiment order before each repeat
+start_utc=2026-09-27T23:55:39Z
+working_directory=/home/pi/experiments
+experiment_count=7
+total_planned_runs=28
+experiments=system_baseline.sh idle_stability.sh stream_stability.sh detection_benchmark.sh follow_benchmark.sh api_latency.sh endurance_test.sh 
+end_utc=2026-09-28T01:45:59Z
+completed_runs=28
+failed_runs=0

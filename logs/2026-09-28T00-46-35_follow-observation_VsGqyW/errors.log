@@ -1,0 +1,5 @@
+WARNING: No memory limit support
+WARNING: No swap limit support
+error from daemon in stream: Error grabbing logs: invalid character '\x00' looking for beginning of value
+
+2026-09-28T00:47:35Z Docker logs unavailable or incomplete (timeout/permissions/container missing)

@@ -1,0 +1,47 @@
+experiment=endurance
+start_utc=2026-09-28T00:34:32Z
+start_local=2026-09-28T02:34:33+02:00
+session_id=2026-09-27T23-55-39Z_randomized
+duration_requested_s=600
+interval_s=5
+requests=100
+request_timeout_s=3
+stall_timeout_s=15
+target_host_setting=localhost
+target_port_setting=1607
+target_base_url=http://localhost:1607
+container_name=vehicle
+metrics_scope=local collector host and local Docker context; HTTP target may differ
+harness_directory=/home/pi/experiments
+harness_repository=/home/pi/experiments
+backend_source_directory=not supplied
+docker_status=resolved
+hostname=pametno-vozilo
+kernel=Linux 6.18.50+rpt-rpi-2712
+architecture=aarch64
+os=PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.7
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+pi_model=Raspberry Pi 5 Model B Rev 1.0
+git_remote=https://github.com/smartvehiclelab/experiments
+git_commit=fcf5e8da8cb2d9217a111aa7c5cf0272b3980f4e
+git_branch=main
+git_state=dirty
+docker_version=Docker version 26.1.5+dfsg1, build a72d7cd
+docker_context=default
+container_identity=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 image_ref=yoloprojekat/rpi-server:latest image_id=sha256:a9e2dfdc9c0a868c345b2548ae0c9e102543de836432298bcd77f8444bef581c
+image_digests=["yoloprojekat/rpi-server@sha256:96ca4f9db15947b42614c568e4c50437fb930d4c15afca13684b93cbc217d2bd"]
+runtime_yolo_env=YOLO_OFFLINE=1
+YOLO_VERBOSE=False
+camera_runtime_configuration=NA (not exposed by API)
+end_utc=2026-09-28T00:44:33Z
+end_local=2026-09-28T02:44:33+02:00
+elapsed_s=601
+exit_code=0

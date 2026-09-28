@@ -1,0 +1,429 @@
+2026-09-28T00:28:31Z [idle-stability] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T00-28-31_idle-stability_L1gJlW; collecting metadata
+2026-09-28T00:28:31Z [idle-stability] Running Docker containers:
+2026-09-28T00:28:31Z [idle-stability] docker-ps: NAMES     STATUS                    PORTS
+2026-09-28T00:28:31Z [idle-stability] docker-ps: vehicle   Up 48 minutes (healthy)   
+2026-09-28T00:28:31Z [idle-stability] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T00:28:31Z [idle-stability] Using existing Docker container=vehicle state=running
+2026-09-28T00:28:32Z [idle-stability] health=preflight http=200 valid=true latency_s=0.000915 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:32Z [idle-stability] phase=observed_idle remaining_s=300 (collection budget; cleanup follows)
+2026-09-28T00:28:32Z [idle-stability] health=1 http=200 valid=true latency_s=0.002606 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:32Z [idle-stability] phase=observed_idle sample=1 cpu_pct=NA ram_used_total_kib=1038224,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:33Z [idle-stability] phase=observed_idle remaining_s=299
+2026-09-28T00:28:34Z [idle-stability] phase=observed_idle remaining_s=298
+2026-09-28T00:28:35Z [idle-stability] phase=observed_idle remaining_s=297
+2026-09-28T00:28:36Z [idle-stability] phase=observed_idle remaining_s=296
+2026-09-28T00:28:37Z [idle-stability] phase=observed_idle remaining_s=295
+2026-09-28T00:28:37Z [idle-stability] health=2 http=200 valid=true latency_s=0.001018 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:37Z [idle-stability] phase=observed_idle sample=2 cpu_pct=4.444 ram_used_total_kib=1031840,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:38Z [idle-stability] phase=observed_idle remaining_s=294
+2026-09-28T00:28:39Z [idle-stability] phase=observed_idle remaining_s=293
+2026-09-28T00:28:40Z [idle-stability] phase=observed_idle remaining_s=292
+2026-09-28T00:28:41Z [idle-stability] phase=observed_idle remaining_s=291
+2026-09-28T00:28:42Z [idle-stability] phase=observed_idle remaining_s=290
+2026-09-28T00:28:42Z [idle-stability] health=3 http=200 valid=true latency_s=0.001109 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:42Z [idle-stability] phase=observed_idle sample=3 cpu_pct=4.429 ram_used_total_kib=1020752,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:43Z [idle-stability] phase=observed_idle remaining_s=289
+2026-09-28T00:28:44Z [idle-stability] phase=observed_idle remaining_s=288
+2026-09-28T00:28:45Z [idle-stability] phase=observed_idle remaining_s=287
+2026-09-28T00:28:46Z [idle-stability] phase=observed_idle remaining_s=286
+2026-09-28T00:28:47Z [idle-stability] phase=observed_idle remaining_s=285
+2026-09-28T00:28:47Z [idle-stability] health=4 http=200 valid=true latency_s=0.001339 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:47Z [idle-stability] phase=observed_idle sample=4 cpu_pct=4.442 ram_used_total_kib=1028976,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:48Z [idle-stability] phase=observed_idle remaining_s=284
+2026-09-28T00:28:49Z [idle-stability] phase=observed_idle remaining_s=283
+2026-09-28T00:28:50Z [idle-stability] phase=observed_idle remaining_s=282
+2026-09-28T00:28:51Z [idle-stability] phase=observed_idle remaining_s=281
+2026-09-28T00:28:52Z [idle-stability] phase=observed_idle remaining_s=280
+2026-09-28T00:28:52Z [idle-stability] health=5 http=200 valid=true latency_s=0.001061 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:52Z [idle-stability] phase=observed_idle sample=5 cpu_pct=4.236 ram_used_total_kib=1020144,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:53Z [idle-stability] phase=observed_idle remaining_s=279
+2026-09-28T00:28:54Z [idle-stability] phase=observed_idle remaining_s=278
+2026-09-28T00:28:55Z [idle-stability] phase=observed_idle remaining_s=277
+2026-09-28T00:28:56Z [idle-stability] phase=observed_idle remaining_s=276
+2026-09-28T00:28:57Z [idle-stability] phase=observed_idle remaining_s=275
+2026-09-28T00:28:57Z [idle-stability] health=6 http=200 valid=true latency_s=0.001448 camera=true yolo=true detection=false follow=false
+2026-09-28T00:28:57Z [idle-stability] phase=observed_idle sample=6 cpu_pct=4.346 ram_used_total_kib=1021920,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:28:58Z [idle-stability] phase=observed_idle remaining_s=274
+2026-09-28T00:28:59Z [idle-stability] phase=observed_idle remaining_s=273
+2026-09-28T00:29:00Z [idle-stability] phase=observed_idle remaining_s=272
+2026-09-28T00:29:01Z [idle-stability] phase=observed_idle remaining_s=271
+2026-09-28T00:29:02Z [idle-stability] phase=observed_idle remaining_s=270
+2026-09-28T00:29:02Z [idle-stability] health=7 http=200 valid=true latency_s=0.001042 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:02Z [idle-stability] phase=observed_idle sample=7 cpu_pct=4.284 ram_used_total_kib=1010640,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:03Z [idle-stability] phase=observed_idle remaining_s=269
+2026-09-28T00:29:04Z [idle-stability] phase=observed_idle remaining_s=268
+2026-09-28T00:29:05Z [idle-stability] phase=observed_idle remaining_s=267
+2026-09-28T00:29:06Z [idle-stability] phase=observed_idle remaining_s=266
+2026-09-28T00:29:07Z [idle-stability] phase=observed_idle remaining_s=265
+2026-09-28T00:29:07Z [idle-stability] health=8 http=200 valid=true latency_s=0.001065 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:07Z [idle-stability] phase=observed_idle sample=8 cpu_pct=3.401 ram_used_total_kib=1011104,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:08Z [idle-stability] phase=observed_idle remaining_s=264
+2026-09-28T00:29:09Z [idle-stability] phase=observed_idle remaining_s=263
+2026-09-28T00:29:10Z [idle-stability] phase=observed_idle remaining_s=262
+2026-09-28T00:29:11Z [idle-stability] phase=observed_idle remaining_s=261
+2026-09-28T00:29:12Z [idle-stability] phase=observed_idle remaining_s=260
+2026-09-28T00:29:12Z [idle-stability] health=9 http=200 valid=true latency_s=0.001113 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:12Z [idle-stability] phase=observed_idle sample=9 cpu_pct=4.191 ram_used_total_kib=1005248,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:13Z [idle-stability] phase=observed_idle remaining_s=259
+2026-09-28T00:29:14Z [idle-stability] phase=observed_idle remaining_s=258
+2026-09-28T00:29:15Z [idle-stability] phase=observed_idle remaining_s=257
+2026-09-28T00:29:16Z [idle-stability] phase=observed_idle remaining_s=256
+2026-09-28T00:29:17Z [idle-stability] phase=observed_idle remaining_s=255
+2026-09-28T00:29:17Z [idle-stability] health=10 http=200 valid=true latency_s=0.001060 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:18Z [idle-stability] phase=observed_idle sample=10 cpu_pct=4.581 ram_used_total_kib=1014416,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:18Z [idle-stability] phase=observed_idle remaining_s=254
+2026-09-28T00:29:19Z [idle-stability] phase=observed_idle remaining_s=253
+2026-09-28T00:29:20Z [idle-stability] phase=observed_idle remaining_s=252
+2026-09-28T00:29:21Z [idle-stability] phase=observed_idle remaining_s=251
+2026-09-28T00:29:22Z [idle-stability] phase=observed_idle remaining_s=250
+2026-09-28T00:29:23Z [idle-stability] health=11 http=200 valid=true latency_s=0.001095 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:23Z [idle-stability] phase=observed_idle sample=11 cpu_pct=4.286 ram_used_total_kib=1010800,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:23Z [idle-stability] phase=observed_idle remaining_s=249
+2026-09-28T00:29:24Z [idle-stability] phase=observed_idle remaining_s=248
+2026-09-28T00:29:25Z [idle-stability] phase=observed_idle remaining_s=247
+2026-09-28T00:29:26Z [idle-stability] phase=observed_idle remaining_s=246
+2026-09-28T00:29:27Z [idle-stability] phase=observed_idle remaining_s=245
+2026-09-28T00:29:28Z [idle-stability] health=12 http=200 valid=true latency_s=0.000844 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:28Z [idle-stability] phase=observed_idle sample=12 cpu_pct=3.591 ram_used_total_kib=1010704,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:28Z [idle-stability] phase=observed_idle remaining_s=244
+2026-09-28T00:29:29Z [idle-stability] phase=observed_idle remaining_s=243
+2026-09-28T00:29:30Z [idle-stability] phase=observed_idle remaining_s=242
+2026-09-28T00:29:31Z [idle-stability] phase=observed_idle remaining_s=241
+2026-09-28T00:29:32Z [idle-stability] phase=observed_idle remaining_s=240
+2026-09-28T00:29:33Z [idle-stability] health=13 http=200 valid=true latency_s=0.001111 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:33Z [idle-stability] phase=observed_idle sample=13 cpu_pct=4.288 ram_used_total_kib=1010288,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:33Z [idle-stability] phase=observed_idle remaining_s=239
+2026-09-28T00:29:34Z [idle-stability] phase=observed_idle remaining_s=238
+2026-09-28T00:29:35Z [idle-stability] phase=observed_idle remaining_s=237
+2026-09-28T00:29:36Z [idle-stability] phase=observed_idle remaining_s=236
+2026-09-28T00:29:37Z [idle-stability] phase=observed_idle remaining_s=235
+2026-09-28T00:29:38Z [idle-stability] phase=observed_idle remaining_s=234
+2026-09-28T00:29:38Z [idle-stability] health=14 http=200 valid=true latency_s=0.001097 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:38Z [idle-stability] phase=observed_idle sample=14 cpu_pct=4.664 ram_used_total_kib=1012416,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:39Z [idle-stability] phase=observed_idle remaining_s=233
+2026-09-28T00:29:40Z [idle-stability] phase=observed_idle remaining_s=232
+2026-09-28T00:29:41Z [idle-stability] phase=observed_idle remaining_s=231
+2026-09-28T00:29:42Z [idle-stability] phase=observed_idle remaining_s=230
+2026-09-28T00:29:43Z [idle-stability] phase=observed_idle remaining_s=229
+2026-09-28T00:29:43Z [idle-stability] health=15 http=200 valid=true latency_s=0.001027 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:43Z [idle-stability] phase=observed_idle sample=15 cpu_pct=3.447 ram_used_total_kib=1013168,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:44Z [idle-stability] phase=observed_idle remaining_s=228
+2026-09-28T00:29:45Z [idle-stability] phase=observed_idle remaining_s=227
+2026-09-28T00:29:46Z [idle-stability] phase=observed_idle remaining_s=226
+2026-09-28T00:29:47Z [idle-stability] phase=observed_idle remaining_s=225
+2026-09-28T00:29:48Z [idle-stability] phase=observed_idle remaining_s=224
+2026-09-28T00:29:48Z [idle-stability] health=16 http=200 valid=true latency_s=0.000991 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:48Z [idle-stability] phase=observed_idle sample=16 cpu_pct=4.425 ram_used_total_kib=1014320,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:49Z [idle-stability] phase=observed_idle remaining_s=223
+2026-09-28T00:29:50Z [idle-stability] phase=observed_idle remaining_s=222
+2026-09-28T00:29:51Z [idle-stability] phase=observed_idle remaining_s=221
+2026-09-28T00:29:52Z [idle-stability] phase=observed_idle remaining_s=220
+2026-09-28T00:29:53Z [idle-stability] phase=observed_idle remaining_s=219
+2026-09-28T00:29:53Z [idle-stability] health=17 http=200 valid=true latency_s=0.001039 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:53Z [idle-stability] phase=observed_idle sample=17 cpu_pct=4.487 ram_used_total_kib=1025136,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:54Z [idle-stability] phase=observed_idle remaining_s=218
+2026-09-28T00:29:55Z [idle-stability] phase=observed_idle remaining_s=217
+2026-09-28T00:29:56Z [idle-stability] phase=observed_idle remaining_s=216
+2026-09-28T00:29:57Z [idle-stability] phase=observed_idle remaining_s=215
+2026-09-28T00:29:58Z [idle-stability] phase=observed_idle remaining_s=214
+2026-09-28T00:29:58Z [idle-stability] health=18 http=200 valid=true latency_s=0.001074 camera=true yolo=true detection=false follow=false
+2026-09-28T00:29:58Z [idle-stability] phase=observed_idle sample=18 cpu_pct=4.975 ram_used_total_kib=1013392,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:29:59Z [idle-stability] phase=observed_idle remaining_s=213
+2026-09-28T00:30:00Z [idle-stability] phase=observed_idle remaining_s=212
+2026-09-28T00:30:01Z [idle-stability] phase=observed_idle remaining_s=211
+2026-09-28T00:30:02Z [idle-stability] phase=observed_idle remaining_s=210
+2026-09-28T00:30:03Z [idle-stability] phase=observed_idle remaining_s=209
+2026-09-28T00:30:03Z [idle-stability] health=19 http=200 valid=true latency_s=0.000894 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:03Z [idle-stability] phase=observed_idle sample=19 cpu_pct=3.591 ram_used_total_kib=1015024,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:04Z [idle-stability] phase=observed_idle remaining_s=208
+2026-09-28T00:30:05Z [idle-stability] phase=observed_idle remaining_s=207
+2026-09-28T00:30:06Z [idle-stability] phase=observed_idle remaining_s=206
+2026-09-28T00:30:07Z [idle-stability] phase=observed_idle remaining_s=205
+2026-09-28T00:30:08Z [idle-stability] phase=observed_idle remaining_s=204
+2026-09-28T00:30:08Z [idle-stability] health=20 http=200 valid=true latency_s=0.003737 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:08Z [idle-stability] phase=observed_idle sample=20 cpu_pct=4.288 ram_used_total_kib=1018896,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:09Z [idle-stability] phase=observed_idle remaining_s=203
+2026-09-28T00:30:10Z [idle-stability] phase=observed_idle remaining_s=202
+2026-09-28T00:30:11Z [idle-stability] phase=observed_idle remaining_s=201
+2026-09-28T00:30:12Z [idle-stability] phase=observed_idle remaining_s=200
+2026-09-28T00:30:13Z [idle-stability] phase=observed_idle remaining_s=199
+2026-09-28T00:30:13Z [idle-stability] health=21 http=200 valid=true latency_s=0.001078 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:13Z [idle-stability] phase=observed_idle sample=21 cpu_pct=4.528 ram_used_total_kib=1019120,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:14Z [idle-stability] phase=observed_idle remaining_s=198
+2026-09-28T00:30:15Z [idle-stability] phase=observed_idle remaining_s=197
+2026-09-28T00:30:16Z [idle-stability] phase=observed_idle remaining_s=196
+2026-09-28T00:30:17Z [idle-stability] phase=observed_idle remaining_s=195
+2026-09-28T00:30:18Z [idle-stability] phase=observed_idle remaining_s=194
+2026-09-28T00:30:19Z [idle-stability] health=22 http=200 valid=true latency_s=0.001088 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:19Z [idle-stability] phase=observed_idle sample=22 cpu_pct=4.472 ram_used_total_kib=1014400,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:19Z [idle-stability] phase=observed_idle remaining_s=193
+2026-09-28T00:30:20Z [idle-stability] phase=observed_idle remaining_s=192
+2026-09-28T00:30:21Z [idle-stability] phase=observed_idle remaining_s=191
+2026-09-28T00:30:22Z [idle-stability] phase=observed_idle remaining_s=190
+2026-09-28T00:30:23Z [idle-stability] phase=observed_idle remaining_s=189
+2026-09-28T00:30:24Z [idle-stability] health=23 http=200 valid=true latency_s=0.001036 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:24Z [idle-stability] phase=observed_idle sample=23 cpu_pct=4.585 ram_used_total_kib=1019520,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:24Z [idle-stability] phase=observed_idle remaining_s=188
+2026-09-28T00:30:25Z [idle-stability] phase=observed_idle remaining_s=187
+2026-09-28T00:30:26Z [idle-stability] phase=observed_idle remaining_s=186
+2026-09-28T00:30:27Z [idle-stability] phase=observed_idle remaining_s=185
+2026-09-28T00:30:28Z [idle-stability] phase=observed_idle remaining_s=184
+2026-09-28T00:30:29Z [idle-stability] health=24 http=200 valid=true latency_s=0.001095 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:29Z [idle-stability] phase=observed_idle sample=24 cpu_pct=4.380 ram_used_total_kib=1020320,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:29Z [idle-stability] phase=observed_idle remaining_s=183
+2026-09-28T00:30:30Z [idle-stability] phase=observed_idle remaining_s=182
+2026-09-28T00:30:31Z [idle-stability] phase=observed_idle remaining_s=181
+2026-09-28T00:30:32Z [idle-stability] phase=observed_idle remaining_s=180
+2026-09-28T00:30:33Z [idle-stability] phase=observed_idle remaining_s=179
+2026-09-28T00:30:34Z [idle-stability] health=25 http=200 valid=true latency_s=0.001040 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:34Z [idle-stability] phase=observed_idle sample=25 cpu_pct=3.401 ram_used_total_kib=1013312,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:34Z [idle-stability] phase=observed_idle remaining_s=178
+2026-09-28T00:30:35Z [idle-stability] phase=observed_idle remaining_s=177
+2026-09-28T00:30:36Z [idle-stability] phase=observed_idle remaining_s=176
+2026-09-28T00:30:37Z [idle-stability] phase=observed_idle remaining_s=175
+2026-09-28T00:30:38Z [idle-stability] phase=observed_idle remaining_s=174
+2026-09-28T00:30:39Z [idle-stability] phase=observed_idle remaining_s=173
+2026-09-28T00:30:39Z [idle-stability] health=26 http=200 valid=true latency_s=0.001147 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:39Z [idle-stability] phase=observed_idle sample=26 cpu_pct=3.153 ram_used_total_kib=1010976,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:40Z [idle-stability] phase=observed_idle remaining_s=172
+2026-09-28T00:30:41Z [idle-stability] phase=observed_idle remaining_s=171
+2026-09-28T00:30:42Z [idle-stability] phase=observed_idle remaining_s=170
+2026-09-28T00:30:43Z [idle-stability] phase=observed_idle remaining_s=169
+2026-09-28T00:30:44Z [idle-stability] phase=observed_idle remaining_s=168
+2026-09-28T00:30:44Z [idle-stability] health=27 http=200 valid=true latency_s=0.000904 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:44Z [idle-stability] phase=observed_idle sample=27 cpu_pct=3.638 ram_used_total_kib=1010752,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:45Z [idle-stability] phase=observed_idle remaining_s=167
+2026-09-28T00:30:46Z [idle-stability] phase=observed_idle remaining_s=166
+2026-09-28T00:30:47Z [idle-stability] phase=observed_idle remaining_s=165
+2026-09-28T00:30:48Z [idle-stability] phase=observed_idle remaining_s=164
+2026-09-28T00:30:49Z [idle-stability] phase=observed_idle remaining_s=163
+2026-09-28T00:30:49Z [idle-stability] health=28 http=200 valid=true latency_s=0.001081 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:49Z [idle-stability] phase=observed_idle sample=28 cpu_pct=4.284 ram_used_total_kib=1012640,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:50Z [idle-stability] phase=observed_idle remaining_s=162
+2026-09-28T00:30:51Z [idle-stability] phase=observed_idle remaining_s=161
+2026-09-28T00:30:52Z [idle-stability] phase=observed_idle remaining_s=160
+2026-09-28T00:30:53Z [idle-stability] phase=observed_idle remaining_s=159
+2026-09-28T00:30:54Z [idle-stability] phase=observed_idle remaining_s=158
+2026-09-28T00:30:54Z [idle-stability] health=29 http=200 valid=true latency_s=0.001051 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:54Z [idle-stability] phase=observed_idle sample=29 cpu_pct=4.769 ram_used_total_kib=1012032,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:30:55Z [idle-stability] phase=observed_idle remaining_s=157
+2026-09-28T00:30:56Z [idle-stability] phase=observed_idle remaining_s=156
+2026-09-28T00:30:57Z [idle-stability] phase=observed_idle remaining_s=155
+2026-09-28T00:30:58Z [idle-stability] phase=observed_idle remaining_s=154
+2026-09-28T00:30:59Z [idle-stability] phase=observed_idle remaining_s=153
+2026-09-28T00:30:59Z [idle-stability] health=30 http=200 valid=true latency_s=0.001136 camera=true yolo=true detection=false follow=false
+2026-09-28T00:30:59Z [idle-stability] phase=observed_idle sample=30 cpu_pct=4.286 ram_used_total_kib=1011568,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:00Z [idle-stability] phase=observed_idle remaining_s=152
+2026-09-28T00:31:01Z [idle-stability] phase=observed_idle remaining_s=151
+2026-09-28T00:31:02Z [idle-stability] phase=observed_idle remaining_s=150
+2026-09-28T00:31:03Z [idle-stability] phase=observed_idle remaining_s=149
+2026-09-28T00:31:04Z [idle-stability] phase=observed_idle remaining_s=148
+2026-09-28T00:31:04Z [idle-stability] health=31 http=200 valid=true latency_s=0.001089 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:04Z [idle-stability] phase=observed_idle sample=31 cpu_pct=3.633 ram_used_total_kib=1017808,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:05Z [idle-stability] phase=observed_idle remaining_s=147
+2026-09-28T00:31:06Z [idle-stability] phase=observed_idle remaining_s=146
+2026-09-28T00:31:07Z [idle-stability] phase=observed_idle remaining_s=145
+2026-09-28T00:31:08Z [idle-stability] phase=observed_idle remaining_s=144
+2026-09-28T00:31:09Z [idle-stability] phase=observed_idle remaining_s=143
+2026-09-28T00:31:10Z [idle-stability] health=32 http=200 valid=true latency_s=0.001196 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:10Z [idle-stability] phase=observed_idle sample=32 cpu_pct=4.187 ram_used_total_kib=1017104,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:10Z [idle-stability] phase=observed_idle remaining_s=142
+2026-09-28T00:31:11Z [idle-stability] phase=observed_idle remaining_s=141
+2026-09-28T00:31:12Z [idle-stability] phase=observed_idle remaining_s=140
+2026-09-28T00:31:13Z [idle-stability] phase=observed_idle remaining_s=139
+2026-09-28T00:31:14Z [idle-stability] phase=observed_idle remaining_s=138
+2026-09-28T00:31:15Z [idle-stability] health=33 http=200 valid=true latency_s=0.001142 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:15Z [idle-stability] phase=observed_idle sample=33 cpu_pct=4.624 ram_used_total_kib=1013728,8255824 temp_c=62.25 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:15Z [idle-stability] phase=observed_idle remaining_s=137
+2026-09-28T00:31:16Z [idle-stability] phase=observed_idle remaining_s=136
+2026-09-28T00:31:17Z [idle-stability] phase=observed_idle remaining_s=135
+2026-09-28T00:31:18Z [idle-stability] phase=observed_idle remaining_s=134
+2026-09-28T00:31:19Z [idle-stability] phase=observed_idle remaining_s=133
+2026-09-28T00:31:20Z [idle-stability] health=34 http=200 valid=true latency_s=0.001109 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:20Z [idle-stability] phase=observed_idle sample=34 cpu_pct=4.239 ram_used_total_kib=1019632,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:20Z [idle-stability] phase=observed_idle remaining_s=132
+2026-09-28T00:31:21Z [idle-stability] phase=observed_idle remaining_s=131
+2026-09-28T00:31:22Z [idle-stability] phase=observed_idle remaining_s=130
+2026-09-28T00:31:23Z [idle-stability] phase=observed_idle remaining_s=129
+2026-09-28T00:31:24Z [idle-stability] phase=observed_idle remaining_s=128
+2026-09-28T00:31:25Z [idle-stability] health=35 http=200 valid=true latency_s=0.000889 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:25Z [idle-stability] phase=observed_idle sample=35 cpu_pct=3.399 ram_used_total_kib=1012832,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:25Z [idle-stability] phase=observed_idle remaining_s=127
+2026-09-28T00:31:26Z [idle-stability] phase=observed_idle remaining_s=126
+2026-09-28T00:31:27Z [idle-stability] phase=observed_idle remaining_s=125
+2026-09-28T00:31:28Z [idle-stability] phase=observed_idle remaining_s=124
+2026-09-28T00:31:29Z [idle-stability] phase=observed_idle remaining_s=123
+2026-09-28T00:31:30Z [idle-stability] health=36 http=200 valid=true latency_s=0.000820 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:30Z [idle-stability] phase=observed_idle sample=36 cpu_pct=3.441 ram_used_total_kib=1015472,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:30Z [idle-stability] phase=observed_idle remaining_s=122
+2026-09-28T00:31:31Z [idle-stability] phase=observed_idle remaining_s=121
+2026-09-28T00:31:32Z [idle-stability] phase=observed_idle remaining_s=120
+2026-09-28T00:31:33Z [idle-stability] phase=observed_idle remaining_s=119
+2026-09-28T00:31:34Z [idle-stability] phase=observed_idle remaining_s=118
+2026-09-28T00:31:35Z [idle-stability] health=37 http=200 valid=true latency_s=0.001062 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:35Z [idle-stability] phase=observed_idle sample=37 cpu_pct=4.447 ram_used_total_kib=1022768,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:35Z [idle-stability] phase=observed_idle remaining_s=117
+2026-09-28T00:31:36Z [idle-stability] phase=observed_idle remaining_s=116
+2026-09-28T00:31:37Z [idle-stability] phase=observed_idle remaining_s=115
+2026-09-28T00:31:38Z [idle-stability] phase=observed_idle remaining_s=114
+2026-09-28T00:31:39Z [idle-stability] phase=observed_idle remaining_s=113
+2026-09-28T00:31:40Z [idle-stability] health=38 http=200 valid=true latency_s=0.001095 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:40Z [idle-stability] phase=observed_idle sample=38 cpu_pct=3.436 ram_used_total_kib=1022048,8255824 temp_c=65 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:40Z [idle-stability] phase=observed_idle remaining_s=112
+2026-09-28T00:31:41Z [idle-stability] phase=observed_idle remaining_s=111
+2026-09-28T00:31:42Z [idle-stability] phase=observed_idle remaining_s=110
+2026-09-28T00:31:43Z [idle-stability] phase=observed_idle remaining_s=109
+2026-09-28T00:31:44Z [idle-stability] phase=observed_idle remaining_s=108
+2026-09-28T00:31:45Z [idle-stability] phase=observed_idle remaining_s=107
+2026-09-28T00:31:45Z [idle-stability] health=39 http=200 valid=true latency_s=0.001172 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:45Z [idle-stability] phase=observed_idle sample=39 cpu_pct=4.675 ram_used_total_kib=1013552,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:46Z [idle-stability] phase=observed_idle remaining_s=106
+2026-09-28T00:31:47Z [idle-stability] phase=observed_idle remaining_s=105
+2026-09-28T00:31:48Z [idle-stability] phase=observed_idle remaining_s=104
+2026-09-28T00:31:49Z [idle-stability] phase=observed_idle remaining_s=103
+2026-09-28T00:31:50Z [idle-stability] phase=observed_idle remaining_s=102
+2026-09-28T00:31:50Z [idle-stability] health=40 http=200 valid=true latency_s=0.000828 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:50Z [idle-stability] phase=observed_idle sample=40 cpu_pct=3.296 ram_used_total_kib=1015904,8255824 temp_c=66.1 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:51Z [idle-stability] phase=observed_idle remaining_s=101
+2026-09-28T00:31:52Z [idle-stability] phase=observed_idle remaining_s=100
+2026-09-28T00:31:53Z [idle-stability] phase=observed_idle remaining_s=99
+2026-09-28T00:31:54Z [idle-stability] phase=observed_idle remaining_s=98
+2026-09-28T00:31:55Z [idle-stability] phase=observed_idle remaining_s=97
+2026-09-28T00:31:55Z [idle-stability] health=41 http=200 valid=true latency_s=0.001058 camera=true yolo=true detection=false follow=false
+2026-09-28T00:31:55Z [idle-stability] phase=observed_idle sample=41 cpu_pct=5.084 ram_used_total_kib=1023728,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:31:56Z [idle-stability] phase=observed_idle remaining_s=96
+2026-09-28T00:31:57Z [idle-stability] phase=observed_idle remaining_s=95
+2026-09-28T00:31:58Z [idle-stability] phase=observed_idle remaining_s=94
+2026-09-28T00:31:59Z [idle-stability] phase=observed_idle remaining_s=93
+2026-09-28T00:32:00Z [idle-stability] phase=observed_idle remaining_s=92
+2026-09-28T00:32:00Z [idle-stability] health=42 http=200 valid=true latency_s=0.001036 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:00Z [idle-stability] phase=observed_idle sample=42 cpu_pct=4.380 ram_used_total_kib=1018544,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:01Z [idle-stability] phase=observed_idle remaining_s=91
+2026-09-28T00:32:02Z [idle-stability] phase=observed_idle remaining_s=90
+2026-09-28T00:32:03Z [idle-stability] phase=observed_idle remaining_s=89
+2026-09-28T00:32:04Z [idle-stability] phase=observed_idle remaining_s=88
+2026-09-28T00:32:05Z [idle-stability] phase=observed_idle remaining_s=87
+2026-09-28T00:32:05Z [idle-stability] health=43 http=200 valid=true latency_s=0.001054 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:05Z [idle-stability] phase=observed_idle sample=43 cpu_pct=3.545 ram_used_total_kib=1014640,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:06Z [idle-stability] phase=observed_idle remaining_s=86
+2026-09-28T00:32:07Z [idle-stability] phase=observed_idle remaining_s=85
+2026-09-28T00:32:08Z [idle-stability] phase=observed_idle remaining_s=84
+2026-09-28T00:32:09Z [idle-stability] phase=observed_idle remaining_s=83
+2026-09-28T00:32:10Z [idle-stability] phase=observed_idle remaining_s=82
+2026-09-28T00:32:11Z [idle-stability] health=44 http=200 valid=true latency_s=0.000809 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:11Z [idle-stability] phase=observed_idle sample=44 cpu_pct=3.346 ram_used_total_kib=1010752,8255824 temp_c=64.45 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:11Z [idle-stability] phase=observed_idle remaining_s=81
+2026-09-28T00:32:12Z [idle-stability] phase=observed_idle remaining_s=80
+2026-09-28T00:32:13Z [idle-stability] phase=observed_idle remaining_s=79
+2026-09-28T00:32:14Z [idle-stability] phase=observed_idle remaining_s=78
+2026-09-28T00:32:15Z [idle-stability] phase=observed_idle remaining_s=77
+2026-09-28T00:32:16Z [idle-stability] health=45 http=200 valid=true latency_s=0.001093 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:16Z [idle-stability] phase=observed_idle sample=45 cpu_pct=4.344 ram_used_total_kib=1015296,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:16Z [idle-stability] phase=observed_idle remaining_s=76
+2026-09-28T00:32:17Z [idle-stability] phase=observed_idle remaining_s=75
+2026-09-28T00:32:18Z [idle-stability] phase=observed_idle remaining_s=74
+2026-09-28T00:32:19Z [idle-stability] phase=observed_idle remaining_s=73
+2026-09-28T00:32:20Z [idle-stability] phase=observed_idle remaining_s=72
+2026-09-28T00:32:21Z [idle-stability] health=46 http=200 valid=true latency_s=0.001172 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:21Z [idle-stability] phase=observed_idle sample=46 cpu_pct=4.519 ram_used_total_kib=1018352,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:21Z [idle-stability] phase=observed_idle remaining_s=71
+2026-09-28T00:32:22Z [idle-stability] phase=observed_idle remaining_s=70
+2026-09-28T00:32:23Z [idle-stability] phase=observed_idle remaining_s=69
+2026-09-28T00:32:24Z [idle-stability] phase=observed_idle remaining_s=68
+2026-09-28T00:32:25Z [idle-stability] phase=observed_idle remaining_s=67
+2026-09-28T00:32:26Z [idle-stability] health=47 http=200 valid=true latency_s=0.001345 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:26Z [idle-stability] phase=observed_idle sample=47 cpu_pct=3.207 ram_used_total_kib=1020432,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:26Z [idle-stability] phase=observed_idle remaining_s=66
+2026-09-28T00:32:27Z [idle-stability] phase=observed_idle remaining_s=65
+2026-09-28T00:32:28Z [idle-stability] phase=observed_idle remaining_s=64
+2026-09-28T00:32:29Z [idle-stability] phase=observed_idle remaining_s=63
+2026-09-28T00:32:30Z [idle-stability] phase=observed_idle remaining_s=62
+2026-09-28T00:32:31Z [idle-stability] health=48 http=200 valid=true latency_s=0.001047 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:31Z [idle-stability] phase=observed_idle sample=48 cpu_pct=4.281 ram_used_total_kib=1019680,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:31Z [idle-stability] phase=observed_idle remaining_s=61
+2026-09-28T00:32:32Z [idle-stability] phase=observed_idle remaining_s=60
+2026-09-28T00:32:33Z [idle-stability] phase=observed_idle remaining_s=59
+2026-09-28T00:32:34Z [idle-stability] phase=observed_idle remaining_s=58
+2026-09-28T00:32:35Z [idle-stability] phase=observed_idle remaining_s=57
+2026-09-28T00:32:36Z [idle-stability] health=49 http=200 valid=true latency_s=0.001074 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:36Z [idle-stability] phase=observed_idle sample=49 cpu_pct=4.485 ram_used_total_kib=1017472,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:36Z [idle-stability] phase=observed_idle remaining_s=56
+2026-09-28T00:32:37Z [idle-stability] phase=observed_idle remaining_s=55
+2026-09-28T00:32:38Z [idle-stability] phase=observed_idle remaining_s=54
+2026-09-28T00:32:39Z [idle-stability] phase=observed_idle remaining_s=53
+2026-09-28T00:32:40Z [idle-stability] phase=observed_idle remaining_s=52
+2026-09-28T00:32:41Z [idle-stability] health=50 http=200 valid=true latency_s=0.001096 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:41Z [idle-stability] phase=observed_idle sample=50 cpu_pct=4.333 ram_used_total_kib=1020128,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:41Z [idle-stability] phase=observed_idle remaining_s=51
+2026-09-28T00:32:42Z [idle-stability] phase=observed_idle remaining_s=50
+2026-09-28T00:32:43Z [idle-stability] phase=observed_idle remaining_s=49
+2026-09-28T00:32:44Z [idle-stability] phase=observed_idle remaining_s=48
+2026-09-28T00:32:45Z [idle-stability] phase=observed_idle remaining_s=47
+2026-09-28T00:32:46Z [idle-stability] health=51 http=200 valid=true latency_s=0.001132 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:46Z [idle-stability] phase=observed_idle remaining_s=46
+2026-09-28T00:32:46Z [idle-stability] phase=observed_idle sample=51 cpu_pct=4.249 ram_used_total_kib=1011584,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:47Z [idle-stability] phase=observed_idle remaining_s=45
+2026-09-28T00:32:48Z [idle-stability] phase=observed_idle remaining_s=44
+2026-09-28T00:32:49Z [idle-stability] phase=observed_idle remaining_s=43
+2026-09-28T00:32:50Z [idle-stability] phase=observed_idle remaining_s=42
+2026-09-28T00:32:51Z [idle-stability] phase=observed_idle remaining_s=41
+2026-09-28T00:32:51Z [idle-stability] health=52 http=200 valid=true latency_s=0.001144 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:51Z [idle-stability] phase=observed_idle sample=52 cpu_pct=3.246 ram_used_total_kib=1018016,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:52Z [idle-stability] phase=observed_idle remaining_s=40
+2026-09-28T00:32:53Z [idle-stability] phase=observed_idle remaining_s=39
+2026-09-28T00:32:54Z [idle-stability] phase=observed_idle remaining_s=38
+2026-09-28T00:32:55Z [idle-stability] phase=observed_idle remaining_s=37
+2026-09-28T00:32:56Z [idle-stability] phase=observed_idle remaining_s=36
+2026-09-28T00:32:56Z [idle-stability] health=53 http=200 valid=true latency_s=0.000962 camera=true yolo=true detection=false follow=false
+2026-09-28T00:32:56Z [idle-stability] phase=observed_idle sample=53 cpu_pct=3.401 ram_used_total_kib=1020736,8255824 temp_c=65.55 throttled=0x50000 container=running restarts=0
+2026-09-28T00:32:57Z [idle-stability] phase=observed_idle remaining_s=35
+2026-09-28T00:32:58Z [idle-stability] phase=observed_idle remaining_s=34
+2026-09-28T00:32:59Z [idle-stability] phase=observed_idle remaining_s=33
+2026-09-28T00:33:00Z [idle-stability] phase=observed_idle remaining_s=32
+2026-09-28T00:33:01Z [idle-stability] phase=observed_idle remaining_s=31
+2026-09-28T00:33:01Z [idle-stability] health=54 http=200 valid=true latency_s=0.001073 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:01Z [idle-stability] phase=observed_idle sample=54 cpu_pct=4.474 ram_used_total_kib=1013984,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:02Z [idle-stability] phase=observed_idle remaining_s=30
+2026-09-28T00:33:03Z [idle-stability] phase=observed_idle remaining_s=29
+2026-09-28T00:33:04Z [idle-stability] phase=observed_idle remaining_s=28
+2026-09-28T00:33:05Z [idle-stability] phase=observed_idle remaining_s=27
+2026-09-28T00:33:06Z [idle-stability] phase=observed_idle remaining_s=26
+2026-09-28T00:33:07Z [idle-stability] health=55 http=200 valid=true latency_s=0.001057 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:07Z [idle-stability] phase=observed_idle sample=55 cpu_pct=4.487 ram_used_total_kib=1011712,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:07Z [idle-stability] phase=observed_idle remaining_s=25
+2026-09-28T00:33:08Z [idle-stability] phase=observed_idle remaining_s=24
+2026-09-28T00:33:09Z [idle-stability] phase=observed_idle remaining_s=23
+2026-09-28T00:33:10Z [idle-stability] phase=observed_idle remaining_s=22
+2026-09-28T00:33:11Z [idle-stability] phase=observed_idle remaining_s=21
+2026-09-28T00:33:12Z [idle-stability] health=56 http=200 valid=true latency_s=0.000999 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:12Z [idle-stability] phase=observed_idle sample=56 cpu_pct=4.144 ram_used_total_kib=1017872,8255824 temp_c=63.9 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:12Z [idle-stability] phase=observed_idle remaining_s=20
+2026-09-28T00:33:13Z [idle-stability] phase=observed_idle remaining_s=19
+2026-09-28T00:33:14Z [idle-stability] phase=observed_idle remaining_s=18
+2026-09-28T00:33:15Z [idle-stability] phase=observed_idle remaining_s=17
+2026-09-28T00:33:16Z [idle-stability] phase=observed_idle remaining_s=16
+2026-09-28T00:33:17Z [idle-stability] health=57 http=200 valid=true latency_s=0.001067 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:17Z [idle-stability] phase=observed_idle sample=57 cpu_pct=4.721 ram_used_total_kib=1021712,8255824 temp_c=62.8 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:17Z [idle-stability] phase=observed_idle remaining_s=15
+2026-09-28T00:33:18Z [idle-stability] phase=observed_idle remaining_s=14
+2026-09-28T00:33:19Z [idle-stability] phase=observed_idle remaining_s=13
+2026-09-28T00:33:20Z [idle-stability] phase=observed_idle remaining_s=12
+2026-09-28T00:33:21Z [idle-stability] phase=observed_idle remaining_s=11
+2026-09-28T00:33:22Z [idle-stability] health=58 http=200 valid=true latency_s=0.001132 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:22Z [idle-stability] phase=observed_idle sample=58 cpu_pct=4.000 ram_used_total_kib=1013520,8255824 temp_c=61.7 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:22Z [idle-stability] phase=observed_idle remaining_s=10
+2026-09-28T00:33:23Z [idle-stability] phase=observed_idle remaining_s=9
+2026-09-28T00:33:24Z [idle-stability] phase=observed_idle remaining_s=8
+2026-09-28T00:33:25Z [idle-stability] phase=observed_idle remaining_s=7
+2026-09-28T00:33:26Z [idle-stability] phase=observed_idle remaining_s=6
+2026-09-28T00:33:27Z [idle-stability] health=59 http=200 valid=true latency_s=0.001089 camera=true yolo=true detection=false follow=false
+2026-09-28T00:33:27Z [idle-stability] phase=observed_idle sample=59 cpu_pct=4.581 ram_used_total_kib=1014592,8255824 temp_c=63.35 throttled=0x50000 container=running restarts=0
+2026-09-28T00:33:27Z [idle-stability] phase=observed_idle remaining_s=5
+2026-09-28T00:33:28Z [idle-stability] phase=observed_idle remaining_s=4
+2026-09-28T00:33:29Z [idle-stability] phase=observed_idle remaining_s=3
+2026-09-28T00:33:30Z [idle-stability] phase=observed_idle remaining_s=2
+2026-09-28T00:33:31Z [idle-stability] phase=observed_idle remaining_s=1
+2026-09-28T00:33:32Z [idle-stability] phase=observed_idle remaining_s=0 collection complete
+2026-09-28T00:33:32Z [idle-stability] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T00:33:32Z [idle-stability] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T00:33:32Z [idle-stability] Finished exit_code=0 elapsed_s=301 results=/home/pi/experiments/logs/2026-09-28T00-28-31_idle-stability_L1gJlW

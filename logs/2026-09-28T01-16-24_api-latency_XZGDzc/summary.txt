@@ -1,0 +1,9 @@
+Derived statistics; valid HTTP 200 health JSON responses only; units: seconds
+requests=100
+successful=100
+failed=0
+min_s=0.000816
+max_s=0.004344
+mean_s=0.00128084
+median_s=0.001062
+p95_nearest_rank_s=0.002634

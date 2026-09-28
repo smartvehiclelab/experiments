@@ -1,0 +1,314 @@
+2026-09-28T01:44:15Z [api-latency] Starting target=http://localhost:1607 results=/home/pi/experiments/logs/2026-09-28T01-44-15_api-latency_TjreFi; collecting metadata
+2026-09-28T01:44:15Z [api-latency] Running Docker containers:
+2026-09-28T01:44:15Z [api-latency] docker-ps: NAMES     STATUS                 PORTS
+2026-09-28T01:44:15Z [api-latency] docker-ps: vehicle   Up 2 hours (healthy)   
+2026-09-28T01:44:15Z [api-latency] Exactly one Docker container is running; selecting container=vehicle
+2026-09-28T01:44:15Z [api-latency] Using existing Docker container=vehicle state=running
+2026-09-28T01:44:15Z [api-latency] API estimated upper remaining time remaining_s=399 (collection budget; cleanup follows)
+2026-09-28T01:44:15Z [api-latency] health=1 http=200 valid=true latency_s=0.001496 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:15Z [api-latency] request=1/100 remaining_requests=99 elapsed_s=0
+2026-09-28T01:44:16Z [api-latency] API estimated upper remaining time remaining_s=398
+2026-09-28T01:44:16Z [api-latency] health=2 http=200 valid=true latency_s=0.000816 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:16Z [api-latency] request=2/100 remaining_requests=98 elapsed_s=1
+2026-09-28T01:44:17Z [api-latency] API estimated upper remaining time remaining_s=397
+2026-09-28T01:44:17Z [api-latency] health=3 http=200 valid=true latency_s=0.000800 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:17Z [api-latency] request=3/100 remaining_requests=97 elapsed_s=2
+2026-09-28T01:44:18Z [api-latency] API estimated upper remaining time remaining_s=396
+2026-09-28T01:44:18Z [api-latency] health=4 http=200 valid=true latency_s=0.000887 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:18Z [api-latency] request=4/100 remaining_requests=96 elapsed_s=3
+2026-09-28T01:44:19Z [api-latency] API estimated upper remaining time remaining_s=395
+2026-09-28T01:44:19Z [api-latency] health=5 http=200 valid=true latency_s=0.000872 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:19Z [api-latency] request=5/100 remaining_requests=95 elapsed_s=4
+2026-09-28T01:44:20Z [api-latency] API estimated upper remaining time remaining_s=394
+2026-09-28T01:44:20Z [api-latency] health=6 http=200 valid=true latency_s=0.000978 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:20Z [api-latency] request=6/100 remaining_requests=94 elapsed_s=5
+2026-09-28T01:44:21Z [api-latency] API estimated upper remaining time remaining_s=393
+2026-09-28T01:44:21Z [api-latency] health=7 http=200 valid=true latency_s=0.001047 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:21Z [api-latency] request=7/100 remaining_requests=93 elapsed_s=6
+2026-09-28T01:44:22Z [api-latency] API estimated upper remaining time remaining_s=392
+2026-09-28T01:44:22Z [api-latency] health=8 http=200 valid=true latency_s=0.001014 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:22Z [api-latency] request=8/100 remaining_requests=92 elapsed_s=7
+2026-09-28T01:44:23Z [api-latency] API estimated upper remaining time remaining_s=391
+2026-09-28T01:44:23Z [api-latency] health=9 http=200 valid=true latency_s=0.003375 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:23Z [api-latency] request=9/100 remaining_requests=91 elapsed_s=8
+2026-09-28T01:44:24Z [api-latency] API estimated upper remaining time remaining_s=390
+2026-09-28T01:44:24Z [api-latency] health=10 http=200 valid=true latency_s=0.001061 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:24Z [api-latency] request=10/100 remaining_requests=90 elapsed_s=9
+2026-09-28T01:44:25Z [api-latency] API estimated upper remaining time remaining_s=389
+2026-09-28T01:44:25Z [api-latency] health=11 http=200 valid=true latency_s=0.001063 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:25Z [api-latency] request=11/100 remaining_requests=89 elapsed_s=10
+2026-09-28T01:44:26Z [api-latency] API estimated upper remaining time remaining_s=388
+2026-09-28T01:44:26Z [api-latency] health=12 http=200 valid=true latency_s=0.002477 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:26Z [api-latency] request=12/100 remaining_requests=88 elapsed_s=11
+2026-09-28T01:44:27Z [api-latency] API estimated upper remaining time remaining_s=387
+2026-09-28T01:44:27Z [api-latency] health=13 http=200 valid=true latency_s=0.000997 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:27Z [api-latency] request=13/100 remaining_requests=87 elapsed_s=12
+2026-09-28T01:44:28Z [api-latency] API estimated upper remaining time remaining_s=386
+2026-09-28T01:44:28Z [api-latency] health=14 http=200 valid=true latency_s=0.001089 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:28Z [api-latency] request=14/100 remaining_requests=86 elapsed_s=13
+2026-09-28T01:44:29Z [api-latency] API estimated upper remaining time remaining_s=385
+2026-09-28T01:44:30Z [api-latency] health=15 http=200 valid=true latency_s=0.001081 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:30Z [api-latency] request=15/100 remaining_requests=85 elapsed_s=15
+2026-09-28T01:44:30Z [api-latency] API estimated upper remaining time remaining_s=384
+2026-09-28T01:44:31Z [api-latency] health=16 http=200 valid=true latency_s=0.001088 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:31Z [api-latency] request=16/100 remaining_requests=84 elapsed_s=16
+2026-09-28T01:44:31Z [api-latency] API estimated upper remaining time remaining_s=383
+2026-09-28T01:44:32Z [api-latency] health=17 http=200 valid=true latency_s=0.000990 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:32Z [api-latency] request=17/100 remaining_requests=83 elapsed_s=17
+2026-09-28T01:44:32Z [api-latency] API estimated upper remaining time remaining_s=382
+2026-09-28T01:44:33Z [api-latency] health=18 http=200 valid=true latency_s=0.001065 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:33Z [api-latency] request=18/100 remaining_requests=82 elapsed_s=18
+2026-09-28T01:44:33Z [api-latency] API estimated upper remaining time remaining_s=381
+2026-09-28T01:44:34Z [api-latency] health=19 http=200 valid=true latency_s=0.001075 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:34Z [api-latency] request=19/100 remaining_requests=81 elapsed_s=19
+2026-09-28T01:44:34Z [api-latency] API estimated upper remaining time remaining_s=380
+2026-09-28T01:44:35Z [api-latency] health=20 http=200 valid=true latency_s=0.001076 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:35Z [api-latency] request=20/100 remaining_requests=80 elapsed_s=20
+2026-09-28T01:44:35Z [api-latency] API estimated upper remaining time remaining_s=379
+2026-09-28T01:44:36Z [api-latency] health=21 http=200 valid=true latency_s=0.001461 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:36Z [api-latency] request=21/100 remaining_requests=79 elapsed_s=21
+2026-09-28T01:44:36Z [api-latency] API estimated upper remaining time remaining_s=378
+2026-09-28T01:44:37Z [api-latency] API estimated upper remaining time remaining_s=377
+2026-09-28T01:44:37Z [api-latency] health=22 http=200 valid=true latency_s=0.001055 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:37Z [api-latency] request=22/100 remaining_requests=78 elapsed_s=22
+2026-09-28T01:44:38Z [api-latency] API estimated upper remaining time remaining_s=376
+2026-09-28T01:44:38Z [api-latency] health=23 http=200 valid=true latency_s=0.001410 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:38Z [api-latency] request=23/100 remaining_requests=77 elapsed_s=23
+2026-09-28T01:44:39Z [api-latency] API estimated upper remaining time remaining_s=375
+2026-09-28T01:44:39Z [api-latency] health=24 http=200 valid=true latency_s=0.001033 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:39Z [api-latency] request=24/100 remaining_requests=76 elapsed_s=24
+2026-09-28T01:44:40Z [api-latency] API estimated upper remaining time remaining_s=374
+2026-09-28T01:44:40Z [api-latency] health=25 http=200 valid=true latency_s=0.000978 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:40Z [api-latency] request=25/100 remaining_requests=75 elapsed_s=25
+2026-09-28T01:44:41Z [api-latency] API estimated upper remaining time remaining_s=373
+2026-09-28T01:44:41Z [api-latency] health=26 http=200 valid=true latency_s=0.001101 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:41Z [api-latency] request=26/100 remaining_requests=74 elapsed_s=26
+2026-09-28T01:44:42Z [api-latency] API estimated upper remaining time remaining_s=372
+2026-09-28T01:44:42Z [api-latency] health=27 http=200 valid=true latency_s=0.001014 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:42Z [api-latency] request=27/100 remaining_requests=73 elapsed_s=27
+2026-09-28T01:44:43Z [api-latency] API estimated upper remaining time remaining_s=371
+2026-09-28T01:44:43Z [api-latency] health=28 http=200 valid=true latency_s=0.001083 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:43Z [api-latency] request=28/100 remaining_requests=72 elapsed_s=28
+2026-09-28T01:44:44Z [api-latency] API estimated upper remaining time remaining_s=370
+2026-09-28T01:44:44Z [api-latency] health=29 http=200 valid=true latency_s=0.001101 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:44Z [api-latency] request=29/100 remaining_requests=71 elapsed_s=29
+2026-09-28T01:44:45Z [api-latency] API estimated upper remaining time remaining_s=369
+2026-09-28T01:44:45Z [api-latency] health=30 http=200 valid=true latency_s=0.001432 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:45Z [api-latency] request=30/100 remaining_requests=70 elapsed_s=30
+2026-09-28T01:44:46Z [api-latency] API estimated upper remaining time remaining_s=368
+2026-09-28T01:44:46Z [api-latency] health=31 http=200 valid=true latency_s=0.001064 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:46Z [api-latency] request=31/100 remaining_requests=69 elapsed_s=31
+2026-09-28T01:44:47Z [api-latency] API estimated upper remaining time remaining_s=367
+2026-09-28T01:44:47Z [api-latency] health=32 http=200 valid=true latency_s=0.001005 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:47Z [api-latency] request=32/100 remaining_requests=68 elapsed_s=32
+2026-09-28T01:44:48Z [api-latency] API estimated upper remaining time remaining_s=366
+2026-09-28T01:44:48Z [api-latency] health=33 http=200 valid=true latency_s=0.001113 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:48Z [api-latency] request=33/100 remaining_requests=67 elapsed_s=33
+2026-09-28T01:44:49Z [api-latency] API estimated upper remaining time remaining_s=365
+2026-09-28T01:44:49Z [api-latency] health=34 http=200 valid=true latency_s=0.001033 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:49Z [api-latency] request=34/100 remaining_requests=66 elapsed_s=34
+2026-09-28T01:44:50Z [api-latency] API estimated upper remaining time remaining_s=364
+2026-09-28T01:44:51Z [api-latency] health=35 http=200 valid=true latency_s=0.001074 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:51Z [api-latency] request=35/100 remaining_requests=65 elapsed_s=36
+2026-09-28T01:44:51Z [api-latency] API estimated upper remaining time remaining_s=363
+2026-09-28T01:44:52Z [api-latency] health=36 http=200 valid=true latency_s=0.001115 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:52Z [api-latency] request=36/100 remaining_requests=64 elapsed_s=37
+2026-09-28T01:44:52Z [api-latency] API estimated upper remaining time remaining_s=362
+2026-09-28T01:44:53Z [api-latency] health=37 http=200 valid=true latency_s=0.001045 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:53Z [api-latency] request=37/100 remaining_requests=63 elapsed_s=38
+2026-09-28T01:44:53Z [api-latency] API estimated upper remaining time remaining_s=361
+2026-09-28T01:44:54Z [api-latency] health=38 http=200 valid=true latency_s=0.001218 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:54Z [api-latency] request=38/100 remaining_requests=62 elapsed_s=39
+2026-09-28T01:44:54Z [api-latency] API estimated upper remaining time remaining_s=360
+2026-09-28T01:44:55Z [api-latency] health=39 http=200 valid=true latency_s=0.001115 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:55Z [api-latency] request=39/100 remaining_requests=61 elapsed_s=40
+2026-09-28T01:44:55Z [api-latency] API estimated upper remaining time remaining_s=359
+2026-09-28T01:44:56Z [api-latency] health=40 http=200 valid=true latency_s=0.001100 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:56Z [api-latency] request=40/100 remaining_requests=60 elapsed_s=41
+2026-09-28T01:44:56Z [api-latency] API estimated upper remaining time remaining_s=358
+2026-09-28T01:44:57Z [api-latency] health=41 http=200 valid=true latency_s=0.001103 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:57Z [api-latency] request=41/100 remaining_requests=59 elapsed_s=42
+2026-09-28T01:44:57Z [api-latency] API estimated upper remaining time remaining_s=357
+2026-09-28T01:44:58Z [api-latency] health=42 http=200 valid=true latency_s=0.001053 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:58Z [api-latency] request=42/100 remaining_requests=58 elapsed_s=43
+2026-09-28T01:44:58Z [api-latency] API estimated upper remaining time remaining_s=356
+2026-09-28T01:44:59Z [api-latency] API estimated upper remaining time remaining_s=355
+2026-09-28T01:44:59Z [api-latency] health=43 http=200 valid=true latency_s=0.001005 camera=true yolo=true detection=false follow=false
+2026-09-28T01:44:59Z [api-latency] request=43/100 remaining_requests=57 elapsed_s=44
+2026-09-28T01:45:00Z [api-latency] API estimated upper remaining time remaining_s=354
+2026-09-28T01:45:00Z [api-latency] health=44 http=200 valid=true latency_s=0.001034 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:00Z [api-latency] request=44/100 remaining_requests=56 elapsed_s=45
+2026-09-28T01:45:01Z [api-latency] API estimated upper remaining time remaining_s=353
+2026-09-28T01:45:01Z [api-latency] health=45 http=200 valid=true latency_s=0.001102 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:01Z [api-latency] request=45/100 remaining_requests=55 elapsed_s=46
+2026-09-28T01:45:02Z [api-latency] API estimated upper remaining time remaining_s=352
+2026-09-28T01:45:02Z [api-latency] health=46 http=200 valid=true latency_s=0.000995 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:02Z [api-latency] request=46/100 remaining_requests=54 elapsed_s=47
+2026-09-28T01:45:03Z [api-latency] API estimated upper remaining time remaining_s=351
+2026-09-28T01:45:03Z [api-latency] health=47 http=200 valid=true latency_s=0.001034 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:03Z [api-latency] request=47/100 remaining_requests=53 elapsed_s=48
+2026-09-28T01:45:04Z [api-latency] API estimated upper remaining time remaining_s=350
+2026-09-28T01:45:04Z [api-latency] health=48 http=200 valid=true latency_s=0.001032 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:04Z [api-latency] request=48/100 remaining_requests=52 elapsed_s=49
+2026-09-28T01:45:05Z [api-latency] API estimated upper remaining time remaining_s=349
+2026-09-28T01:45:05Z [api-latency] health=49 http=200 valid=true latency_s=0.001060 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:05Z [api-latency] request=49/100 remaining_requests=51 elapsed_s=50
+2026-09-28T01:45:06Z [api-latency] API estimated upper remaining time remaining_s=348
+2026-09-28T01:45:06Z [api-latency] health=50 http=200 valid=true latency_s=0.001013 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:06Z [api-latency] request=50/100 remaining_requests=50 elapsed_s=51
+2026-09-28T01:45:07Z [api-latency] API estimated upper remaining time remaining_s=347
+2026-09-28T01:45:07Z [api-latency] health=51 http=200 valid=true latency_s=0.001401 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:07Z [api-latency] request=51/100 remaining_requests=49 elapsed_s=52
+2026-09-28T01:45:08Z [api-latency] API estimated upper remaining time remaining_s=346
+2026-09-28T01:45:08Z [api-latency] health=52 http=200 valid=true latency_s=0.001037 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:08Z [api-latency] request=52/100 remaining_requests=48 elapsed_s=53
+2026-09-28T01:45:09Z [api-latency] API estimated upper remaining time remaining_s=345
+2026-09-28T01:45:09Z [api-latency] health=53 http=200 valid=true latency_s=0.000991 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:09Z [api-latency] request=53/100 remaining_requests=47 elapsed_s=54
+2026-09-28T01:45:10Z [api-latency] API estimated upper remaining time remaining_s=344
+2026-09-28T01:45:11Z [api-latency] health=54 http=200 valid=true latency_s=0.001028 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:11Z [api-latency] request=54/100 remaining_requests=46 elapsed_s=56
+2026-09-28T01:45:11Z [api-latency] API estimated upper remaining time remaining_s=343
+2026-09-28T01:45:12Z [api-latency] health=55 http=200 valid=true latency_s=0.001040 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:12Z [api-latency] request=55/100 remaining_requests=45 elapsed_s=57
+2026-09-28T01:45:12Z [api-latency] API estimated upper remaining time remaining_s=342
+2026-09-28T01:45:13Z [api-latency] health=56 http=200 valid=true latency_s=0.001015 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:13Z [api-latency] request=56/100 remaining_requests=44 elapsed_s=58
+2026-09-28T01:45:13Z [api-latency] API estimated upper remaining time remaining_s=341
+2026-09-28T01:45:14Z [api-latency] health=57 http=200 valid=true latency_s=0.001059 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:14Z [api-latency] request=57/100 remaining_requests=43 elapsed_s=59
+2026-09-28T01:45:14Z [api-latency] API estimated upper remaining time remaining_s=340
+2026-09-28T01:45:15Z [api-latency] health=58 http=200 valid=true latency_s=0.000994 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:15Z [api-latency] request=58/100 remaining_requests=42 elapsed_s=60
+2026-09-28T01:45:15Z [api-latency] API estimated upper remaining time remaining_s=339
+2026-09-28T01:45:16Z [api-latency] health=59 http=200 valid=true latency_s=0.001068 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:16Z [api-latency] request=59/100 remaining_requests=41 elapsed_s=61
+2026-09-28T01:45:16Z [api-latency] API estimated upper remaining time remaining_s=338
+2026-09-28T01:45:17Z [api-latency] health=60 http=200 valid=true latency_s=0.001122 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:17Z [api-latency] request=60/100 remaining_requests=40 elapsed_s=62
+2026-09-28T01:45:17Z [api-latency] API estimated upper remaining time remaining_s=337
+2026-09-28T01:45:18Z [api-latency] health=61 http=200 valid=true latency_s=0.001093 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:18Z [api-latency] request=61/100 remaining_requests=39 elapsed_s=63
+2026-09-28T01:45:18Z [api-latency] API estimated upper remaining time remaining_s=336
+2026-09-28T01:45:19Z [api-latency] health=62 http=200 valid=true latency_s=0.001037 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:19Z [api-latency] request=62/100 remaining_requests=38 elapsed_s=64
+2026-09-28T01:45:19Z [api-latency] API estimated upper remaining time remaining_s=335
+2026-09-28T01:45:20Z [api-latency] health=63 http=200 valid=true latency_s=0.001013 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:20Z [api-latency] request=63/100 remaining_requests=37 elapsed_s=65
+2026-09-28T01:45:20Z [api-latency] API estimated upper remaining time remaining_s=334
+2026-09-28T01:45:21Z [api-latency] API estimated upper remaining time remaining_s=333
+2026-09-28T01:45:21Z [api-latency] health=64 http=200 valid=true latency_s=0.001336 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:21Z [api-latency] request=64/100 remaining_requests=36 elapsed_s=66
+2026-09-28T01:45:22Z [api-latency] API estimated upper remaining time remaining_s=332
+2026-09-28T01:45:22Z [api-latency] health=65 http=200 valid=true latency_s=0.001023 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:22Z [api-latency] request=65/100 remaining_requests=35 elapsed_s=67
+2026-09-28T01:45:23Z [api-latency] API estimated upper remaining time remaining_s=331
+2026-09-28T01:45:23Z [api-latency] health=66 http=200 valid=true latency_s=0.001119 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:23Z [api-latency] request=66/100 remaining_requests=34 elapsed_s=68
+2026-09-28T01:45:24Z [api-latency] API estimated upper remaining time remaining_s=330
+2026-09-28T01:45:24Z [api-latency] health=67 http=200 valid=true latency_s=0.001084 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:24Z [api-latency] request=67/100 remaining_requests=33 elapsed_s=69
+2026-09-28T01:45:25Z [api-latency] API estimated upper remaining time remaining_s=329
+2026-09-28T01:45:25Z [api-latency] health=68 http=200 valid=true latency_s=0.001192 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:25Z [api-latency] request=68/100 remaining_requests=32 elapsed_s=70
+2026-09-28T01:45:26Z [api-latency] API estimated upper remaining time remaining_s=328
+2026-09-28T01:45:26Z [api-latency] health=69 http=200 valid=true latency_s=0.001075 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:26Z [api-latency] request=69/100 remaining_requests=31 elapsed_s=71
+2026-09-28T01:45:27Z [api-latency] API estimated upper remaining time remaining_s=327
+2026-09-28T01:45:27Z [api-latency] health=70 http=200 valid=true latency_s=0.001100 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:27Z [api-latency] request=70/100 remaining_requests=30 elapsed_s=72
+2026-09-28T01:45:28Z [api-latency] API estimated upper remaining time remaining_s=326
+2026-09-28T01:45:28Z [api-latency] health=71 http=200 valid=true latency_s=0.001110 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:28Z [api-latency] request=71/100 remaining_requests=29 elapsed_s=73
+2026-09-28T01:45:29Z [api-latency] API estimated upper remaining time remaining_s=325
+2026-09-28T01:45:29Z [api-latency] health=72 http=200 valid=true latency_s=0.001051 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:29Z [api-latency] request=72/100 remaining_requests=28 elapsed_s=74
+2026-09-28T01:45:30Z [api-latency] API estimated upper remaining time remaining_s=324
+2026-09-28T01:45:30Z [api-latency] health=73 http=200 valid=true latency_s=0.001007 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:30Z [api-latency] request=73/100 remaining_requests=27 elapsed_s=75
+2026-09-28T01:45:31Z [api-latency] API estimated upper remaining time remaining_s=323
+2026-09-28T01:45:32Z [api-latency] health=74 http=200 valid=true latency_s=0.001032 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:32Z [api-latency] request=74/100 remaining_requests=26 elapsed_s=77
+2026-09-28T01:45:32Z [api-latency] API estimated upper remaining time remaining_s=322
+2026-09-28T01:45:33Z [api-latency] health=75 http=200 valid=true latency_s=0.001043 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:33Z [api-latency] request=75/100 remaining_requests=25 elapsed_s=78
+2026-09-28T01:45:33Z [api-latency] API estimated upper remaining time remaining_s=321
+2026-09-28T01:45:34Z [api-latency] health=76 http=200 valid=true latency_s=0.001045 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:34Z [api-latency] request=76/100 remaining_requests=24 elapsed_s=79
+2026-09-28T01:45:34Z [api-latency] API estimated upper remaining time remaining_s=320
+2026-09-28T01:45:35Z [api-latency] health=77 http=200 valid=true latency_s=0.001019 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:35Z [api-latency] request=77/100 remaining_requests=23 elapsed_s=80
+2026-09-28T01:45:35Z [api-latency] API estimated upper remaining time remaining_s=319
+2026-09-28T01:45:36Z [api-latency] health=78 http=200 valid=true latency_s=0.001026 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:36Z [api-latency] request=78/100 remaining_requests=22 elapsed_s=81
+2026-09-28T01:45:36Z [api-latency] API estimated upper remaining time remaining_s=318
+2026-09-28T01:45:37Z [api-latency] health=79 http=200 valid=true latency_s=0.001088 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:37Z [api-latency] request=79/100 remaining_requests=21 elapsed_s=82
+2026-09-28T01:45:37Z [api-latency] API estimated upper remaining time remaining_s=317
+2026-09-28T01:45:38Z [api-latency] health=80 http=200 valid=true latency_s=0.001026 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:38Z [api-latency] request=80/100 remaining_requests=20 elapsed_s=83
+2026-09-28T01:45:38Z [api-latency] API estimated upper remaining time remaining_s=316
+2026-09-28T01:45:39Z [api-latency] health=81 http=200 valid=true latency_s=0.001289 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:39Z [api-latency] request=81/100 remaining_requests=19 elapsed_s=84
+2026-09-28T01:45:39Z [api-latency] API estimated upper remaining time remaining_s=315
+2026-09-28T01:45:40Z [api-latency] health=82 http=200 valid=true latency_s=0.001038 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:40Z [api-latency] request=82/100 remaining_requests=18 elapsed_s=85
+2026-09-28T01:45:40Z [api-latency] API estimated upper remaining time remaining_s=314
+2026-09-28T01:45:41Z [api-latency] health=83 http=200 valid=true latency_s=0.001017 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:41Z [api-latency] request=83/100 remaining_requests=17 elapsed_s=86
+2026-09-28T01:45:41Z [api-latency] API estimated upper remaining time remaining_s=313
+2026-09-28T01:45:42Z [api-latency] API estimated upper remaining time remaining_s=312
+2026-09-28T01:45:42Z [api-latency] health=84 http=200 valid=true latency_s=0.001029 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:42Z [api-latency] request=84/100 remaining_requests=16 elapsed_s=87
+2026-09-28T01:45:43Z [api-latency] API estimated upper remaining time remaining_s=311
+2026-09-28T01:45:43Z [api-latency] health=85 http=200 valid=true latency_s=0.001079 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:43Z [api-latency] request=85/100 remaining_requests=15 elapsed_s=88
+2026-09-28T01:45:44Z [api-latency] API estimated upper remaining time remaining_s=310
+2026-09-28T01:45:44Z [api-latency] health=86 http=200 valid=true latency_s=0.001004 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:44Z [api-latency] request=86/100 remaining_requests=14 elapsed_s=89
+2026-09-28T01:45:45Z [api-latency] API estimated upper remaining time remaining_s=309
+2026-09-28T01:45:45Z [api-latency] health=87 http=200 valid=true latency_s=0.001057 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:45Z [api-latency] request=87/100 remaining_requests=13 elapsed_s=90
+2026-09-28T01:45:46Z [api-latency] API estimated upper remaining time remaining_s=308
+2026-09-28T01:45:46Z [api-latency] health=88 http=200 valid=true latency_s=0.000995 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:46Z [api-latency] request=88/100 remaining_requests=12 elapsed_s=91
+2026-09-28T01:45:47Z [api-latency] API estimated upper remaining time remaining_s=307
+2026-09-28T01:45:47Z [api-latency] health=89 http=200 valid=true latency_s=0.001054 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:47Z [api-latency] request=89/100 remaining_requests=11 elapsed_s=92
+2026-09-28T01:45:48Z [api-latency] API estimated upper remaining time remaining_s=306
+2026-09-28T01:45:48Z [api-latency] health=90 http=200 valid=true latency_s=0.001060 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:48Z [api-latency] request=90/100 remaining_requests=10 elapsed_s=93
+2026-09-28T01:45:49Z [api-latency] API estimated upper remaining time remaining_s=305
+2026-09-28T01:45:49Z [api-latency] health=91 http=200 valid=true latency_s=0.001078 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:49Z [api-latency] request=91/100 remaining_requests=9 elapsed_s=94
+2026-09-28T01:45:50Z [api-latency] API estimated upper remaining time remaining_s=304
+2026-09-28T01:45:50Z [api-latency] health=92 http=200 valid=true latency_s=0.001074 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:50Z [api-latency] request=92/100 remaining_requests=8 elapsed_s=95
+2026-09-28T01:45:51Z [api-latency] API estimated upper remaining time remaining_s=303
+2026-09-28T01:45:51Z [api-latency] health=93 http=200 valid=true latency_s=0.001013 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:51Z [api-latency] request=93/100 remaining_requests=7 elapsed_s=96
+2026-09-28T01:45:52Z [api-latency] API estimated upper remaining time remaining_s=302
+2026-09-28T01:45:53Z [api-latency] health=94 http=200 valid=true latency_s=0.001091 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:53Z [api-latency] request=94/100 remaining_requests=6 elapsed_s=98
+2026-09-28T01:45:53Z [api-latency] API estimated upper remaining time remaining_s=301
+2026-09-28T01:45:54Z [api-latency] health=95 http=200 valid=true latency_s=0.001078 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:54Z [api-latency] request=95/100 remaining_requests=5 elapsed_s=99
+2026-09-28T01:45:54Z [api-latency] API estimated upper remaining time remaining_s=300
+2026-09-28T01:45:55Z [api-latency] health=96 http=200 valid=true latency_s=0.002352 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:55Z [api-latency] request=96/100 remaining_requests=4 elapsed_s=100
+2026-09-28T01:45:55Z [api-latency] API estimated upper remaining time remaining_s=299
+2026-09-28T01:45:56Z [api-latency] health=97 http=200 valid=true latency_s=0.001052 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:56Z [api-latency] request=97/100 remaining_requests=3 elapsed_s=101
+2026-09-28T01:45:56Z [api-latency] API estimated upper remaining time remaining_s=298
+2026-09-28T01:45:57Z [api-latency] health=98 http=200 valid=true latency_s=0.001030 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:57Z [api-latency] request=98/100 remaining_requests=2 elapsed_s=102
+2026-09-28T01:45:57Z [api-latency] API estimated upper remaining time remaining_s=297
+2026-09-28T01:45:58Z [api-latency] health=99 http=200 valid=true latency_s=0.001033 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:58Z [api-latency] request=99/100 remaining_requests=1 elapsed_s=103
+2026-09-28T01:45:58Z [api-latency] API estimated upper remaining time remaining_s=296
+2026-09-28T01:45:59Z [api-latency] health=100 http=200 valid=true latency_s=0.001040 camera=true yolo=true detection=false follow=false
+2026-09-28T01:45:59Z [api-latency] request=100/100 remaining_requests=0 elapsed_s=104
+2026-09-28T01:45:59Z [api-latency] Requests complete; generating latency summary
+2026-09-28T01:45:59Z [api-latency] Finalizing: stopping workers, restoring state and collecting Docker logs
+2026-09-28T01:45:59Z [api-latency] WARNING Docker logs unavailable or incomplete (timeout/permissions/container missing)
+2026-09-28T01:45:59Z [api-latency] Finished exit_code=0 elapsed_s=104 results=/home/pi/experiments/logs/2026-09-28T01-44-15_api-latency_TjreFi

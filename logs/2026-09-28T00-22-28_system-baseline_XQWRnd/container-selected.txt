@@ -1,0 +1,11 @@
+container_name=vehicle
+container_state=running
+id=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01
+name=/vehicle
+image_ref=yoloprojekat/rpi-server:latest
+image_id=sha256:a9e2dfdc9c0a868c345b2548ae0c9e102543de836432298bcd77f8444bef581c
+status=running
+started_at=2026-09-27T23:40:05.583388272Z
+restart_count=0
+oom_killed=false
+health=healthy
