@@ -224,6 +224,22 @@ Every stream run recorded one attempt, HTTP 200, and curl exit 28 (`deadline_or_
 
 ---
 
+## Docker diagnostic follow-up: 2026-09-28
+
+Six diagnostic captures are retained as `logs/docker-check-20260928-*.log`, starting between 04:09:28 and 04:11:49 CEST (02:09:28–02:11:49 UTC). They supplement the 35 experiment runs; they are not additional benchmark repetitions. See the [first capture](logs/docker-check-20260928-040928.log) and [latest capture](logs/docker-check-20260928-041149.log).
+
+The latest capture records:
+
+- Docker's systemd service active since 2026-09-28 01:40:05 CEST.
+- Container `vehicle` (`e5219652fb7b…`), using `yoloprojekat/rpi-server:latest` with image ID `sha256:a9e2dfdc9c0a868c345b2548ae0c9e102543de836432298bcd77f8444bef581c`. Use this observed name when selecting the recorded deployment explicitly; `rpi_stream_server` above describes the historical source configuration.
+- Running/healthy state, restart count 0, `OOMKilled=false`, and `StartedAt=2026-09-27T23:40:05.583388272Z`. These are snapshot values, not proof of uninterrupted historical availability.
+- Five retained healthcheck results with exit code 0, camera/model active, model loading false, and detection/follow disabled. The application log tail also contains HTTP 200 responses for `/health`.
+- Host networking, privileged mode, 512 MiB shared memory, `unless-stopped`, and the `json-file` logging driver with `max-size=10m` and `max-file=3`.
+
+The service journal still contains repeated `Error streaming logs: invalid character '\x00' looking for beginning of value` errors for the same container, including an entry at 04:06:19 CEST. The later diagnostic captures contain readable application log tails, but do not establish that the decoding problem was repaired or recover the missing experiment logs. The 28-run Docker-log evidence gap therefore remains.
+
+---
+
 ## Earlier Individual Results: 2026-09-27
 
 > **Important:** the following results are historical single-run measurements. They predate the four-repetition randomized methodology described above and must not be represented as results produced by that protocol.
@@ -331,6 +347,18 @@ sudo docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 The expected application container should be visible.
 
 The harness performs the same container-table capture automatically and stores it with each run.
+
+### Docker service, inspection and live logs
+
+The updated [`docker-status.sh`](docker-status.sh) records Docker's systemd service status, full `docker inspect` output, and the selected container's last 200 log lines, then follows new log output with Docker timestamps. Run it on the Pi with an explicit container name or ID:
+
+```bash
+sudo bash ./docker-status.sh vehicle ./logs
+```
+
+Replace `vehicle` with the name reported by `docker ps` for another deployment. The optional second argument is the output directory (default: current directory). Combined stdout/stderr is displayed with `tee` and saved as `docker-check-YYYYMMDD-HHMMSS.log`; the filename uses the host's local time, unlike the experiment directories' UTC names.
+
+The command follows logs until interrupted with Ctrl+C or until the Docker log stream exits; it has no fixed collection duration. It only reads service/container state and logs. Unlike the experiment harness, it does not discover a container automatically or produce benchmark CSVs. Review the captured errors directly: its pipeline and final print do not reliably propagate Docker failures as a nonzero script exit status.
 
 ### Manual experiment runs
 
