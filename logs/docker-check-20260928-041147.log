@@ -1,0 +1,505 @@
+=== Docker check started: 2026-09-28T04:11:47+02:00 ===
+
+=== Docker systemd service status ===
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2026-09-28 01:40:05 CEST; 2h 31min ago
+ Invocation: 7a582f017eb84872b1a9b80ab32303a5
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 1196 (dockerd)
+      Tasks: 12
+        CPU: 9.333s
+     CGroup: /system.slice/docker.service
+             └─1196 /usr/sbin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Sep 28 03:15:24 pametno-vozilo dockerd[1196]: time="2026-09-28T03:15:24.670026712+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=ec77b7531655167a traceID=cbdb91d7c3a310f3e03d5c97114afae3
+Sep 28 03:18:09 pametno-vozilo dockerd[1196]: time="2026-09-28T03:18:09.324554403+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=9a96c962124c688a traceID=976ed34745ed630c333b230116766674
+Sep 28 03:19:10 pametno-vozilo dockerd[1196]: time="2026-09-28T03:19:10.825187766+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=1f32d646cef9526d traceID=d659860f685f38035a2d7c34d8057fbd
+Sep 28 03:25:11 pametno-vozilo dockerd[1196]: time="2026-09-28T03:25:11.905839171+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=408f1aa7e585089b traceID=312b2c94e761f5238e842dde875fc10d
+Sep 28 03:27:12 pametno-vozilo dockerd[1196]: time="2026-09-28T03:27:12.413849890+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=4f60cf7f352501ee traceID=eec60dd0f0b3ac40e7f08cad6c806268
+Sep 28 03:30:13 pametno-vozilo dockerd[1196]: time="2026-09-28T03:30:13.650613564+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=8c0c0ffd692ec580 traceID=fcd8262693c5d01f360228299b5bfa22
+Sep 28 03:41:14 pametno-vozilo dockerd[1196]: time="2026-09-28T03:41:14.548203754+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=8e8c99cbfd98cc79 traceID=d33546c6bd0bce9ee7ac8743d302795b
+Sep 28 03:43:14 pametno-vozilo dockerd[1196]: time="2026-09-28T03:43:14.970080471+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=c29225cf08d9666c traceID=33a5e042cfa77e79f98e71dbe628db5b
+Sep 28 03:45:59 pametno-vozilo dockerd[1196]: time="2026-09-28T03:45:59.621999569+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=3e3a0b7940aeb69b traceID=78879ba08056e41affb647cfa557e3c0
+Sep 28 04:06:19 pametno-vozilo dockerd[1196]: time="2026-09-28T04:06:19.038679016+02:00" level=error msg="Error streaming logs: invalid character '\\x00' looking for beginning of value" container=e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01 method="(*Daemon).ContainerLogs" module=daemon spanID=452e3190baf417eb traceID=a796809b2a5d658a5164389b8d198096
+
+=== Container inspect: vehicle ===
+[
+    {
+        "Id": "e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01",
+        "Created": "2026-09-22T23:18:19.11630522Z",
+        "Path": "python",
+        "Args": [
+            "-O",
+            "main.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1392,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-27T23:40:05.583388272Z",
+            "FinishedAt": "2026-09-27T23:40:04.798796994Z",
+            "Health": {
+                "Status": "healthy",
+                "FailingStreak": 0,
+                "Log": [
+                    {
+                        "Start": "2026-09-28T04:11:04.455310207+02:00",
+                        "End": "2026-09-28T04:11:04.501507135+02:00",
+                        "ExitCode": 0,
+                        "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   162  100   162    0   {\"status\": \"ok\", \"camera_active\": true, \"yolo_active\": true, \"yolo_loading\": false, \"detection_enabled\": false, \"follow_enabled\": false, \"uptime_seconds\": 9055.0}  0   159k      0 --:--:-- --:--:-- --:--:--  158k\n"
+                    },
+                    {
+                        "Start": "2026-09-28T04:11:14.503512052+02:00",
+                        "End": "2026-09-28T04:11:14.552194054+02:00",
+                        "ExitCode": 0,
+                        "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   162  100   162    0     0  45518      0 --:--:-- --:--:-- --:--:-- 54000\n{\"status\": \"ok\", \"camera_active\": true, \"yolo_active\": true, \"yolo_loading\": false, \"detection_enabled\": false, \"follow_enabled\": false, \"uptime_seconds\": 9065.1}"
+                    },
+                    {
+                        "Start": "2026-09-28T04:11:24.55420619+02:00",
+                        "End": "2026-09-28T04:11:24.606026374+02:00",
+                        "ExitCode": 0,
+                        "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{\"status\": \"ok\", \"camera_active\": true, \"yolo_active\": true, \"yolo_loading\": false, \"detection_enabled\": false, \"follow_enabled\": false, \"uptime_seconds\": 9075.1}\r100   162  100   162    0     0   150k      0 --:--:-- --:--:-- --:--:--  158k\n"
+                    },
+                    {
+                        "Start": "2026-09-28T04:11:34.608043091+02:00",
+                        "End": "2026-09-28T04:11:34.657641459+02:00",
+                        "ExitCode": 0,
+                        "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{\"status\": \"ok\", \"camera_active\": true, \"yolo_active\": true, \"yolo_loading\": false, \"detection_enabled\": false, \"follow_enabled\": false, \"uptime_seconds\": 9085.2}\r100   162  100   162    0     0   154k      0 --:--:-- --:--:-- --:--:--  158k\n"
+                    },
+                    {
+                        "Start": "2026-09-28T04:11:44.659979437+02:00",
+                        "End": "2026-09-28T04:11:44.705684621+02:00",
+                        "ExitCode": 0,
+                        "Output": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r100   162  100   162    0     0   146k      0 --:--:-- --:--:-- --:--:--  158k\n{\"status\": \"ok\", \"camera_active\": true, \"yolo_active\": true, \"yolo_loading\": false, \"detection_enabled\": false, \"follow_enabled\": false, \"uptime_seconds\": 9095.2}"
+                    }
+                ]
+            }
+        },
+        "Image": "sha256:a9e2dfdc9c0a868c345b2548ae0c9e102543de836432298bcd77f8444bef581c",
+        "ResolvConfPath": "/var/lib/docker/containers/e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01/hostname",
+        "HostsPath": "/var/lib/docker/containers/e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01/hosts",
+        "LogPath": "/var/lib/docker/containers/e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01/e5219652fb7bbb3a22df2ed2747a988fb69b6f33150958dcaee0ab8570e0cb01-json.log",
+        "Name": "/vehicle",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/dev:/dev",
+                "/run/udev:/run/udev:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {
+                    "max-file": "3",
+                    "max-size": "10m"
+                }
+            },
+            "NetworkMode": "host",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "unless-stopped",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                30,
+                120
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": true,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": [
+                "label=disable"
+            ],
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 536870912,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": null,
+            "ReadonlyPaths": null
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/478ac933c390af6863bc958fe21b2b17eab81ff3df886bc88fdca9adc18aca66-init/diff:/var/lib/docker/overlay2/c7a8b83c559322b6716356107a7c6193b31273621f801768db152cf5937256ff/diff:/var/lib/docker/overlay2/5bf0f0e1072183d3ce2376f2c725b54c2722127d947c2c901342652f7032828d/diff:/var/lib/docker/overlay2/46e7ae4a04831b1092db3a05421053239292f84a12cf2a02b81388fc6cc1f52f/diff:/var/lib/docker/overlay2/ae73aaa38c40dfbad9bd0522dce8492616983a4489ec5039e850301f5d736347/diff:/var/lib/docker/overlay2/226555f2a940b8bf657af71b9ccbc6258425cd2afdaaaff0351993230a74de70/diff:/var/lib/docker/overlay2/bebfd9cef4106256144041e8764e75a94b96742ac3922b8c127dfb2f9eb7ff01/diff:/var/lib/docker/overlay2/bcb65628234cfe4f219f13e20a11d6c6d9103c34bff786b5d07e72d168b90591/diff:/var/lib/docker/overlay2/b4414edc90bd6755c11d34ee999a34a6046d98e1be20eabbba0d6186303863e2/diff:/var/lib/docker/overlay2/c736a67ff4a871ab565a91251ac67c699a0346d5c5086f1856e57545b77692c2/diff:/var/lib/docker/overlay2/c415c1c16d154f57adf8eee9c88139acea0dbce7a8c9afc7dcf8e123efc6e982/diff:/var/lib/docker/overlay2/9c26e4f70136f186acbd6ff42d8130fb5addaf322c48fc3b5a243f2a1d8debf4/diff:/var/lib/docker/overlay2/3dbfe1cf96daccc82255ea24fb0e8412a386aa61e50237267a0438b70d321f39/diff:/var/lib/docker/overlay2/cb7c4f7b51852e7d2f6c31271ccd97890cf01468bc5406ab00a80579d5c24332/diff:/var/lib/docker/overlay2/631924cf1b23ee05d72d3cc86b899f84c650d9e9246b244d7db95c4a7cd67aa6/diff:/var/lib/docker/overlay2/f6c6ece5f42ced34875646b45f6b11d52903634cc82befa5a17fbe18425703c7/diff:/var/lib/docker/overlay2/f597649e0897aabc50647ed66e6377a75b267e478be0efa5129ef5c5c80dd0b1/diff",
+                "MergedDir": "/var/lib/docker/overlay2/478ac933c390af6863bc958fe21b2b17eab81ff3df886bc88fdca9adc18aca66/merged",
+                "UpperDir": "/var/lib/docker/overlay2/478ac933c390af6863bc958fe21b2b17eab81ff3df886bc88fdca9adc18aca66/diff",
+                "WorkDir": "/var/lib/docker/overlay2/478ac933c390af6863bc958fe21b2b17eab81ff3df886bc88fdca9adc18aca66/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/dev",
+                "Destination": "/dev",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/run/udev",
+                "Destination": "/run/udev",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "pametno-vozilo",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "1607/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.16",
+                "PYTHON_SHA256=91bcdebfdde239a003ae93738a7fce0f9230fee5c4bc2b86f6e6e8c6f98aabe8",
+                "PYTHONUNBUFFERED=1",
+                "PYTHONPATH=/usr/lib/python3/dist-packages",
+                "YOLO_OFFLINE=1",
+                "YOLO_VERBOSE=False"
+            ],
+            "Cmd": [
+                "python",
+                "-O",
+                "main.py"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "curl -f http://localhost:1607/health || exit 1"
+                ],
+                "Interval": 10000000000,
+                "Timeout": 3000000000,
+                "StartPeriod": 5000000000,
+                "Retries": 3
+            },
+            "Image": "yoloprojekat/rpi-server:latest",
+            "Volumes": null,
+            "WorkingDir": "/app",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.opencontainers.image.created": "2026-09-05T23:04:58.318Z",
+                "org.opencontainers.image.description": "A production-ready architecture for running a Dockerized YOLO vehicle on a Raspberry Pi separates concerns into distinct components: hardware control, video streaming, YOLO inference, and the android interface.",
+                "org.opencontainers.image.licenses": "MIT",
+                "org.opencontainers.image.revision": "2de433043c89cec83909f8e5a59875d78d0594a3",
+                "org.opencontainers.image.source": "https://github.com/yoloprojekat/rpi-server",
+                "org.opencontainers.image.title": "rpi-server",
+                "org.opencontainers.image.url": "https://github.com/yoloprojekat/rpi-server",
+                "org.opencontainers.image.version": "4.2.1"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "5118e6e63a322331f392d97914409c2ec33dee12f5271084490f989f4dadbfcf",
+            "SandboxKey": "/var/run/docker/netns/default",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "host": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "",
+                    "NetworkID": "9e9918effaed41e7d5d91e074ab7f793ee4972b46fbf4a44d7d583c1f472f4fe",
+                    "EndpointID": "6cb18777f4b50a196d0d56e6f8eb16bd05fc40c020272d2b75be27933957e336",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+
+=== Container logs: vehicle ===
+Including last 200 lines, then following live output.
+
+2026-09-28T01:45:16.509007726Z 2026-09-28 01:45:16,508 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:16 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:45:17.272658385Z 2026-09-28 01:45:17,272 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:17 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:18.323251505Z 2026-09-28 01:45:18,323 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:18 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:19.376406590Z 2026-09-28 01:45:19,376 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:19 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:20.426690402Z 2026-09-28 01:45:20,426 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:20 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:21.475942585Z 2026-09-28 01:45:21,475 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:21 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:22.525966388Z 2026-09-28 01:45:22,525 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:22 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:23.575590412Z 2026-09-28 01:45:23,575 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:23 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:24.625349281Z 2026-09-28 01:45:24,625 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:24 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:25.676613235Z 2026-09-28 01:45:25,676 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:25 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:26.560026493Z 2026-09-28 01:45:26,559 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:26 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:45:26.727240644Z 2026-09-28 01:45:26,727 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:26 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:27.778866810Z 2026-09-28 01:45:27,778 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:27 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:28.829255434Z 2026-09-28 01:45:28,829 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:28 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:29.884902704Z 2026-09-28 01:45:29,884 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:29 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:30.935082117Z 2026-09-28 01:45:30,934 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:30 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:31.986254361Z 2026-09-28 01:45:31,986 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:31 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:33.036039910Z 2026-09-28 01:45:33,035 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:33 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:34.086275016Z 2026-09-28 01:45:34,086 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:34 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:35.140358603Z 2026-09-28 01:45:35,140 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:35 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:36.190278904Z 2026-09-28 01:45:36,190 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:36 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:36.620272442Z 2026-09-28 01:45:36,620 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:36 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:45:37.238736324Z 2026-09-28 01:45:37,238 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:37 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:38.288580253Z 2026-09-28 01:45:38,288 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:38 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:39.338548342Z 2026-09-28 01:45:39,338 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:39 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:40.391764395Z 2026-09-28 01:45:40,391 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:40 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:41.441106653Z 2026-09-28 01:45:41,440 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:41 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:42.491514633Z 2026-09-28 01:45:42,491 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:42 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:43.541880918Z 2026-09-28 01:45:43,541 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:43 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:44.592524108Z 2026-09-28 01:45:44,592 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:44 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:45.642327157Z 2026-09-28 01:45:45,642 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:45 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:46.671449807Z 2026-09-28 01:45:46,671 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:46 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:45:46.690661529Z 2026-09-28 01:45:46,690 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:46 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:47.739153896Z 2026-09-28 01:45:47,738 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:47 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:48.788100414Z 2026-09-28 01:45:48,787 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:48 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:49.838032171Z 2026-09-28 01:45:49,837 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:49 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:50.892195103Z 2026-09-28 01:45:50,891 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:50 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:51.942625319Z 2026-09-28 01:45:51,942 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:51 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:52.993075990Z 2026-09-28 01:45:52,992 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:52 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:54.045211750Z 2026-09-28 01:45:54,044 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:54 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:55.095928372Z 2026-09-28 01:45:55,095 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:55 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:56.150542697Z 2026-09-28 01:45:56,150 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:56 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:56.721082988Z 2026-09-28 01:45:56,720 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:56 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:45:57.201488048Z 2026-09-28 01:45:57,201 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:57 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:58.252653435Z 2026-09-28 01:45:58,252 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:58 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:45:59.302719710Z 2026-09-28 01:45:59,302 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:45:59 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/8.14.1"
+2026-09-28T01:46:06.780565325Z 2026-09-28 01:46:06,780 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:06 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:46:16.840060943Z 2026-09-28 01:46:16,839 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:16 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:46:26.891741435Z 2026-09-28 01:46:26,891 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:26 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:46:36.960458801Z 2026-09-28 01:46:36,960 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:36 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:46:47.004717408Z 2026-09-28 01:46:47,004 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:47 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:46:57.055829429Z 2026-09-28 01:46:57,055 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:46:57 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:07.104205971Z 2026-09-28 01:47:07,104 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:07 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:17.156805428Z 2026-09-28 01:47:17,156 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:17 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:27.208547886Z 2026-09-28 01:47:27,208 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:27 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:37.255777486Z 2026-09-28 01:47:37,255 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:37 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:47.319988771Z 2026-09-28 01:47:47,319 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:47 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:47:57.371937447Z 2026-09-28 01:47:57,371 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:47:57 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:07.420046828Z 2026-09-28 01:48:07,419 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:07 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:17.468225856Z 2026-09-28 01:48:17,468 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:17 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:27.516465829Z 2026-09-28 01:48:27,516 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:27 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:37.560313832Z 2026-09-28 01:48:37,560 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:37 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:47.614347095Z 2026-09-28 01:48:47,614 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:47 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:48:57.676034629Z 2026-09-28 01:48:57,675 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:48:57 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:07.736234378Z 2026-09-28 01:49:07,736 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:07 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:17.783889043Z 2026-09-28 01:49:17,783 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:17 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:27.832102000Z 2026-09-28 01:49:27,831 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:27 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:37.888647967Z 2026-09-28 01:49:37,888 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:37 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:47.940294338Z 2026-09-28 01:49:47,940 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:47 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:49:57.992503504Z 2026-09-28 01:49:57,992 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:49:57 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:08.048213869Z 2026-09-28 01:50:08,048 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:08 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:18.115939751Z 2026-09-28 01:50:18,115 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:18 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:28.164165895Z 2026-09-28 01:50:28,164 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:28 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:38.212453776Z 2026-09-28 01:50:38,212 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:38 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:48.268469909Z 2026-09-28 01:50:48,268 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:48 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:50:58.320552549Z 2026-09-28 01:50:58,320 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:50:58 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:08.379610034Z 2026-09-28 01:51:08,379 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:08 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:18.428503344Z 2026-09-28 01:51:18,428 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:18 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:28.483923357Z 2026-09-28 01:51:28,483 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:28 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:38.541308397Z 2026-09-28 01:51:38,541 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:38 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:48.592257731Z 2026-09-28 01:51:48,592 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:48 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:51:58.652632174Z 2026-09-28 01:51:58,652 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:51:58 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:08.703749462Z 2026-09-28 01:52:08,703 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:08 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:18.751947613Z 2026-09-28 01:52:18,751 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:18 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:28.803999262Z 2026-09-28 01:52:28,803 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:28 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:38.859205324Z 2026-09-28 01:52:38,859 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:38 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:48.918961274Z 2026-09-28 01:52:48,918 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:48 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:52:58.980226259Z 2026-09-28 01:52:58,980 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:52:58 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:09.032239285Z 2026-09-28 01:53:09,032 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:09 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:19.084109415Z 2026-09-28 01:53:19,083 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:19 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:29.127886636Z 2026-09-28 01:53:29,127 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:29 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:39.180834655Z 2026-09-28 01:53:39,180 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:39 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:49.244448277Z 2026-09-28 01:53:49,244 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:49 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:53:59.292047035Z 2026-09-28 01:53:59,291 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:53:59 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:09.348029132Z 2026-09-28 01:54:09,347 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:09 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:19.408465052Z 2026-09-28 01:54:19,408 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:19 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:29.456290340Z 2026-09-28 01:54:29,456 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:29 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:39.500496975Z 2026-09-28 01:54:39,500 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:39 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:49.547938428Z 2026-09-28 01:54:49,547 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:49 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:54:59.599953629Z 2026-09-28 01:54:59,599 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:54:59 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:09.648369414Z 2026-09-28 01:55:09,648 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:09 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:19.707075190Z 2026-09-28 01:55:19,706 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:19 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:29.760425254Z 2026-09-28 01:55:29,760 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:29 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:39.812988630Z 2026-09-28 01:55:39,812 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:39 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:49.869411895Z 2026-09-28 01:55:49,869 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:49 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:55:59.920094583Z 2026-09-28 01:55:59,919 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:55:59 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:56:09.964355422Z 2026-09-28 01:56:09,964 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:56:09 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:56:20.012629512Z 2026-09-28 01:56:20,012 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:56:20 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:56:30.060309159Z 2026-09-28 01:56:30,060 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:56:30 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:56:40.116690701Z 2026-09-28 01:56:40,116 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:56:40 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:56:50.160136362Z 2026-09-28 01:56:50,159 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:56:50 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:00.208281396Z 2026-09-28 01:57:00,208 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:00 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:10.268427751Z 2026-09-28 01:57:10,268 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:10 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:20.320018729Z 2026-09-28 01:57:20,319 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:20 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:30.381010269Z 2026-09-28 01:57:30,380 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:30 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:40.428720306Z 2026-09-28 01:57:40,428 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:40 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:57:50.484608484Z 2026-09-28 01:57:50,484 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:57:50 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:00.543221724Z 2026-09-28 01:58:00,543 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:00 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:10.587790303Z 2026-09-28 01:58:10,587 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:10 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:20.641054750Z 2026-09-28 01:58:20,640 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:20 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:30.692021103Z 2026-09-28 01:58:30,691 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:30 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:40.739170107Z 2026-09-28 01:58:40,739 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:40 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:58:50.783865500Z 2026-09-28 01:58:50,783 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:58:50 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:00.840550727Z 2026-09-28 01:59:00,840 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:00 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:10.887977682Z 2026-09-28 01:59:10,887 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:10 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:20.940246098Z 2026-09-28 01:59:20,940 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:20 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:30.996209765Z 2026-09-28 01:59:30,996 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:30 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:41.056432218Z 2026-09-28 01:59:41,056 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:41 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T01:59:51.104768751Z 2026-09-28 01:59:51,104 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:01:59:51 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:01.167525249Z 2026-09-28 02:00:01,167 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:01 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:11.220435638Z 2026-09-28 02:00:11,220 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:11 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:21.280165780Z 2026-09-28 02:00:21,280 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:21 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:31.328361639Z 2026-09-28 02:00:31,328 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:31 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:41.380268035Z 2026-09-28 02:00:41,380 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:41 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:00:51.435452341Z 2026-09-28 02:00:51,435 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:00:51 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:01.489896983Z 2026-09-28 02:01:01,489 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:01 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:11.544493096Z 2026-09-28 02:01:11,544 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:11 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:21.593030463Z 2026-09-28 02:01:21,592 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:21 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:31.644007463Z 2026-09-28 02:01:31,643 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:31 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:41.684340275Z 2026-09-28 02:01:41,684 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:41 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:01:51.740485364Z 2026-09-28 02:01:51,740 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:01:51 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:01.792062726Z 2026-09-28 02:02:01,791 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:01 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:11.839939453Z 2026-09-28 02:02:11,839 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:11 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:21.883960053Z 2026-09-28 02:02:21,883 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:21 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:31.931976539Z 2026-09-28 02:02:31,931 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:31 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:41.980208990Z 2026-09-28 02:02:41,980 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:41 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:02:52.036041265Z 2026-09-28 02:02:52,035 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:02:52 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:02.092498248Z 2026-09-28 02:03:02,092 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:02 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:12.144629685Z 2026-09-28 02:03:12,144 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:12 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:22.181054618Z 2026-09-28 02:03:22,180 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:22 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:32.224399929Z 2026-09-28 02:03:32,224 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:32 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:42.273140302Z 2026-09-28 02:03:42,272 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:42 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:03:52.328234611Z 2026-09-28 02:03:52,328 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:03:52 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:02.380025717Z 2026-09-28 02:04:02,379 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:02 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:12.428125419Z 2026-09-28 02:04:12,427 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:12 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:22.482704704Z 2026-09-28 02:04:22,482 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:22 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:32.532441263Z 2026-09-28 02:04:32,532 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:32 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:42.577218361Z 2026-09-28 02:04:42,577 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:42 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:04:52.628083496Z 2026-09-28 02:04:52,627 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:04:52 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:02.681222676Z 2026-09-28 02:05:02,681 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:02 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:12.731918982Z 2026-09-28 02:05:12,731 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:12 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:22.780132755Z 2026-09-28 02:05:22,779 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:22 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:32.832912268Z 2026-09-28 02:05:32,832 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:32 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:42.894212323Z 2026-09-28 02:05:42,894 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:42 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:05:52.942803673Z 2026-09-28 02:05:52,941 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:05:52 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:02.995227786Z 2026-09-28 02:06:02,995 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:02 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:13.044784901Z 2026-09-28 02:06:13,044 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:13 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:23.100546248Z 2026-09-28 02:06:23,100 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:23 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:33.148100437Z 2026-09-28 02:06:33,147 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:33 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:43.191454754Z 2026-09-28 02:06:43,191 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:43 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:06:53.239814945Z 2026-09-28 02:06:53,239 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:06:53 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:03.289197810Z 2026-09-28 02:07:03,288 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:03 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:13.340506495Z 2026-09-28 02:07:13,340 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:13 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:23.396336505Z 2026-09-28 02:07:23,396 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:23 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:33.444314832Z 2026-09-28 02:07:33,444 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:33 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:43.488280611Z 2026-09-28 02:07:43,488 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:43 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:07:53.539857900Z 2026-09-28 02:07:53,539 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:07:53 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:03.591795283Z 2026-09-28 02:08:03,591 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:03 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:13.640585678Z 2026-09-28 02:08:13,640 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:13 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:23.688981701Z 2026-09-28 02:08:23,688 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:23 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:33.730043611Z 2026-09-28 02:08:33,729 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:33 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:43.782252357Z 2026-09-28 02:08:43,782 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:43 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:08:53.840423367Z 2026-09-28 02:08:53,840 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:08:53 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:03.892093231Z 2026-09-28 02:09:03,891 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:03 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:13.940209658Z 2026-09-28 02:09:13,940 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:13 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:23.988289017Z 2026-09-28 02:09:23,988 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:23 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:34.039902712Z 2026-09-28 02:09:34,039 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:34 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:44.091191860Z 2026-09-28 02:09:44,091 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:44 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:09:54.155360017Z 2026-09-28 02:09:54,155 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:09:54 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:04.212477631Z 2026-09-28 02:10:04,212 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:04 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:14.260468176Z 2026-09-28 02:10:14,260 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:14 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:24.304088504Z 2026-09-28 02:10:24,303 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:24 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:34.351175477Z 2026-09-28 02:10:34,351 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:34 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:44.399738779Z 2026-09-28 02:10:44,399 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:44 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:10:54.452351358Z 2026-09-28 02:10:54,452 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:10:54 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:11:04.500092858Z 2026-09-28 02:11:04,499 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:11:04 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:11:14.550681113Z 2026-09-28 02:11:14,550 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:11:14 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:11:24.604547357Z 2026-09-28 02:11:24,604 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:11:24 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:11:34.656158571Z 2026-09-28 02:11:34,656 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:11:34 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
+2026-09-28T02:11:44.704162066Z 2026-09-28 02:11:44,704 [INFO] aiohttp.access: 127.0.0.1 [28/Sep/2026:02:11:44 +0000] "GET /health HTTP/1.1" 200 322 "-" "curl/7.88.1"
