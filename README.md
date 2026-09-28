@@ -4,9 +4,9 @@
 
 Run these Bash scripts **on the Raspberry Pi host with `sudo`** to measure the running server's resource use, HTTP latency, stream transport, Docker/container state, and reliability. Each execution saves a new UTC timestamped directory under `logs/` beside the scripts.
 
-For publishable repeated measurements, use `run_randomized_repeats.sh`. It executes the experiment set **four times**, independently randomizes experiment order within every repetition, inserts a configurable cooldown between runs, records the exact execution order, and assigns a common session ID to the resulting datasets.
+For publishable repeated measurements, use `run_randomized_repeats`. It executes the experiment set **four times**, independently randomizes experiment order within every repetition, inserts a configurable cooldown between runs, records the exact execution order, and assigns a common session ID to the resulting datasets.
 
-Seven earlier recorded runs from 2026-09-27 are also available under [`logs/`](logs/). They predate the randomized repeated-run methodology and were collected without Docker socket access; their measurements and evidence limitations are documented separately below.
+The repository contains **35 recorded runs**: a completed **28-run randomized session** from 2026-09-27/28 and seven earlier individual runs under [`logs/`](logs/). The seven earlier runs predate the randomized protocol and lack Docker socket access. Both datasets are analyzed separately below.
 
 Nothing in the harness installs packages, tunes the Pi, restarts containers, modifies GPIO configuration, or changes production code.
 
@@ -93,7 +93,7 @@ The run retains explicit container evidence including `container-selected.txt`, 
 
 ### Randomized repeated-run protocol
 
-The preferred protocol for new comparative measurements is `run_randomized_repeats.sh`.
+The preferred protocol for new comparative measurements is `run_randomized_repeats`.
 
 The default design performs **four repetitions of the experiment set**. Before every repetition, the experiment order is independently randomized using `shuf`.
 
@@ -158,22 +158,73 @@ Record relevant environmental conditions in `operator-notes.md`.
 | Follow observation | `follow_benchmark.sh` | Read-only current-state observations; default 60 s | samples/flags; **no controlled follow comparison** |
 | API latency | `api_latency.sh` | 100 health requests, 1 s pauses by default | individual `raw.csv`, health bodies, `summary.txt` |
 | Endurance/reliability | `endurance_test.sh` | Continuous resource/service/container observation; default 600 s | samples, health responses, Docker logs/errors |
-| Safe session | `run_all_safe.sh` | Baseline, latency, idle, stream, endurance in sequence | parent metadata, `children.csv`, separate child directories |
-| Randomized repetitions | `run_randomized_repeats.sh` | Four independently randomized repetitions with cooldown and session tracking | individual experiment directories plus session order/metadata |
+| Randomized repetitions | `run_randomized_repeats` | Four independently randomized repetitions with cooldown and session tracking | individual experiment directories plus session order/metadata |
 
 `common.sh` is shared infrastructure and is **not** an experiment.
 
-`run_all_safe.sh` is an aggregate runner and should not itself be included as a child of `run_randomized_repeats.sh`, because doing so would duplicate nested measurements.
-
-The safe runner defaults to 60 s for each duration-based child (explicitly propagated), 5 s pauses and 100 latency requests; use short commands first when validating the harness.
-
-Failed children remain in the session and later children still run. Detection and follow are deliberately excluded from the safe runner.
+The checkout contains seven experiments, common.sh, the extensionless randomized runner, and tests/test_harness.py. The previously documented run_all_safe.sh is absent, though the tests still reference it.
 
 Endurance is resource+health monitoring; it does not add a stream or change application toggles.
 
 ---
 
-## Existing Results: 2026-09-27
+## Randomized Results: 2026-09-27/28
+
+The [session metadata](logs/sessions/2026-09-27T23-55-39Z_randomized/session-metadata.txt) and [execution order](logs/sessions/2026-09-27T23-55-39Z_randomized/execution-order.csv) record **28/28 completed runs, zero child exit failures**: four repetitions of seven experiments with 60-second cooldowns. The session lasted from **2026-09-27 23:55:39 to 2026-09-28 01:45:59 UTC**, including cooldowns. Completion does not mean every diagnostic succeeded.
+
+Metadata identifies a Raspberry Pi 5 Model B Rev 1.0, Debian 13.7 (trixie), kernel `6.18.50+rpt-rpi-2712`, `aarch64`, and 8,255,824 KiB OS-visible RAM. HTTP targets `http://localhost:1607`. Docker discovery selected container `vehicle`. The harness checkout was dirty at commit `fcf5e8da8cb2d9217a111aa7c5cf0272b3980f4e`; consult the individual source checksums rather than assuming the commit captures every executed change.
+
+### Resource measurements
+
+Values below are arithmetic means of valid host CPU samples within each run, excluding initial `NA` values. Columns follow repetition order, not alphabetical experiment order. The final column is the equally weighted mean of four run means. These descriptive statistics are not confidence intervals. Use the execution-order record above to locate each timestamped directory under [logs](logs/), then inspect its `raw.csv` and `metadata.txt`.
+
+| Experiment / phase | Total rows / valid CPU | R1 CPU (%) | R2 CPU (%) | R3 CPU (%) | R4 CPU (%) | Mean CPU (%) |
+|---|---|---|---|---|---|---|
+| Baseline | 8 / 4 | 5.14 | 4.48 | 6.99 | 4.25 | 5.21 |
+| Idle | 236 / 232 | 4.19 | 4.14 | 4.11 | 4.24 | 4.17 |
+| Stream | 48 / 44 | 4.35 | 4.53 | 4.20 | 3.96 | 4.26 |
+| Detection off | 48 / 44 | 4.23 | 3.95 | 4.13 | 4.21 | 4.13 |
+| Detection on | 48 / 44 | 56.01 | 55.59 | 55.72 | 55.81 | 55.78 |
+| Follow observation (off) | 48 / 44 | 4.52 | 4.24 | 4.11 | 4.33 | 4.30 |
+| Endurance | 472 / 468 | 4.19 | 4.21 | 4.11 | 4.21 | 4.18 |
+
+Detection increased mean host CPU by **51.65 percentage points**, averaged over the four paired comparisons. Peak recorded temperature was **76.55 °C**, during detection. Each detection phase used a 60-second budget and fixed off→on order; this measures inference plus annotation under the recorded conditions, not isolated inference timing. Transition records show restoration requests to the original off state in all four runs.
+
+Idle used 300-second budgets, endurance 600 seconds, stream and follow observation 60 seconds, and baseline two samples. Resource sampling pauses were 5 seconds. Follow remained off in all **908 resource rows**, so these data do not measure autonomous-follow performance.
+
+### API latency
+
+All **400/400 requests** returned valid HTTP 200 health responses: 100 per repetition with one-second pauses. Units below are milliseconds; p95 is nearest rank within each run. These loopback health timings do not measure video, inference or Wi-Fi latency.
+
+| Repetition / raw data | Failures | Mean (ms) | Median (ms) | p95 (ms) | Maximum (ms) |
+|---|---|---|---|---|---|
+| [1](logs/2026-09-27T23-57-40_api-latency_DeQove/raw.csv) | 0 | 1.280 | 1.071 | 3.107 | 4.555 |
+| [2](logs/2026-09-28T00-48-35_api-latency_LiInvP/raw.csv) | 0 | 1.152 | 1.064 | 1.997 | 3.715 |
+| [3](logs/2026-09-28T01-16-24_api-latency_XZGDzc/raw.csv) | 0 | 1.281 | 1.062 | 2.634 | 4.344 |
+| [4](logs/2026-09-28T01-44-15_api-latency_TjreFi/raw.csv) | 0 | 1.121 | 1.055 | 1.432 | 3.375 |
+
+### Stream transport
+
+Every stream run recorded one attempt, HTTP 200, and curl exit 28 (`deadline_or_stall_timeout`). Retained stderr reports the 60,000 ms timeout, consistent with each configured deadline. No reconnect attempts occurred. Bytes establish transport activity, not frame validity, FPS or frame freshness.
+
+| Repetition / raw data | Bytes received | Transfer time (s) |
+|---|---|---|
+| [1](logs/2026-09-28T00-20-28_stream-stability_16WvtX/stream.csv) | 35,394,369 | 60.000491 |
+| [2](logs/2026-09-28T00-23-30_stream-stability_2a7eMb/stream.csv) | 35,189,536 | 60.000300 |
+| [3](logs/2026-09-28T00-51-20_stream-stability_8g0FwW/stream.csv) | 35,413,036 | 60.000539 |
+| [4](logs/2026-09-28T01-42-14_stream-stability_Lxw4Zo/stream.csv) | 35,544,181 | 60.000989 |
+
+### Reliability and evidence gaps
+
+- All 908 resource rows reported valid health responses, camera/model ready, model not loading, and the same container ID in running/healthy state, with restart count 0 and OOM flag false. Sampling cannot rule out outages between probes or during cooldowns.
+- The throttling bitmask was `0x50000` in 893 rows and `0x50005` in 15 rows. All 15 occurred during detection-on phases (5, 2, 4 and 4 by repetition). Do not describe this dataset as having no throttling flags; the raw masks include historical state.
+- **All 28 runs reported incomplete/unavailable Docker logs**, including a daemon log-decoding error involving a null character. Container inspection succeeded, but complete application-log evidence is unavailable. Docker also warned that memory and swap limits were unsupported.
+- No operator-notes file is present. Scene, cooling, ambient temperature, motor-power condition and other clients are not independently documented. The first follow observation was cooler (46.85–50.70 °C) than later runs; randomization and cooldown did not establish identical thermal starting conditions.
+- Keep these measurements separate from the seven earlier runs below: durations, Docker access and collection conditions differ.
+
+---
+
+## Earlier Individual Results: 2026-09-27
 
 > **Important:** the following results are historical single-run measurements. They predate the four-repetition randomized methodology described above and must not be represented as results produced by that protocol.
 
@@ -329,13 +380,13 @@ Docker discovery always concerns the collector's Docker context, even with a rem
 Make the runner executable once:
 
 ```bash
-chmod +x run_randomized_repeats.sh
+chmod +x run_randomized_repeats
 ```
 
 Then run:
 
 ```bash
-sudo ./run_randomized_repeats.sh
+sudo bash run_randomized_repeats
 ```
 
 Default methodology:
@@ -355,13 +406,13 @@ The default cooldown is 60 seconds between experiment executions.
 For a longer cooldown:
 
 ```bash
-sudo COOLDOWN=120 ./run_randomized_repeats.sh
+sudo COOLDOWN=120 bash run_randomized_repeats
 ```
 
 To explicitly select another repetition count:
 
 ```bash
-sudo REPEATS=5 COOLDOWN=120 ./run_randomized_repeats.sh
+sudo REPEATS=5 COOLDOWN=120 bash run_randomized_repeats
 ```
 
 For the standard reported protocol, retain `REPEATS=4`.
@@ -375,21 +426,6 @@ logs/sessions/<SESSION_ID>/
 ```
 
 Individual experiment outputs remain in the normal timestamped `logs/` directories and carry the shared session ID in their metadata.
-
-### Safe grouped session
-
-The existing safe grouped runner remains useful for short validation before a full repeated experiment:
-
-```bash
-sudo bash run_all_safe.sh \
-    --duration 30 \
-    --interval 1 \
-    --requests 10
-```
-
-This runner intentionally excludes detection/follow state-changing experiments.
-
-It is a harness/deployment check, not a substitute for the four-repetition randomized protocol.
 
 ### Detection experiment
 
@@ -504,8 +540,6 @@ API tests display request progress and an estimated upper remaining time based o
 
 Baseline reports its fixed two-sample plan.
 
-The safe session reports each child and its countdown rather than claiming an exact overall finish time.
-
 The randomized runner additionally reports repetition, randomized position, global execution sequence, cooldowns and failures.
 
 Names use UTC plus a random suffix to prevent collisions, including concurrent starts.
@@ -573,7 +607,7 @@ Git SHA does not include uncommitted harness changes, so commit the harness befo
 
 ## Safety
 
-Baseline, idle, stream, API, endurance, follow observation and the safe runner issue only GETs and read-only local commands.
+Baseline, idle, stream, API, endurance and follow observation issue only GETs and read-only local commands.
 
 They cannot initiate motor motion but also cannot stop pre-existing motion.
 
@@ -587,7 +621,7 @@ No experiment script calls `/control` or `/toggle_follow`, manipulates GPIO, or 
 
 Follow observation only records current software state and does not exercise autonomous steering.
 
-Because `run_randomized_repeats.sh` can include `detection_benchmark.sh`, **secure the vehicle and isolate motor power before starting the entire randomized session**, not merely when the detection run happens. Its position is deliberately unpredictable.
+Because `run_randomized_repeats` can include `detection_benchmark.sh`, **secure the vehicle and isolate motor power before starting the entire randomized session**, not merely when the detection run happens. Its position is deliberately unpredictable.
 
 ---
 
@@ -596,7 +630,7 @@ Because `run_randomized_repeats.sh` can include `detection_benchmark.sh`, **secu
 Check every shell script before a publishable session:
 
 ```bash
-for script in *.sh; do
+for script in *.sh run_randomized_repeats; do
     bash -n "$script" || exit 1
 done
 ```
@@ -604,10 +638,10 @@ done
 If ShellCheck is installed:
 
 ```bash
-shellcheck -x *.sh
+shellcheck -x *.sh run_randomized_repeats
 ```
 
-Run the harness tests:
+The fixture suite references the missing run_all_safe.sh and cannot complete successfully as checked in. Restore that runner or update the obsolete session test before treating this as a passing validation command:
 
 ```bash
 python3 tests/test_harness.py
